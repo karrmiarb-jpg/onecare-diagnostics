@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>OneCare Diagnostics — Coming Soon</title>
-<meta name="description" content="OneCare Diagnostics is launching soon. Accurate, reliable diagnostic testing for you and your family.">
+<title>OneCare Diagnostics — Dumanjug, Cebu</title>
+<meta name="description" content="OneCare Diagnostics in Poblacion Central, Dumanjug, Cebu. Accurate, reliable lab tests and ECG for your family since 2024. Open Mon–Sat, 7:30AM–5:00PM.">
 <link rel="icon" href="assets/logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -107,6 +107,7 @@
   .lead { font-size: 17px; color: var(--muted); max-width: 520px; }
 
   /* Countdown */
+  .cd-label { margin: 30px 0 -18px; font-size: 13px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--blue); }
   .countdown { display: flex; gap: 14px; margin: 32px 0 30px; flex-wrap: wrap; }
   .cd {
     background: #fff; border: 1px solid var(--line); border-radius: 16px;
@@ -202,17 +203,21 @@
     overflow: hidden; box-shadow: var(--shadow); transition: .3s;
   }
   .svc:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
-  .svc-art { height: 150px; display: grid; place-items: center; position: relative; overflow: hidden; }
+  .svc-art { height: 240px; position: relative; overflow: hidden; background: #E8F1FF; }
+  .svc-art img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .6s ease; }
+  .svc:hover .svc-art img { transform: scale(1.05); }
   .svc-art::after {
     content: ""; position: absolute; inset: 0;
-    background-image: radial-gradient(rgba(255,255,255,.25) 1.2px, transparent 1.2px);
-    background-size: 16px 16px;
+    background: linear-gradient(180deg, rgba(10,42,102,0) 55%, rgba(10,42,102,.35) 100%);
   }
-  .svc-art svg { width: 64px; height: 64px; color: #fff; position: relative; z-index: 1; }
-  .a1 { background: linear-gradient(135deg, #0047AB, #3B82F6); }
-  .a2 { background: linear-gradient(135deg, #00A055, #34D399); }
-  .a3 { background: linear-gradient(135deg, #0B6BCB, #0FB5A6); }
-  .a4 { background: linear-gradient(135deg, #0A2A66, #0047AB); }
+  .svc-badge {
+    position: absolute; left: 18px; bottom: 16px; z-index: 1;
+    width: 48px; height: 48px; border-radius: 14px; display: grid; place-items: center;
+    color: #fff; box-shadow: 0 8px 20px rgba(0,0,0,.18);
+  }
+  .svc-badge svg { width: 24px; height: 24px; }
+  .b-green { background: linear-gradient(135deg, var(--green), var(--teal)); }
+  .b-blue { background: linear-gradient(135deg, var(--blue), #1565D8); }
   .svc-body { padding: 18px 20px 20px; display: flex; align-items: flex-end; justify-content: space-between; gap: 10px; }
   .svc-body b { font-size: 16px; color: var(--navy); display: block; }
   .svc-body p { font-size: 13px; color: var(--muted); line-height: 1.5; margin-top: 4px; }
@@ -338,6 +343,7 @@
     .help { padding: 24px 16px; }
     .help-grid, .services { grid-template-columns: 1fr; }
     .help-item, .help-item:nth-child(4) { grid-column: auto; }
+    .svc-art { height: 190px; }
     .band { grid-template-columns: 1fr; }
     .stat { justify-content: flex-start; }
     .stat + .stat { border-left: 0; border-top: 1px solid rgba(255,255,255,.22); padding-top: 18px; }
@@ -374,12 +380,14 @@
   <div class="hero-photo"><img src="assets/hero.jpg" alt="OneCare medical technologist examining samples under a microscope"></div>
   <div class="wrap hero-grid">
     <div>
-      <span class="eyebrow"><span class="dot"></span> Launching Soon</span>
+      <span class="eyebrow"><span class="dot"></span> Open Now · New Website Coming Soon</span>
       <h1>Better Diagnostics.<br><span class="accent">Better Care.</span></h1>
-      <p class="lead">OneCare Diagnostics is almost ready. Accurate lab tests, fast results and caring
-        professionals for you and your whole family, all under one roof.</p>
+      <p class="lead">Serving Dumanjug since 2024 with accurate lab tests, fast results and caring
+        professionals. We're open as usual while we build our new website and make our clinic
+        even more comfortable for you.</p>
 
-      <div class="countdown" aria-label="Countdown to launch">
+      <p class="cd-label">New website launches in</p>
+      <div class="countdown" aria-label="Countdown to new website launch">
         <div class="cd"><b id="d">00</b><span>Days</span></div>
         <div class="cd"><b id="h">00</b><span>Hours</span></div>
         <div class="cd"><b id="m">00</b><span>Mins</span></div>
@@ -395,7 +403,7 @@
       </form>
       <p class="form-note" id="note">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-        Be the first to know when we open. No spam, ever.
+        Get notified when our new website and online booking go live. No spam, ever.
       </p>
 
       <div class="trust">
@@ -406,7 +414,7 @@
           <span style="background:#1565D8">R</span>
           <span style="background:#0A2A66">+</span>
         </div>
-        <div><b>Your health, our priority</b><small>Trusted care for every family</small></div>
+        <div><b>Serving Dumanjug since 2024</b><small>Trusted care for every family</small></div>
       </div>
     </div>
 
@@ -434,9 +442,9 @@
 </section>
 
 <main class="wrap">
-  <!-- What's coming -->
+  <!-- How can we help -->
   <div class="help reveal">
-    <h2>What's Coming to OneCare</h2>
+    <h2>How Can We Help You?</h2>
     <div class="help-grid">
       <div class="help-item">
         <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 2v6l-5 9a3 3 0 0 0 2.6 4.5h10.8A3 3 0 0 0 20 17l-5-9V2"/><path d="M8 2h8M6.5 14h11"/></svg></div>
@@ -465,15 +473,15 @@
   <section class="block">
     <div class="sec-head reveal">
       <h2>Our Diagnostic <span>Services</span></h2>
-      <p>Comprehensive testing for you and your family, opening soon.</p>
+      <p>Comprehensive testing for you and your family, available now.</p>
     </div>
     <div class="services">
       <article class="svc reveal">
-        <div class="svc-art a2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 2v6l-5 9a3 3 0 0 0 2.6 4.5h10.8A3 3 0 0 0 20 17l-5-9V2"/><path d="M8 2h8M6.5 14h11"/></svg></div>
+        <div class="svc-art"><img src="assets/lab-tests.jpg" style="object-position: 40% 32%" alt="Racks of sample test tubes beside a laboratory analyzer" loading="lazy"><span class="svc-badge b-green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 2v6l-5 9a3 3 0 0 0 2.6 4.5h10.8A3 3 0 0 0 20 17l-5-9V2"/><path d="M8 2h8M6.5 14h11"/></svg></span></div>
         <div class="svc-body"><div><b>Diagnostic Laboratory Tests</b><p>Hematology &amp; clinical chemistry: CBC, FBS, lipid profile, kidney &amp; liver tests.</p></div><span class="arrow"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span></div>
       </article>
       <article class="svc reveal">
-        <div class="svc-art a4"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+        <div class="svc-art"><img src="assets/ecg.jpg" alt="Stethoscope and ECG electrodes on an ECG printout" loading="lazy"><span class="svc-badge b-blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></span></div>
         <div class="svc-body"><div><b>ECG &amp; Wellness</b><p>Heart screening &amp; annual check-ups.</p></div><span class="arrow"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span></div>
       </article>
     </div>
@@ -484,7 +492,7 @@
     <div class="stat"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></div><div><b>Quality Assured</b><small>Strict lab standards</small></div></div>
     <div class="stat"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="5"/><path d="M3 21a9 9 0 0 1 18 0"/></svg></div><div><b>Licensed Staff</b><small>Experienced professionals</small></div></div>
     <div class="stat"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div><div><b>Fast Turnaround</b><small>Results when you need them</small></div></div>
-    <div class="stat"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div><div><b>Affordable</b><small>Fair, transparent pricing</small></div></div>
+    <div class="stat"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 11H4M20 7H4M7 21V4a1 1 0 0 1 1-1h4a1 1 0 0 1 0 12H7"/></svg></div><div><b>Affordable</b><small>Fair, transparent pricing</small></div></div>
   </div>
 
   <!-- Why + mission -->
@@ -504,7 +512,7 @@
       </ul>
     </div>
     <div class="mission reveal">
-      <h3>Have a question before we open?</h3>
+      <h3>Have a question? We're here to help.</h3>
       <p>Our team is happy to help with tests, packages and corporate partnerships.</p>
       <a href="mailto:onecarediagnostics@gmail.com" class="btn">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg>
@@ -516,11 +524,11 @@
   <!-- CTA -->
   <div class="cta reveal">
     <div>
-      <h3>Your Health is Our Priority</h3>
-      <p>Join the list and be the first to book when our doors open.</p>
+      <h3>We're Open &amp; Getting Even Better</h3>
+      <p>Visit us Mon–Sat, 7:30AM–5:00PM. We're refreshing our clinic to make every visit more comfortable.</p>
     </div>
-    <a href="#notify" class="btn">Notify Me at Launch
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+    <a href="tel:+639151630908" class="btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      Call Us Now
     </a>
   </div>
 </main>
@@ -531,7 +539,7 @@
     <div class="foot">
       <div>
         <img src="assets/logo.png" alt="OneCare Diagnostics">
-        <p>Accurate diagnostics and compassionate care for every family. Opening soon.</p>
+        <p>Accurate diagnostics and compassionate care for every family in Dumanjug since 2024.</p>
         <div class="socials">
           <a href="#" aria-label="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M14 9V7c0-.9.6-1 1-1h3V2h-4c-3.3 0-4 2.4-4 4v3H7v4h3v9h4v-9h3.3l.7-4z"/></svg></a>
           <a href="#" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
@@ -539,7 +547,7 @@
         </div>
       </div>
       <div>
-        <h4>Coming Soon</h4>
+        <h4>Our Services</h4>
         <ul>
           <li>Laboratory Tests</li>
           <li>Home Sample Collection</li>
@@ -591,7 +599,7 @@
       return;
     }
     note.style.color = ""; note.className = "form-note ok";
-    note.textContent = "✓ Thank you! We'll let you know as soon as we open.";
+    note.textContent = "✓ Thank you! We'll let you know when our new website goes live.";
     form.reset();
   });
 
