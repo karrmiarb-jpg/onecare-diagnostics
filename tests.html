@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tests & Prices | OneCare Diagnostics, Dumanjug</title>
+<meta name="description" content="See OneCare Diagnostics' lab tests and prices, tick the tests you need, and get an estimated total before your visit. Senior and PWD discounts included.">
+<meta property="og:title" content="Tests & Prices | OneCare Diagnostics">
+<meta property="og:description" content="Tick the tests you need and see your estimated total before you visit.">
+<meta property="og:image" content="assets/img/hero.jpg">
+<link rel="icon" href="assets/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/site.css">
+<script defer src="assets/js/i18n.js"></script>
+<script defer src="assets/js/site.js"></script>
+<script defer src="assets/js/prices.js"></script>
+<script defer src="assets/js/estimator.js"></script>
+</head>
+<body>
+<header id="site-header"></header>
+
+<section class="page-hero">
+  <div class="wrap">
+    <span class="eyebrow"><span class="dot"></span><span data-i18n="tests.eyebrow">Tests &amp; Prices</span></span>
+    <h1 data-i18n="tests.h1">Know your total <span class="accent">before you come in</span></h1>
+    <p class="lead" data-i18n="tests.lead">Tick the tests your doctor asked for, or the ones you'd like to have. Your estimated total shows as you go, with any preparation you need to know about.</p>
+    <p class="lead" style="margin-top:14px" hidden data-draft><span class="badge draft" data-i18n="tests.draft">Draft prices: final price list coming soon</span></p>
+  </div>
+</section>
+
+<main class="wrap" style="padding-top:34px">
+  <div class="est">
+    <div class="est-main">
+      <div class="est-tools">
+        <label class="search">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+          <span class="sr-only" data-i18n="tests.searchLabel">Search tests</span>
+          <input id="est-search" type="search" placeholder="Search a test, e.g. CBC, sugar, urine" data-i18n-ph="tests.searchPh" autocomplete="off">
+        </label>
+      </div>
+      <div class="note-box" style="margin-bottom:24px">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+        <span data-i18n="tests.help">Not sure which test you need? Bring your doctor's request, or call us at <a href="tel:+639851888881">+63 985 188 8881</a> and we'll help you.</span>
+      </div>
+      <div id="est-groups" aria-live="polite"></div>
+    </div>
+
+    <aside class="est-side" aria-label="Your estimate">
+      <div class="summary" data-summary></div>
+    </aside>
+  </div>
+</main>
+
+<div class="mobile-sum" aria-label="Your estimate">
+  <div class="bar">
+    <div><small id="mobile-count">0 tests</small><b id="mobile-total">₱0</b></div>
+    <button class="btn btn-primary btn-sm" type="button" data-sheet aria-expanded="false">View estimate</button>
+  </div>
+  <div class="sheet"><div class="summary" data-summary></div></div>
+</div>
+
+<footer id="site-footer"></footer>
+</body>
+</html>
