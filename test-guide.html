@@ -33,6 +33,27 @@
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
     <span data-i18n="guide.note">Your doctor reads your results with you. This guide is here to help you understand your tests, not to diagnose.</span>
   </div>
+  <!-- What are you feeling? -->
+  <form class="feel-card" id="feel-form" autocomplete="off">
+    <h2 data-i18n="feel.h">Not sure which test? Tell us what you feel</h2>
+    <p data-i18n="feel.p">Type how you feel in English or Bisaya, like "fever and headache" or "sakit akong tiyan", then press Enter.</p>
+    <div class="feel-row">
+      <label class="search">
+        <span class="sr-only" data-i18n="feel.label">Describe what you feel</span>
+        <input id="feel-input" type="text" enterkeyhint="search" placeholder="e.g. fever for 3 days, always thirsty" data-i18n-ph="feel.ph">
+      </label>
+      <button class="btn btn-primary" type="submit" data-i18n="feel.btn">Suggest Tests</button>
+    </div>
+    <div id="feel-out" aria-live="polite"></div>
+    <p class="feel-disclaimer"><b data-i18n="feel.discH">This is not a diagnosis.</b> <span data-i18n="feel.discP">Please check with a licensed physician first. Your doctor will decide which tests you really need.</span></p>
+  </form>
+
+  <h2 class="h-sm" style="margin:34px 0 14px" data-i18n="guide.allH">All tests</h2>
+  <label class="search" style="margin-bottom:14px">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+    <span class="sr-only" data-i18n="guide.searchLabel">Search tests</span>
+    <input id="guide-search" type="search" placeholder="Search a test, e.g. CBC, sugar, liver" data-i18n-ph="guide.searchPh" autocomplete="off">
+  </label>
   <div class="guide-filter" id="guide-filter" role="group" aria-label="Filter tests"></div>
   <div class="guide" id="guide"></div>
 

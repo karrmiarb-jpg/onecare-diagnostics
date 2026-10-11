@@ -93,6 +93,127 @@
     heart: '<path d="M22 12h-4l-3 9L9 3l-3 9H2"/>'
   };
 
+
+  // ---------- "Tell us what you feel" ----------
+  // Guide test name -> ids on the Prices page
+  const PRICE_IDS = {
+    "CBC (Complete Blood Count)": ["cbc"], "Blood Typing (ABO & Rh)": ["btype"], "Clotting & Bleeding Time": ["ctbt"], "ESR": ["esr"],
+    "FBS (Fasting Blood Sugar)": ["fbs"], "RBS (Random Blood Sugar)": ["rbs"], "Lipid Profile": ["lipid"],
+    "BUN & Creatinine": ["bun", "crea"], "Uric Acid": ["bua"], "SGPT / ALT & SGOT / AST": ["sgpt", "sgot"],
+    "Urinalysis": ["ua"], "Fecalysis": ["fa"], "Fecal Occult Blood Test": ["fobt"], "Pregnancy Test (Urine)": ["preg"],
+    "Dengue Rapid Test": ["dengue"], "Hepatitis B Screening (HBsAg)": ["hbsag"], "Syphilis Screening": ["syph"],
+    "HIV Screening": ["hiv"], "ECG (Electrocardiogram)": ["ecg"]
+  };
+
+  // Words people might type (English, Bisaya, some Tagalog) -> tests doctors commonly ask for.
+  // Kept simple and conservative on purpose. To be reviewed by our RMT.
+  const SYMPTOMS = [
+    { words: ["fever", "hilanat", "hilantan", "gihilantan", "init akong lawas", "lagnat", "nilalagnat", "chills", "katugnaw"],
+      en: "Fever", ceb: "Hilanat",
+      tests: ["CBC (Complete Blood Count)", "Dengue Rapid Test", "Urinalysis"] },
+    { words: ["dengue", "rashes", "pantal", "pula sa panit", "bleeding gums"],
+      en: "Possible dengue", ceb: "Basin dengue",
+      tests: ["Dengue Rapid Test", "CBC (Complete Blood Count)"] },
+    { words: ["tired", "weak", "fatigue", "pale", "dizzy", "anemia", "anemic", "kapoy", "luya", "kaluya", "luspad", "lipong", "malipong", "hilo", "pagod", "nahihilo", "maputla"],
+      en: "Tired, weak, pale or dizzy", ceb: "Kapoy, luya, luspad o malipong",
+      tests: ["CBC (Complete Blood Count)", "FBS (Fasting Blood Sugar)"] },
+    { words: ["thirst", "uhaw", "giuhaw", "frequent urin", "pee a lot", "pee often", "kanunay mangihi", "permi mangihi", "diabetes", "diabetic", "sugar", "asukar", "tam-is", "weight loss", "niwang"],
+      en: "Thirst, frequent peeing or sugar concerns", ceb: "Uhaw, kanunay mangihi o asukar",
+      tests: ["FBS (Fasting Blood Sugar)", "RBS (Random Blood Sugar)", "Urinalysis"] },
+    { words: ["painful urin", "burning urin", "pain when pee", "uti", "hapdos", "sakit mangihi", "sakit pag-ihi", "cloudy urine", "ihi nga lubog", "masakit umihi"],
+      en: "Pain or burning when peeing", ceb: "Sakit o hapdos pag-ihi",
+      tests: ["Urinalysis", "CBC (Complete Blood Count)"] },
+    { words: ["stomach", "tummy", "abdominal", "diarrhea", "diarrhoea", "lbm", "loose stool", "worm", "tiyan", "libang", "kalibang", "nagkalibang", "bitok", "tae", "sakit ng tiyan", "pagtatae"],
+      en: "Stomach pain, diarrhea or worms", ceb: "Sakit sa tiyan, kalibang o bitok",
+      tests: ["Fecalysis", "CBC (Complete Blood Count)"] },
+    { words: ["blood in stool", "bloody stool", "black stool", "dugo sa tae", "itom nga tae", "itom ang tae"],
+      en: "Blood in the stool or black stool", ceb: "Dugo sa tae o itom nga tae",
+      tests: ["Fecal Occult Blood Test", "CBC (Complete Blood Count)"] },
+    { words: ["joint", "gout", "big toe", "rayuma", "arthritis", "lutahan", "tuhod", "kasu-kasuan"],
+      en: "Joint pain or gout", ceb: "Sakit sa lutahan o gout",
+      tests: ["Uric Acid", "ESR"] },
+    { words: ["yellow skin", "yellow eyes", "jaundice", "dalag", "naninilaw", "liver", "atay", "hepatitis", "alcohol", "drink a lot", "palahubog", "hubog"],
+      en: "Liver concerns or yellow skin or eyes", ceb: "Atay o nagdalag ang panit o mata",
+      tests: ["SGPT / ALT & SGOT / AST", "Hepatitis B Screening (HBsAg)"] },
+    { words: ["kidney", "bato sa kidney", "swollen feet", "swelling", "manas", "hubag ang tiil", "high blood", "hypertension", "alta presyon", "highblood"],
+      en: "Kidney concerns, swelling or high blood pressure", ceb: "Kidney, manas o high blood",
+      tests: ["BUN & Creatinine", "Urinalysis", "Lipid Profile"] },
+    { words: ["palpitat", "heart", "chest", "kulba", "kasingkasing", "dughan", "dibdib", "kumakabog"],
+      en: "Heart or chest discomfort", ceb: "Kasingkasing o dughan",
+      tests: ["ECG (Electrocardiogram)", "Lipid Profile"] },
+    { words: ["cholesterol", "kolesterol", "overweight", "obese", "tambok", "fatty food", "taba"],
+      en: "Cholesterol or weight concerns", ceb: "Kolesterol o katambok",
+      tests: ["Lipid Profile", "FBS (Fasting Blood Sugar)"] },
+    { words: ["pregnan", "buntis", "late period", "missed period", "delayed period", "nalangan", "wala regla", "wala pa regla", "wala ko regla", "prenatal", "nagdadalang"],
+      en: "Possible pregnancy or prenatal check-up", ceb: "Basin buntis o prenatal check-up",
+      tests: ["Pregnancy Test (Urine)", "CBC (Complete Blood Count)", "Blood Typing (ABO & Rh)", "Urinalysis", "Hepatitis B Screening (HBsAg)", "Syphilis Screening", "HIV Screening"] },
+    { words: ["surgery", "operation", "opera", "operahan", "tooth extraction", "bunot", "ibot ngipon", "ibton", "procedure"],
+      en: "Before surgery or a procedure", ceb: "Sa dili pa operahan o procedure",
+      tests: ["CBC (Complete Blood Count)", "Clotting & Bleeding Time", "Blood Typing (ABO & Rh)", "ECG (Electrocardiogram)"] },
+    { words: ["sti", "std", "unprotected", "exposed", "exposure", "discharge", "sore down there", "nana", "sex"],
+      en: "Possible exposure to an infection (private and confidential)", ceb: "Tingali na-expose sa impeksyon (pribado ug kumpidensyal)",
+      tests: ["HIV Screening", "Syphilis Screening", "Hepatitis B Screening (HBsAg)"] },
+    { words: ["check-up", "checkup", "check up", "annual", "pre-employment", "requirement", "work", "school", "trabaho", "eskwelahan", "medical"],
+      en: "Check-up or work and school requirements", ceb: "Check-up o requirements sa trabaho ug eskwelahan",
+      tests: ["CBC (Complete Blood Count)", "Urinalysis", "Fecalysis", "FBS (Fasting Blood Sugar)"] }
+  ];
+
+  // Signs that need a doctor or hospital now, not a lab visit
+  const URGENT = ["chest pain", "sakit dughan", "sakit akong dughan", "sakit sa dughan", "hard to breathe", "can't breathe", "cant breathe", "shortness of breath", "difficulty breathing",
+    "lisod ginhawa", "lisod moginhawa", "hirap huminga", "faint", "nakuyapan", "kuyapan", "nawalan ng malay", "seizure", "kombulsyon", "kumbulsyon",
+    "vomiting blood", "nagsuka dugo", "suka dugo", "heavy bleeding", "daghang dugo", "unconscious", "stroke", "numb", "pamanhid", "severe"];
+
+  const has = (text, w) => w.length <= 4 ? new RegExp("(^|[^a-z])" + w.replace(/[-]/g, "\\-") + "([^a-z]|$)").test(text) : text.includes(w);
+
+  function suggest(raw) {
+    const ceb = window.OC.lang === "ceb";
+    const text = " " + raw.toLowerCase().replace(/\s+/g, " ") + " ";
+    const out = document.getElementById("feel-out");
+    if (!raw.trim()) { out.innerHTML = ""; return; }
+
+    const urgent = URGENT.some(w => has(text, w));
+    const hits = SYMPTOMS.filter(s => s.words.some(w => has(text, w)));
+    const reasons = new Map(); // test name -> symptom labels
+    hits.forEach(s => s.tests.forEach(n => {
+      if (!reasons.has(n)) reasons.set(n, []);
+      reasons.get(n).push(ceb ? s.ceb : s.en);
+    }));
+    const names = [...reasons.keys()];
+
+    const urgentBox = urgent ? `
+      <div class="note-box amber feel-urgent"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/><path d="M12 9v4M12 17h.01"/></svg>
+        <span><b>${t("feel.urgH", "This may need a doctor right away.")}</b> ${t("feel.urgP", "If it is severe or sudden, go to the nearest hospital or call 911 now. Don't wait for a lab test.")}</span></div>` : "";
+
+    if (!names.length) {
+      out.innerHTML = urgentBox + `<p class="feel-none">${t("feel.none", "We couldn't match that to a test. Try simple words like \"fever\", \"sakit tiyan\" or \"always thirsty\", or call us and we'll help you.")}</p>`;
+      return;
+    }
+
+    const cards = names.map(n => {
+      const x = TESTS.find(tt => tt.name === n);
+      const c = ceb ? x.ceb : x.en;
+      return `<li><b>${n}</b><small>${c.what}</small><span class="feel-why">${t("feel.for", "For:")} ${reasons.get(n).join(", ")}</span></li>`;
+    }).join("");
+    out.innerHTML = urgentBox + `
+      <h3>${t("feel.resH", "Tests doctors often ask for")}</h3>
+      <ul class="feel-list">${cards}</ul>
+      <div class="feel-actions">
+        <button class="btn btn-primary btn-sm" type="button" data-feel-prices="${names.join("|")}">${t("feel.prices", "See prices for these tests")}</button>
+      </div>`;
+  }
+
+  // Tick the suggested tests on the Prices page (the estimator restores them from this)
+  function openPrices(names) {
+    let saved = {};
+    try { saved = JSON.parse(sessionStorage.getItem("oc-est") || "{}"); } catch (e) {}
+    const ids = new Set(saved.ids || []);
+    names.forEach(n => (PRICE_IDS[n] || []).forEach(id => ids.add(id)));
+    try { sessionStorage.setItem("oc-est", JSON.stringify({ ids: [...ids], senior: !!saved.senior })); } catch (e) {}
+    location.href = "tests.html";
+  }
+
+  const t = (k, en) => window.OC.t(k, en);
+
   let topic = "all";
 
   function render() {
@@ -102,6 +223,12 @@
     ).join("");
     document.getElementById("guide").innerHTML = TESTS
       .filter(x => topic === "all" || x.topic === topic)
+      .filter(x => {
+        const q = (document.getElementById("guide-search").value || "").trim().toLowerCase();
+        if (!q) return true;
+        const c = ceb ? x.ceb : x.en;
+        return [x.name, c.what, c.checks, c.why, x.en.what, x.en.why].join(" ").toLowerCase().includes(q);
+      })
       .map((x, i) => {
         const c = ceb ? x.ceb : x.en;
         const green = ["sugar", "ustool", "heart"].includes(x.topic) ? " green" : "";
@@ -118,12 +245,22 @@
               <div><h4>${ceb ? L.prep.ceb : L.prep.en}</h4><p>${c.prep}</p></div>
             </div>
           </details>`;
-      }).join("");
+      }).join("") || `<p class="feel-none">${t("guide.noMatch", "No test matches your search. Try another word, or call us and we'll help you.")}</p>`;
   }
 
   document.addEventListener("click", e => {
     const b = e.target.closest("[data-topic]");
     if (b) { topic = b.dataset.topic; render(); }
+    const p = e.target.closest("[data-feel-prices]");
+    if (p) openPrices(p.dataset.feelPrices.split("|"));
   });
-  document.addEventListener("oc:lang", render);
+  document.getElementById("guide-search").addEventListener("input", render);
+  document.getElementById("feel-form").addEventListener("submit", e => {
+    e.preventDefault();
+    suggest(document.getElementById("feel-input").value);
+  });
+  document.addEventListener("oc:lang", () => {
+    render();
+    if (document.getElementById("feel-out").innerHTML) suggest(document.getElementById("feel-input").value);
+  });
 })();

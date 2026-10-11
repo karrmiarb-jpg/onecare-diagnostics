@@ -335,6 +335,28 @@ h2.h-sm { font-size: 26px; font-weight: 800; margin-bottom: 14px; }
 
 /* ---------- Test guide ---------- */
 .guide-filter { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 22px; }
+
+/* "Tell us what you feel" */
+.feel-card {
+  background: linear-gradient(135deg, var(--soft-blue), var(--soft-green)); border: 1px solid #CFE0F8;
+  border-radius: 20px; padding: 22px; box-shadow: var(--shadow);
+}
+.feel-card h2 { font-size: 20px; margin: 0; }
+.feel-card > p { color: var(--muted); font-size: 15px; margin-top: 4px; }
+.feel-row { display: flex; gap: 10px; margin-top: 14px; }
+.feel-row .search { flex: 1; margin: 0; }
+#feel-out:not(:empty) { margin-top: 16px; }
+#feel-out h3 { font-size: 16px; margin: 4px 0 10px; }
+.feel-urgent { margin-bottom: 12px; }
+.feel-list { list-style: none; display: grid; gap: 8px; }
+.feel-list li { background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 12px 14px; }
+.feel-list b { font-family: var(--head); color: var(--navy); display: block; }
+.feel-list small { color: var(--muted); font-size: 14px; display: block; }
+.feel-why { display: inline-block; margin-top: 6px; font-size: 13px; color: var(--green-text); font-weight: 600; }
+.feel-actions { margin-top: 12px; }
+.feel-none { color: var(--muted); font-size: 15px; }
+.feel-disclaimer { margin-top: 14px; font-size: 13.5px; color: #7A3E06; background: var(--soft-amber); border: 1px solid #F6D9AE; border-radius: 12px; padding: 10px 12px; }
+@media (max-width: 560px) { .feel-row { flex-direction: column; } .feel-row .btn { justify-content: center; } }
 .chip-btn {
   border: 1.5px solid var(--line); background: #fff; color: var(--ink); cursor: pointer;
   font-family: var(--head); font-weight: 600; font-size: 14px; padding: 9px 16px; border-radius: 999px; min-height: 42px;
