@@ -5,7 +5,7 @@
 window.ONECARE_CEB = {
   // ----- Navigation & shared -----
   "nav.home": "Home",
-  "nav.tests": "Mga Test ug Presyo",
+  "nav.tests": "Presyo",
   "nav.prep": "Pagpangandam",
   "nav.guide": "Giya sa Test",
   "nav.care": "Pag-atiman sa Pasyente",
@@ -42,7 +42,7 @@ window.ONECARE_CEB = {
   "home.c3": "Duol sa Balay",
   "home.c3s": "Dumanjug ug duol nga lungsod",
   "home.helpH": "Unsaon Namo Pagtabang Nimo?",
-  "home.h1t": "Mga Test ug Presyo",
+  "home.h1t": "Presyo",
   "home.h1p": "Tan-awa ang banabana nga total sa dili pa moanhi.",
   "home.h2t": "Pagpangandam",
   "home.h2p": "Pagpuasa, sample sa ihi, ug unsa ang dad-on.",
@@ -97,7 +97,7 @@ window.ONECARE_CEB = {
   "home.ctaP": "Bisitaha kami sa Poblacion Central, Dumanjug, Lunes–Sabado, 7:30AM–5:00PM. Pwede ang walk-in.",
 
   // ----- Tests & Prices -----
-  "tests.eyebrow": "Mga Test ug Presyo",
+  "tests.eyebrow": "Presyo",
   "tests.h1": "Hibal-i ang total <span class=\"accent\">sa dili pa moanhi</span>",
   "tests.lead": "I-tsek ang mga test nga gipangayo sa imong doktor, o ang gusto nimo ipa-test. Makita dayon ang banabana nga total, uban ang mga pangandam nga angay nimong mahibal-an.",
   "tests.draft": "Draft nga presyo: umaabot pa ang final nga price list",
