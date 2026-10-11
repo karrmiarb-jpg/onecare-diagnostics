@@ -27,14 +27,14 @@
       ceb: { what: "Usa ka kinatibuk-ang test sa dugo.", checks: "Kung unsa ka paspas mo-settle ang red blood cells sa tubo. Mahimong mas paspas kung adunay inflammation.", why: "Gamiton sa doktor uban sa ubang test aron tan-awon o sundan ang inflammation.", prep: "Walay kinahanglan nga pangandam." } },
 
     { topic: "sugar", name: "FBS (Fasting Blood Sugar)",
-      en: { what: "Measures the sugar (glucose) in your blood after fasting.", checks: "Your blood sugar level when you haven't eaten.", why: "Used to screen for and monitor diabetes.", prep: "Fast for 8–10 hours. Plain water is okay." },
-      ceb: { what: "Sukdon ang asukar (glucose) sa imong dugo human sa pagpuasa.", checks: "Ang lebel sa asukar sa dugo kung wala pa ka mokaon.", why: "Gamiton sa pag-screen ug pagbantay sa diabetes.", prep: "Puasa og 8–10 ka oras. Pwede ang tubig." } },
+      en: { what: "Measures the sugar (glucose) in your blood after fasting.", checks: "Your blood sugar level when you haven't eaten.", why: "Used to screen for and monitor diabetes.", prep: "Fast for 8–10 hours. You may take small sips of water if needed." },
+      ceb: { what: "Sukdon ang asukar (glucose) sa imong dugo human sa pagpuasa.", checks: "Ang lebel sa asukar sa dugo kung wala pa ka mokaon.", why: "Gamiton sa pag-screen ug pagbantay sa diabetes.", prep: "Puasa og 8–10 ka oras. Pwede ka mohigop og gamay nga tubig kung kinahanglan." } },
     { topic: "sugar", name: "RBS (Random Blood Sugar)",
       en: { what: "Measures your blood sugar at any time of day.", checks: "Your blood sugar level at the time of the test.", why: "A quick check when fasting isn't possible, or when your doctor wants a reading right away.", prep: "No fasting needed." },
       ceb: { what: "Sukdon ang asukar sa dugo bisan unsang orasa.", checks: "Ang lebel sa asukar sa dugo sa oras sa test.", why: "Dali nga check kung dili makapuasa, o kung gusto sa doktor makita dayon.", prep: "Dili kinahanglan mopuasa." } },
     { topic: "sugar", name: "Lipid Profile",
-      en: { what: "A group of tests on the fats in your blood.", checks: "Total cholesterol, HDL (the 'good' cholesterol), LDL (the 'bad' cholesterol) and triglycerides.", why: "Helps your doctor check your heart and blood vessel health.", prep: "Fast for 10–12 hours. Plain water is okay." },
-      ceb: { what: "Grupo sa mga test sa tambok sa imong dugo.", checks: "Total cholesterol, HDL (ang 'maayo' nga kolesterol), LDL (ang 'dili maayo' nga kolesterol) ug triglycerides.", why: "Motabang sa doktor pagsusi sa kahimsog sa kasingkasing ug ugat.", prep: "Puasa og 10–12 ka oras. Pwede ang tubig." } },
+      en: { what: "A group of tests on the fats in your blood.", checks: "Total cholesterol, HDL (the 'good' cholesterol), LDL (the 'bad' cholesterol) and triglycerides.", why: "Helps your doctor check your heart and blood vessel health.", prep: "Fast for 10–12 hours. You may take small sips of water if needed." },
+      ceb: { what: "Grupo sa mga test sa tambok sa imong dugo.", checks: "Total cholesterol, HDL (ang 'maayo' nga kolesterol), LDL (ang 'dili maayo' nga kolesterol) ug triglycerides.", why: "Motabang sa doktor pagsusi sa kahimsog sa kasingkasing ug ugat.", prep: "Puasa og 10–12 ka oras. Pwede ka mohigop og gamay nga tubig kung kinahanglan." } },
 
     { topic: "organ", name: "BUN & Creatinine",
       en: { what: "Two blood tests about your kidneys.", checks: "Waste products that healthy kidneys remove from the blood.", why: "Used to check how well your kidneys are working, especially if you have diabetes or high blood pressure.", prep: "Usually no preparation needed." },

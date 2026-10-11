@@ -37,8 +37,8 @@
 
   function prepNotes(prep) {
     const notes = [];
-    if (prep.has("fast10")) notes.push(["amber", t("est.n.fast10", "Fast for 10–12 hours before your visit. Water is okay.")]);
-    else if (prep.has("fast8")) notes.push(["amber", t("est.n.fast8", "Fast for 8–10 hours before your visit. Water is okay.")]);
+    if (prep.has("fast10")) notes.push(["amber", t("est.n.fast10", "Fast for 10–12 hours before your visit. You may take small sips of water if needed.")]);
+    else if (prep.has("fast8")) notes.push(["amber", t("est.n.fast8", "Fast for 8–10 hours before your visit. You may take small sips of water if needed.")]);
     if (prep.has("period")) notes.push(["amber", t("est.n.period", "Urinalysis: please come 2–3 days after your period has ended.")]);
     if (prep.has("urine") || prep.has("stool")) notes.push(["", t("est.n.container", "Ask us for a clean sample container before collecting your sample.")]);
     if (prep.has("consent")) notes.push(["green", t("est.n.consent", "Some tests are confidential. We'll explain them and ask for your consent first.")]);
