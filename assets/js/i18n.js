@@ -153,7 +153,7 @@ window.ONECARE_CEB = {
   "prep.guideH": "Unsaon <span>pagpangandam</span>",
   "prep.guideP": "Kung dili ka sigurado unsa ang para nimo, tawag kanamo. Mas maayo nga motubag mi og pangutana kaysa ubrahon pag-usab ang test.",
   "prep.fastH": "Mga test nga kinahanglan mopuasa",
-  "prep.fastP": "Ang pagpuasa nagpasabot nga walay pagkaon ug walay ilimnon gawas sa tubig.",
+  "prep.fastP": "Ang pagpuasa nagpasabot nga walay pagkaon ug walay ilimnon, gawas sa ginagmay nga higop sa tubig kung kinahanglan.",
   "prep.fast1": "<b>FBS (asukar sa dugo):</b> puasa og 8–10 ka oras.",
   "prep.fast2": "<b>Lipid profile, kolesterol, triglycerides:</b> puasa og 10–12 ka oras.",
   "prep.fast3": "Pwede ka muinum og ginagmay nga higop sa tubig kung kinahanglan. Likayi ang kape, juice, kendi ug chewing gum.",
