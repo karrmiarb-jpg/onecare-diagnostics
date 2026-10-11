@@ -7,7 +7,7 @@ window.ONECARE_CEB = {
   "nav.home": "Home",
   "nav.tests": "Presyo",
   "nav.prep": "Pagpangandam",
-  "nav.guide": "Giya sa Test",
+  "nav.guide": "Mga Test",
   "nav.care": "Pag-atiman sa Pasyente",
   "nav.about": "Mahitungod Kanamo",
   "nav.contact": "Kontaka Kami",
@@ -185,7 +185,7 @@ window.ONECARE_CEB = {
   "prep.disclaimer": "Kini kinatibuk-ang giya lamang. Kung lahi ang giingon sa imong doktor, sunda ang imong doktor.",
 
   // ----- Test guide -----
-  "guide.eyebrow": "Giya sa Test",
+  "guide.eyebrow": "Mga Test",
   "guide.h1": "Unsay <span class=\"accent\">kahulogan</span> sa matag test",
   "guide.lead": "Makalibog usahay ang mga lab test. Ania kung unsa ang gisusi sa matag usa ug nganong mahimong ipangayo sa imong doktor, sa simple nga pulong.",
   "guide.note": "Ang imong doktor ang mobasa sa resulta uban nimo. Kini nga giya aron makasabot ka sa imong mga test, dili aron mag-diagnose.",
