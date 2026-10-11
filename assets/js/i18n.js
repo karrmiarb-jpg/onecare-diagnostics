@@ -6,7 +6,7 @@ window.ONECARE_CEB = {
   // ----- Navigation & shared -----
   "nav.home": "Home",
   "nav.tests": "Mga Test ug Presyo",
-  "nav.prep": "Sa Dili Pa ang Test",
+  "nav.prep": "Pagpangandam",
   "nav.guide": "Giya sa Test",
   "nav.care": "Pag-atiman sa Pasyente",
   "nav.about": "Mahitungod Kanamo",
@@ -44,7 +44,7 @@ window.ONECARE_CEB = {
   "home.helpH": "Unsaon Namo Pagtabang Nimo?",
   "home.h1t": "Mga Test ug Presyo",
   "home.h1p": "Tan-awa ang banabana nga total sa dili pa moanhi.",
-  "home.h2t": "Sa Dili Pa ang Test",
+  "home.h2t": "Pagpangandam",
   "home.h2p": "Pagpuasa, sample sa ihi, ug unsa ang dad-on.",
   "home.h3p": "Tawag, text, o pag-book daan. Pwede ang walk-in.",
   "home.h4t": "Alaga sa Senior ug Cancer Patient",
@@ -133,7 +133,7 @@ window.ONECARE_CEB = {
   "est.sms.hi": "Hi OneCare! Gusto ko mangutana bahin niini nga mga test:",
 
   // ----- Before your test -----
-  "prep.eyebrow": "Sa Dili Pa ang Test",
+  "prep.eyebrow": "Pagpangandam",
   "prep.h1": "Ang maayo nga resulta magsugod <span class=\"accent\">sa dili pa ka moabot</span>",
   "prep.lead": "Ang pipila ka test nagkinahanglan og gamay nga pangandam aron sakto ang resulta. Ania kung giunsa ang bisita ug unsa ang buhaton sa dili pa moanhi.",
   "prep.flowH": "Giunsa ang imong <span>bisita</span>",

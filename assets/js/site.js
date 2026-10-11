@@ -21,7 +21,7 @@
     { href: "index.html", key: "nav.home", en: "Home" },
     { href: "about.html", key: "nav.about", en: "About" },
     { href: "tests.html", key: "nav.tests", en: "Tests &amp; Prices" },
-    { href: "before-your-test.html", key: "nav.prep", en: "Before Your Test" },
+    { href: "before-your-test.html", key: "nav.prep", en: "Preparation" },
     { href: "test-guide.html", key: "nav.guide", en: "Test Guide" },
     { href: "patient-care.html", key: "nav.care", en: "Patient Care" },
     { href: "contact.html", key: "nav.contact", en: "Contact" }
