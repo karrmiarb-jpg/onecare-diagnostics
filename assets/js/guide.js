@@ -108,7 +108,7 @@
   // Words people might type (English, Bisaya, some Tagalog) -> tests doctors commonly ask for.
   // Kept simple and conservative on purpose. To be reviewed by our RMT.
   const SYMPTOMS = [
-    { words: ["fever", "hilanat", "hilantan", "gihilantan", "init akong lawas", "lagnat", "nilalagnat", "chills", "katugnaw"],
+    { words: ["fever", "feverish", "hilanat", "hilantan", "gihilantan", "hilanaton", "init", "inito", "kainit", "init akong lawas", "lagnat", "nilalagnat", "chills", "katugnaw"],
       en: "Fever", ceb: "Hilanat",
       tests: ["CBC (Complete Blood Count)", "Dengue Rapid Test", "Urinalysis"] },
     { words: ["dengue", "rashes", "pantal", "pula sa panit", "bleeding gums"],
@@ -129,7 +129,7 @@
     { words: ["blood in stool", "bloody stool", "black stool", "dugo sa tae", "itom nga tae", "itom ang tae"],
       en: "Blood in the stool or black stool", ceb: "Dugo sa tae o itom nga tae",
       tests: ["Fecal Occult Blood Test", "CBC (Complete Blood Count)"] },
-    { words: ["joint", "gout", "big toe", "rayuma", "arthritis", "lutahan", "tuhod", "kasu-kasuan"],
+    { words: ["joint", "knee", "gout", "big toe", "rayuma", "arthritis", "lutahan", "tuhod", "kasu-kasuan"],
       en: "Joint pain or gout", ceb: "Sakit sa lutahan o gout",
       tests: ["Uric Acid", "ESR"] },
     { words: ["yellow skin", "yellow eyes", "jaundice", "dalag", "naninilaw", "liver", "atay", "hepatitis", "alcohol", "drink a lot", "palahubog", "hubog"],
@@ -153,6 +153,30 @@
     { words: ["sti", "std", "unprotected", "exposed", "exposure", "discharge", "sore down there", "nana", "sex"],
       en: "Possible exposure to an infection (private and confidential)", ceb: "Tingali na-expose sa impeksyon (pribado ug kumpidensyal)",
       tests: ["HIV Screening", "Syphilis Screening", "Hepatitis B Screening (HBsAg)"] },
+    { words: ["headache", "head ache", "sakit ulo", "sakit akong ulo", "sakit sa ulo", "labad", "gilabdan", "sakit ng ulo", "masakit ulo", "migraine"],
+      en: "Headache", ceb: "Sakit sa ulo",
+      tests: ["CBC (Complete Blood Count)", "RBS (Random Blood Sugar)"] },
+    { words: ["cough", "ubo", "inubo", "giubo", "colds", "sipon", "sip-on", "flu", "trangkaso", "sore throat", "sakit tutunlan", "tutunlan", "tonsil"],
+      en: "Cough, colds or sore throat", ceb: "Ubo, sip-on o sakit sa tutunlan",
+      tests: ["CBC (Complete Blood Count)"] },
+    { words: ["body pain", "body ache", "muscle pain", "sakit lawas", "sakit akong lawas", "sakit kalawasan", "pangalawas", "sakit ng katawan", "nanakit"],
+      en: "Body or muscle pain", ceb: "Sakit sa lawas",
+      tests: ["CBC (Complete Blood Count)"] },
+    { words: ["vomit", "nausea", "nauseous", "nagsuka", "pagsuka", "sukaon", "luod", "giluod", "nasusuka"],
+      en: "Vomiting or nausea", ceb: "Pagsuka o luod",
+      tests: ["CBC (Complete Blood Count)", "Urinalysis", "Fecalysis"] },
+    { words: ["back pain", "lower back", "flank", "sakit hawak", "sakit akong hawak", "sakit sa hawak", "hawak", "balakang", "sakit ng likod"],
+      en: "Lower back or side pain", ceb: "Sakit sa hawak",
+      tests: ["Urinalysis", "BUN & Creatinine"] },
+    { words: ["blurry", "blurred", "labo akong mata", "labo ang mata", "slow healing", "wound won't heal", "samad dugay maayo", "dugay maayo ang samad", "tingling", "pangimgim", "tusok-tusok"],
+      en: "Blurry eyes, slow-healing wounds or tingling", ceb: "Labo nga mata, samad nga dugay maayo o pangimgim",
+      tests: ["FBS (Fasting Blood Sugar)", "RBS (Random Blood Sugar)"] },
+    { words: ["bruise", "bruising", "pasa", "nosebleed", "nose bleed", "nagdugo ilong", "nagdugo ang ilong", "dugo sa ilong", "easy bleeding"],
+      en: "Easy bruising or nosebleeds", ceb: "Dali mapasa o nagdugo ang ilong",
+      tests: ["CBC (Complete Blood Count)", "Clotting & Bleeding Time"] },
+    { words: ["heavy period", "heavy menstruation", "daghang regla", "taas nga regla", "dugay mahuman regla", "malakas ang regla"],
+      en: "Heavy periods", ceb: "Daghan o dugay nga regla",
+      tests: ["CBC (Complete Blood Count)"] },
     { words: ["check-up", "checkup", "check up", "annual", "pre-employment", "requirement", "work", "school", "trabaho", "eskwelahan", "medical"],
       en: "Check-up or work and school requirements", ceb: "Check-up o requirements sa trabaho ug eskwelahan",
       tests: ["CBC (Complete Blood Count)", "Urinalysis", "Fecalysis", "FBS (Fasting Blood Sugar)"] }
@@ -161,44 +185,95 @@
   // Signs that need a doctor or hospital now, not a lab visit
   const URGENT = ["chest pain", "sakit dughan", "sakit akong dughan", "sakit sa dughan", "hard to breathe", "can't breathe", "cant breathe", "shortness of breath", "difficulty breathing",
     "lisod ginhawa", "lisod moginhawa", "hirap huminga", "faint", "nakuyapan", "kuyapan", "nawalan ng malay", "seizure", "kombulsyon", "kumbulsyon",
-    "vomiting blood", "nagsuka dugo", "suka dugo", "heavy bleeding", "daghang dugo", "unconscious", "stroke", "numb", "pamanhid", "severe"];
+    "vomiting blood", "nagsuka dugo", "suka dugo", "heavy bleeding", "daghang dugo", "unconscious", "stroke", "sudden numb", "face drooping", "slurred", "ngiwi", "severe", "grabe kasakit", "dili makaginhawa"];
 
-  const has = (text, w) => w.length <= 4 ? new RegExp("(^|[^a-z])" + w.replace(/[-]/g, "\\-") + "([^a-z]|$)").test(text) : text.includes(w);
+  // One word: short words must match whole (plural ok); longer ones may sit inside a word (hilantan -> gihilantan).
+  // A phrase matches when its words appear in order, close together ("nagdugo akong ilong" = "nagdugo ilong").
+  const JOINERS = ["and", "ug", "og", "at", "but", "pero", "unya", "with", "then"];
+  const tokMatch = (tok, w) => w.length <= 4 ? tok === w || tok === w + "s" : tok.includes(w);
+  const has = (text, w) => {
+    const toks = text.trim().split(" ");
+    const parts = w.split(" ").filter(p => p.length > 2 || !w.includes(" "));
+    if (!w.includes(" ")) return w.includes("-") ? text.includes(w) : toks.some(tk => tokMatch(tk, w));
+    if (text.includes(w)) return true;
+    // each next word within 3 words of the one before
+    const go = (pi, from) => {
+      if (pi === parts.length) return true;
+      for (let i = from; i < toks.length && (pi === 0 || i <= from + 2); i++) {
+        if (pi > 0 && JOINERS.includes(toks[i])) break; // "high fever and blood" is not "high blood"
+        if (tokMatch(toks[i], parts[pi]) && go(pi + 1, i + 1)) return true;
+      }
+      return false;
+    };
+    return go(0, 0);
+  };
 
-  function suggest(raw) {
-    const ceb = window.OC.lang === "ceb";
-    const text = " " + raw.toLowerCase().replace(/\s+/g, " ") + " ";
-    const out = document.getElementById("feel-out");
-    if (!raw.trim()) { out.innerHTML = ""; return; }
-
-    const urgent = URGENT.some(w => has(text, w));
+  // Built-in word list: always available, free, and used when the AI reader is off
+  function keywordResult(raw) {
+    const text = " " + raw.toLowerCase().replace(/[^a-z0-9ñ'\- ]+/g, " ").replace(/\s+/g, " ") + " ";
     const hits = SYMPTOMS.filter(s => s.words.some(w => has(text, w)));
-    const reasons = new Map(); // test name -> symptom labels
+    const items = new Map(); // test name -> symptoms that point to it
     hits.forEach(s => s.tests.forEach(n => {
-      if (!reasons.has(n)) reasons.set(n, []);
-      reasons.get(n).push(ceb ? s.ceb : s.en);
+      if (!items.has(n)) items.set(n, []);
+      items.get(n).push(s);
     }));
-    const names = [...reasons.keys()];
+    return { urgent: URGENT.some(w => has(text, w)), items: [...items].map(([name, syms]) => ({ name, syms })) };
+  }
 
-    const urgentBox = urgent ? `
+  let aiOff = false; // set when the AI reader isn't set up, so we stop asking
+  async function aiResult(raw) {
+    if (aiOff) return null;
+    try {
+      const r = await fetch("/api/suggest-tests", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ text: raw.slice(0, 500), lang: window.OC.lang, tests: TESTS.map(x => ({ name: x.name, checks: x.en.checks })) })
+      });
+      if ([404, 405, 501, 503].includes(r.status)) { aiOff = true; return null; }
+      if (!r.ok) return null;
+      const out = await r.json();
+      return { urgent: !!out.urgent, items: out.suggestions.map(sg => ({ name: sg.name, reason: sg.reason })) };
+    } catch (e) { return null; }
+  }
+
+  let last = null;
+  async function suggest(raw) {
+    const out = document.getElementById("feel-out");
+    if (!raw.trim()) { out.innerHTML = ""; last = null; return; }
+    const kw = keywordResult(raw);
+    if (!aiOff) out.innerHTML = `<div class="note-box"><span class="spinner" aria-hidden="true"></span><span>${t("feel.thinking", "Finding tests that may help…")}</span></div>`;
+    const ai = await aiResult(raw);
+    // Use the AI's answer when it found something; keep the built-in danger-word check either way
+    last = ai && ai.items.length ? { urgent: ai.urgent || kw.urgent, items: ai.items } : { urgent: kw.urgent || !!(ai && ai.urgent), items: kw.items };
+    showResult();
+  }
+
+  function showResult() {
+    const out = document.getElementById("feel-out");
+    if (!last) return;
+    const ceb = window.OC.lang === "ceb";
+    const urgentBox = last.urgent ? `
       <div class="note-box amber feel-urgent"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/><path d="M12 9v4M12 17h.01"/></svg>
         <span><b>${t("feel.urgH", "This may need a doctor right away.")}</b> ${t("feel.urgP", "If it is severe or sudden, go to the nearest hospital or call 911 now. Don't wait for a lab test.")}</span></div>` : "";
 
-    if (!names.length) {
+    if (!last.items.length) {
       out.innerHTML = urgentBox + `<p class="feel-none">${t("feel.none", "We couldn't match that to a test. Try simple words like \"fever\", \"sakit tiyan\" or \"always thirsty\", or call us and we'll help you.")}</p>`;
       return;
     }
 
-    const cards = names.map(n => {
-      const x = TESTS.find(tt => tt.name === n);
+    const esc = v => String(v).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+    const cards = last.items.map(it => {
+      const x = TESTS.find(tt => tt.name === it.name);
       const c = ceb ? x.ceb : x.en;
-      return `<li><b>${n}</b><small>${c.what}</small><span class="feel-why">${t("feel.for", "For:")} ${reasons.get(n).join(", ")}</span></li>`;
+      const why = it.reason ? esc(it.reason) : `${t("feel.for", "For:")} ${it.syms.map(sy => ceb ? sy.ceb : sy.en).join(", ")}`;
+      return `<li><b>${x.name}</b><small>${c.what}</small><span class="feel-why">${why}</span></li>`;
     }).join("");
+    const names = last.items.map(it => it.name);
     out.innerHTML = urgentBox + `
       <h3>${t("feel.resH", "Tests doctors often ask for")}</h3>
       <ul class="feel-list">${cards}</ul>
       <div class="feel-actions">
-        <button class="btn btn-primary btn-sm" type="button" data-feel-prices="${names.join("|")}">${t("feel.prices", "See prices for these tests")}</button>
+        <button class="btn btn-primary btn-sm" type="button" data-feel-prices="${esc(names.join("|"))}">${t("feel.prices", "See prices for these tests")}</button>
       </div>`;
   }
 
@@ -261,6 +336,6 @@
   });
   document.addEventListener("oc:lang", () => {
     render();
-    if (document.getElementById("feel-out").innerHTML) suggest(document.getElementById("feel-input").value);
+    showResult();
   });
 })();

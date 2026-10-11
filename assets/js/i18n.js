@@ -275,6 +275,7 @@ window.ONECARE_CEB = {
   "feel.discP": "Palihug konsulta una sa lisensyadong doktor. Ang imong doktor ang modesisyon kung unsang mga test ang tinuod nimong kinahanglan.",
   "feel.urgH": "Basin kinahanglan dayon kini og doktor.",
   "feel.urgP": "Kung grabe o kalit, adto dayon sa pinakaduol nga ospital o tawag sa 911. Ayaw na hulata ang lab test.",
+  "feel.thinking": "Nangita og mga test nga makatabang…",
   "feel.none": "Wala namo ma-match kini sa usa ka test. Sulayi ang simple nga pulong sama sa \"hilanat\", \"sakit tiyan\" o \"kanunay giuhaw\", o tawag kanamo ug among tabangan ka.",
   "feel.resH": "Mga test nga kasagarang gipangayo sa doktor",
   "feel.for": "Para sa:",
