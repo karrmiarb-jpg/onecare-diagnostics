@@ -19,11 +19,12 @@
 
   const NAV = [
     { href: "index.html", key: "nav.home", en: "Home" },
+    { href: "about.html", key: "nav.about", en: "About" },
     { href: "tests.html", key: "nav.tests", en: "Tests &amp; Prices" },
     { href: "before-your-test.html", key: "nav.prep", en: "Before Your Test" },
     { href: "test-guide.html", key: "nav.guide", en: "Test Guide" },
     { href: "patient-care.html", key: "nav.care", en: "Patient Care" },
-    { href: "about.html", key: "nav.about", en: "About &amp; Contact" }
+    { href: "contact.html", key: "nav.contact", en: "Contact" }
   ];
 
   const ICON = {
@@ -140,7 +141,7 @@
   function mobileBar() {
     return `
       <a class="btn btn-ghost" href="tel:${CLINIC.phoneTel}">${ICON.phone}<span data-i18n="cta.call">Call Us</span></a>
-      <a class="btn btn-primary" href="about.html#book">${ICON.cal}<span data-i18n="cta.book">Book a Visit</span></a>`;
+      <a class="btn btn-primary" href="contact.html#book">${ICON.cal}<span data-i18n="cta.book">Book a Visit</span></a>`;
   }
 
   function mount() {

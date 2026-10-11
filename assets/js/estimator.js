@@ -153,7 +153,7 @@
     }
     if (kind === "book") {
       try { sessionStorage.setItem("oc-book", listText()); } catch (e) {}
-      location.href = "about.html#book";
+      location.href = "contact.html#book";
     }
   }
 

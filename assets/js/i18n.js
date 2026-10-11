@@ -9,7 +9,8 @@ window.ONECARE_CEB = {
   "nav.prep": "Sa Dili Pa ang Test",
   "nav.guide": "Giya sa Test",
   "nav.care": "Pag-atiman sa Pasyente",
-  "nav.about": "Mahitungod ug Kontak",
+  "nav.about": "Mahitungod Kanamo",
+  "nav.contact": "Kontaka Kami",
   "cta.call": "Tawag Kanamo",
   "cta.text": "Text Kanamo",
   "cta.book": "Pag-book og Bisita",
@@ -245,5 +246,8 @@ window.ONECARE_CEB = {
   "about.formP": "Umaabot pa ang among online booking form. Sa karon, tawag o text kanamo ug among i-set ang imong bisita.",
   "about.addr": "Address",
   "about.hrs": "Oras",
-  "about.callText": "Tawag o text"
+  "about.callText": "Tawag o text",
+  "contact.eyebrow": "Kontaka Kami",
+  "contact.h1": "Bisitaha kami o <span class=\"accent\">kontaka</span>",
+  "contact.lead": "Makit-an mi sa Poblacion Central, Dumanjug. Tawag, text o pag-book daan, ug andam mi para nimo."
 };

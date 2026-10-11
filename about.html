@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>About & Contact | OneCare Diagnostics, Dumanjug</title>
-<meta name="description" content="OneCare Diagnostics is a DOH-licensed clinical laboratory in Poblacion Central, Dumanjug, Cebu, led by a registered medical technologist. Book a visit, call or text us.">
-<meta property="og:title" content="About & Contact | OneCare Diagnostics">
+<title>About Us | OneCare Diagnostics, Dumanjug</title>
+<meta name="description" content="OneCare Diagnostics is a DOH-licensed clinical laboratory in Poblacion Central, Dumanjug, Cebu, led by a registered medical technologist.">
+<meta property="og:title" content="About OneCare Diagnostics">
 <meta property="og:description" content="A DOH-licensed neighborhood lab in Dumanjug, led by a registered medical technologist.">
 <meta property="og:image" content="assets/img/hero.jpg">
 <link rel="icon" href="assets/logo.png">
@@ -78,64 +78,8 @@
     </div>
   </section>
 
-  <!-- Contact + booking -->
-  <section class="block" id="book">
-    <div class="wrap">
-      <div class="sec-head reveal">
-        <h2 data-i18n="about.bookH">Book a visit or <span>ask us anything</span></h2>
-        <p data-i18n="about.bookP">Walk-ins are welcome. Booking ahead helps us get ready for you.</p>
-      </div>
-      <div class="split" style="align-items:start">
-        <div class="card reveal">
-          <div id="picked" hidden>
-            <h3 data-i18n="about.picked" style="margin-top:0">The tests you picked</h3>
-            <pre id="picked-list" style="white-space:pre-wrap;font-family:var(--body);font-size:15px;background:#F6F9FE;border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin:10px 0 18px"></pre>
-          </div>
-          <div class="form-slot" id="form-slot">
-            <div class="form-placeholder">
-              <h3 data-i18n="about.formH">Book by call or text</h3>
-              <p data-i18n="about.formP">Our online booking form is coming soon. For now, call or text us and we'll set your visit.</p>
-              <div class="cta-actions" style="justify-content:center">
-                <a class="btn btn-primary" href="tel:+639851888881" data-tel data-i18n="cta.call">Call Us</a>
-                <a class="btn btn-ghost" href="sms:+639851888881" id="sms-btn" data-i18n="cta.text">Text Us</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="reveal">
-          <ul class="contact-list card">
-            <li><span class="ic-box"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span><div><b data-i18n="about.addr">Address</b><span>Poblacion Central, Dumanjug, Cebu</span></div></li>
-            <li><span class="ic-box green"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></span><div><b data-i18n="about.hrs">Hours</b><span data-i18n="hours">Mon–Sat, 7:30AM–5:00PM</span></div></li>
-            <li><span class="ic-box"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span><div><b data-i18n="about.callText">Call or text</b><span><a href="tel:+639851888881" data-tel data-phone>+63 985 188 8881</a></span></div></li>
-            <li><span class="ic-box green"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg></span><div><b>Email</b><span><a href="mailto:onecarediagnostics@gmail.com" data-email>onecarediagnostics@gmail.com</a></span></div></li>
-          </ul>
-          <iframe class="map" style="margin-top:20px" title="Map to OneCare Diagnostics" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-            src="https://www.google.com/maps?q=Poblacion%20Central%2C%20Dumanjug%2C%20Cebu&output=embed"></iframe>
-        </div>
-      </div>
-    </div>
-  </section>
 </main>
 
 <footer id="site-footer"></footer>
-<script>
-  // Show tests chosen in the estimator, and load the booking form when its link is set in site.js
-  document.addEventListener("DOMContentLoaded", () => {
-    let list = "";
-    try { list = sessionStorage.getItem("oc-book") || ""; } catch (e) {}
-    if (list) {
-      document.getElementById("picked").hidden = false;
-      document.getElementById("picked-list").textContent = list;
-      const sms = document.getElementById("sms-btn");
-      sms.href = "sms:" + OC.CLINIC.phoneTel + "?&body=" + encodeURIComponent("Hi OneCare! I'd like to book these tests:\n" + list);
-    }
-    const url = OC.CLINIC.bookingFormUrl;
-    if (url) {
-      const src = url + (url.includes("?") ? "&" : "?") + encodeURIComponent(OC.CLINIC.bookingTestsField) + "=" + encodeURIComponent(list);
-      document.getElementById("form-slot").innerHTML =
-        '<iframe src="' + src + '" title="Booking form" style="width:100%;min-height:640px;border:0;border-radius:12px" loading="lazy"></iframe>';
-    }
-  });
-</script>
 </body>
 </html>
