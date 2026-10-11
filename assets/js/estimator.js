@@ -13,6 +13,7 @@
     (saved.ids || []).forEach(id => byId[id] && selected.add(id));
     senior = !!saved.senior;
   } catch (e) {}
+  const photoUnsure = new Set(); // tests ticked from a photo where the handwriting was unclear
   const save = () => { try { sessionStorage.setItem("oc-est", JSON.stringify({ ids: [...selected], senior })); } catch (e) {} };
 
   const CHECK = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>';
@@ -65,6 +66,7 @@
         });
         if (inPkg && !on) tags.push(`<span class="badge green">${t("est.inpkg", "Included in")} ${inPkg}</span>`);
         if (inPkg && on) tags.push(`<span class="badge green">${t("est.inpkg2", "Already in")} ${inPkg}</span>`);
+        if (on && photoUnsure.has(x.id)) tags.push(`<span class="badge amber">${t("up.check", "From your photo: please check")}</span>`);
         if (x.confirm && P.DRAFT) tags.push(`<span class="badge draft">${t("est.confirm", "To confirm")}</span>`);
         return `
           <label class="est-row${on ? " on" : ""}">
@@ -145,7 +147,7 @@
   }
 
   function act(kind) {
-    if (kind === "clear") { selected.clear(); senior = false; save(); renderAll(); return; }
+    if (kind === "clear") { selected.clear(); photoUnsure.clear(); senior = false; save(); renderAll(); upStatus(""); return; }
     if (kind === "print") { window.print(); return; }
     if (kind === "sms") {
       const body = t("est.sms.hi", "Hi OneCare! I'd like to ask about these tests:") + "\n" + listText();
@@ -158,7 +160,87 @@
     }
   }
 
+  // ---------- photo of the doctor's request ----------
+  const WARN = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/><path d="M12 9v4M12 17h.01"/></svg>';
+  const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+
+  function sendHref() {
+    const C = window.OC.CLINIC;
+    if (C.messenger) return C.messenger;
+    const body = t("up.smsBody", "Hi OneCare! I'll send you a photo of my doctor's request. Can you tell me the total?");
+    return `sms:${C.phoneTel}?&body=${encodeURIComponent(body)}`;
+  }
+
+  function upStatus(html) { document.getElementById("up-status").innerHTML = html; }
+
+  // Shrink the photo before sending: smaller upload, still sharp enough to read
+  function shrink(file) {
+    return new Promise((resolve, reject) => {
+      const img = new Image();
+      const url = URL.createObjectURL(file);
+      img.onload = () => {
+        const max = 1600;
+        const k = Math.min(1, max / Math.max(img.width, img.height));
+        const c = document.createElement("canvas");
+        c.width = Math.round(img.width * k);
+        c.height = Math.round(img.height * k);
+        c.getContext("2d").drawImage(img, 0, 0, c.width, c.height);
+        URL.revokeObjectURL(url);
+        resolve(c.toDataURL("image/jpeg", 0.85).split(",")[1]);
+      };
+      img.onerror = () => { URL.revokeObjectURL(url); reject(new Error("load")); };
+      img.src = url;
+    });
+  }
+
+  async function readPhoto(file) {
+    const sendBtn = `<a class="btn btn-ghost btn-sm" href="${esc(sendHref())}">${t("up.send", "Send it to us instead")}</a>`;
+    upStatus(`<div class="note-box"><span class="spinner" aria-hidden="true"></span><span>${t("up.reading", "Reading your photo… this takes a few seconds.")}</span></div>`);
+    try {
+      const image = await shrink(file);
+      const r = await fetch("/api/read-request", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ image, mediaType: "image/jpeg", tests: P.tests.map(x => ({ id: x.id, name: x.name })) })
+      });
+      if (!r.ok) throw new Error("http " + r.status);
+      const out = await r.json();
+
+      if (!out.readable || !out.found.length) {
+        upStatus(`<div class="note-box amber">${WARN}<div><b>${t("up.noneH", "We couldn't read the tests on this photo.")}</b><p>${t("up.noneP", "Try a clearer photo in good light, with the whole request in the frame. Or send it to us and we'll read it for you.")}</p><div class="up-more">${sendBtn}</div></div></div>`);
+        return;
+      }
+
+      out.found.forEach(f => {
+        selected.add(f.id);
+        f.sure ? photoUnsure.delete(f.id) : photoUnsure.add(f.id);
+      });
+      save(); renderAll();
+
+      const n = out.found.length;
+      const unsure = out.found.filter(f => !f.sure).map(f => esc(byId[f.id].name));
+      const unclear = (out.unclear || []).map(esc);
+      upStatus(`
+        <div class="note-box amber">${WARN}<div>
+          <b>${n === 1 ? t("up.found1", "We ticked 1 test from your photo.") : t("up.foundN", "We ticked {n} tests from your photo.").replace("{n}", n)}</b>
+          <p>${t("up.warn", "Doctors' handwriting can be hard to read, so this total may have mistakes. Please check the ticked tests below. The lab will confirm your tests and final total.")}</p>
+          ${unsure.length ? `<p><b>${t("up.unsure", "Please double-check:")}</b> ${unsure.join(", ")}</p>` : ""}
+          ${unclear.length ? `<p><b>${t("up.unclear", "We couldn't read or match:")}</b> ${unclear.join("; ")}</p>` : ""}
+          <div class="up-more">${sendBtn}</div>
+        </div></div>`);
+    } catch (e) {
+      upStatus(`<div class="note-box amber">${WARN}<div><b>${t("up.errH", "Photo reading isn't working right now.")}</b><p>${t("up.errP", "Please tick your tests below, or send the photo to us and we'll help you.")}</p><div class="up-more">${sendBtn}</div></div></div>`);
+    }
+  }
+
   function bind() {
+    document.getElementById("up-send").href = sendHref();
+    document.getElementById("up-file").addEventListener("change", e => {
+      const f = e.target.files && e.target.files[0];
+      e.target.value = "";
+      if (f) readPhoto(f);
+    });
+
     document.getElementById("est-groups").addEventListener("change", e => {
       const box = e.target.closest('input[type="checkbox"]');
       if (!box) return;

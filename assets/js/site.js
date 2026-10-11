@@ -8,6 +8,7 @@
     address: "Poblacion Central, Dumanjug, Cebu",
     hoursEn: "Mon–Sat, 7:30AM–5:00PM",
     facebook: "",            // paste the Facebook page link here to show the icon
+    messenger: "",           // e.g. "https://m.me/yourpage" — where patients send a photo of their doctor's request; leave "" to use text instead
     mapQuery: "Poblacion Central, Dumanjug, Cebu",
     license: "07-160-26-CL-2",
     licenseValid: "Jan 1 – Dec 31, 2026",

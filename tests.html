@@ -33,6 +33,24 @@
 <main class="wrap" style="padding-top:34px">
   <div class="est">
     <div class="est-main">
+      <div class="upload-card" id="upload-card">
+        <div class="upload-head">
+          <span class="ic-box"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></span>
+          <div>
+            <h2 data-i18n="up.h">Have your doctor's request?</h2>
+            <p data-i18n="up.p">Take or upload a photo and we'll tick the tests for you.</p>
+          </div>
+        </div>
+        <div class="upload-actions">
+          <label class="btn btn-primary">
+            <input type="file" accept="image/*" id="up-file" hidden>
+            <span data-i18n="up.btn">Upload a Photo</span>
+          </label>
+          <a class="btn btn-ghost" id="up-send" href="#" data-i18n="up.send">Send it to us instead</a>
+        </div>
+        <p class="upload-privacy" data-i18n="up.privacy">Your photo is only used to read the tests and isn't stored.</p>
+        <div id="up-status" aria-live="polite"></div>
+      </div>
       <div class="est-tools">
         <label class="search">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>

@@ -278,6 +278,29 @@ h2.h-sm { font-size: 26px; font-weight: 800; margin-bottom: 14px; }
 .note-box svg { flex: none; margin-top: 2px; }
 .note-box.amber { background: var(--soft-amber); border-color: #F6D9AE; color: #7A3E06; }
 .note-box.green { background: var(--soft-green); border-color: #BDEBD3; color: #065F3A; }
+.note-box p { margin-top: 6px; }
+
+/* Photo of the doctor's request */
+.upload-card {
+  background: #fff; border: 1.5px dashed #B9CDEB; border-radius: 18px; box-shadow: var(--shadow);
+  padding: 20px; margin-bottom: 20px;
+}
+.upload-head { display: flex; gap: 14px; align-items: center; }
+.upload-head .ic-box { flex: none; }
+.upload-head h2 { font-size: 19px; margin: 0; }
+.upload-head p { color: var(--muted); font-size: 15px; margin-top: 2px; }
+.upload-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
+.upload-actions label.btn { cursor: pointer; }
+.upload-privacy { color: var(--muted); font-size: 13px; margin-top: 10px; }
+#up-status:not(:empty) { margin-top: 14px; }
+.up-more { margin-top: 10px; }
+.up-more .btn { background: #fff; }
+.spinner {
+  flex: none; width: 18px; height: 18px; margin-top: 2px; border-radius: 50%;
+  border: 2.5px solid #CFE0F8; border-top-color: var(--blue); animation: spin .8s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+@media (max-width: 560px) { .upload-actions .btn { flex: 1 1 100%; justify-content: center; } }
 
 /* Badges */
 .badge {
