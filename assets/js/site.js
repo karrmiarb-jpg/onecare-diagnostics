@@ -78,7 +78,8 @@
 
   // ---------- Header / footer / mobile bar ----------
   function header() {
-    const links = NAV.map(n =>
+    // Home is left out of the top nav; the logo already links there
+    const links = NAV.filter(n => n.href !== "index.html").map(n =>
       `<li><a href="${n.href}" data-i18n="${n.key}"${n.href === here ? ' aria-current="page"' : ""}>${n.en}</a></li>`
     ).join("");
     return `
