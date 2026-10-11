@@ -19,7 +19,8 @@
 window.ONECARE_PRICES = {
   DRAFT: true,
   updated: "October 2026",
-  seniorPwdDiscount: 0.20,
+  seniorPwdDiscount: 0.25, // Senior / PWD: 25% off (cannot be combined with the promo)
+  promoDiscount: 0.20,     // Special promo: 20% off, applied automatically to everyone else
 
   groups: [
     { id: "hema",  en: "Hematology",            ceb: "Hematology (Dugo)",

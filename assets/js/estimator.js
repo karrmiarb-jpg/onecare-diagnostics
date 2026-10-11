@@ -24,13 +24,15 @@
     selected.forEach(id => (byId[id].includes || []).forEach(c => covered.set(c, byId[id].name)));
     const lines = [...selected].filter(id => !covered.has(id)).map(id => byId[id]);
     const subtotal = lines.reduce((s, x) => s + x.price, 0);
-    const discount = senior ? Math.round(subtotal * P.seniorPwdDiscount) : 0;
+    // Senior / PWD gets 25% off and cannot also take the special promo; everyone else gets the 20% promo automatically
+    const rate = senior ? P.seniorPwdDiscount : P.promoDiscount;
+    const discount = Math.round(subtotal * rate);
     const prep = new Set();
     lines.forEach(x => {
       (x.prep || []).forEach(p => prep.add(p));
       (x.includes || []).forEach(c => (byId[c].prep || []).forEach(p => prep.add(p)));
     });
-    return { covered, lines, subtotal, discount, total: subtotal - discount, prep };
+    return { covered, lines, subtotal, discount, rate, total: subtotal - discount, prep };
   }
 
   function prepNotes(prep) {
@@ -73,7 +75,6 @@
               <span class="desc">${isCeb() ? x.ceb : x.en}</span>
               ${tags.length ? `<span class="tags">${tags.join("")}</span>` : ""}
             </span>
-            <span class="price">${peso(x.price)}</span>
           </label>`;
       }).join("");
       out.push(`
@@ -92,7 +93,7 @@
   function summaryHTML() {
     const c = compute();
     const items = c.lines.map(x =>
-      `<li><span>${x.name} <button class="rm" type="button" data-rm="${x.id}" aria-label="Remove ${x.name}">×</button></span><span>${peso(x.price)}</span></li>`
+      `<li><span>${x.name} <button class="rm" type="button" data-rm="${x.id}" aria-label="Remove ${x.name}">×</button></span></li>`
     ).join("");
     const notes = prepNotes(c.prep).map(([tone, txt]) =>
       `<div class="note-box ${tone}">${INFO}<span>${txt}</span></div>`).join("");
@@ -105,9 +106,9 @@
       <div class="sum-row"><span>${t("est.sum.sub", "Subtotal")}</span><span>${peso(c.subtotal)}</span></div>
       <label class="toggle-line no-print">
         <input type="checkbox" data-senior${senior ? " checked" : ""}>
-        <span>${t("est.sum.senior", "Senior Citizen / PWD (20% off)")}<small>${t("est.sum.seniorNote", "Please bring your Senior Citizen or PWD ID.")}</small></span>
+        <span>${t("est.sum.senior", "Senior Citizen / PWD (25% off)")}<small>${senior ? t("est.sum.seniorOn", "25% off replaces the special promo. Please bring your Senior Citizen or PWD ID.") : t("est.sum.seniorNote", "Please bring your Senior Citizen or PWD ID.")}</small></span>
       </label>
-      ${c.discount ? `<div class="sum-row discount"><span>${t("est.sum.disc", "Senior / PWD discount")}</span><span>−${peso(c.discount)}</span></div>` : ""}
+      ${c.discount ? `<div class="sum-row discount"><span>${senior ? t("est.sum.disc", "Senior / PWD discount (25%)") : t("est.sum.promo", "Special promo (20% off)")}</span><span>−${peso(c.discount)}</span></div>` : ""}
       <div class="sum-total"><span>${t("est.sum.total", "Estimated total")}</span><b>${peso(c.total)}</b></div>
       ${notes ? `<div class="est-prep">${notes}</div>` : ""}
       <div class="sum-actions">
@@ -138,8 +139,8 @@
   // ---------- actions ----------
   function listText() {
     const c = compute();
-    const lines = c.lines.map(x => `- ${x.name} (${peso(x.price)})`);
-    lines.push(`${t("est.sum.total", "Estimated total")}: ${peso(c.total)}${senior ? " (Senior/PWD)" : ""}`);
+    const lines = c.lines.map(x => `- ${x.name}`);
+    lines.push(`${t("est.sum.total", "Estimated total")}: ${peso(c.total)}${senior ? " (Senior/PWD 25% off)" : " (20% promo)"}`);
     return lines.join("\n");
   }
 
