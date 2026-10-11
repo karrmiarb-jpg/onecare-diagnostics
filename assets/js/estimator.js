@@ -93,7 +93,7 @@
   function summaryHTML() {
     const c = compute();
     const items = c.lines.map(x =>
-      `<li><span>${x.name} <button class="rm" type="button" data-rm="${x.id}" aria-label="Remove ${x.name}">×</button></span></li>`
+      `<li><span>${x.name}</span></li>`
     ).join("");
     const notes = prepNotes(c.prep).map(([tone, txt]) =>
       `<div class="note-box ${tone}">${INFO}<span>${txt}</span></div>`).join("");
@@ -170,8 +170,6 @@
       if (e.target.matches("[data-senior]")) { senior = e.target.checked; save(); renderSummary(); }
     });
     document.addEventListener("click", e => {
-      const rm = e.target.closest("[data-rm]");
-      if (rm) { selected.delete(rm.dataset.rm); save(); renderAll(); return; }
       const a = e.target.closest("[data-act]");
       if (a && !a.disabled) act(a.dataset.act);
       const tog = e.target.closest("[data-sheet]");

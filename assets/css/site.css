@@ -377,7 +377,6 @@ h2.h-sm { font-size: 26px; font-weight: 800; margin-bottom: 14px; }
 .summary h2 { font-size: 20px; margin-bottom: 4px; }
 .sum-list { list-style: none; margin: 14px 0; max-height: 260px; overflow: auto; display: grid; gap: 8px; }
 .sum-list li { display: flex; justify-content: space-between; gap: 12px; font-size: 15px; }
-.sum-list .rm { border: 0; background: none; color: var(--muted); cursor: pointer; padding: 0 2px; font-size: 18px; line-height: 1; }
 .sum-empty { color: var(--muted); font-size: 15px; margin: 14px 0; }
 .sum-row { display: flex; justify-content: space-between; font-size: 15px; padding: 6px 0; }
 .sum-row.discount { color: var(--green-text); font-weight: 600; }
