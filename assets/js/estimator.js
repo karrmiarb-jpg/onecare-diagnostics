@@ -118,7 +118,7 @@
         <button class="btn btn-ghost" type="button" data-act="sms"${c.lines.length ? "" : " disabled"}>${t("est.act.sms", "Text this list to us")}</button>
         <div style="display:flex;gap:10px">
           <button class="btn btn-ghost btn-sm" style="flex:1" type="button" data-act="print"${c.lines.length ? "" : " disabled"}>${t("est.act.print", "Save / Print")}</button>
-          <button class="btn btn-ghost btn-sm" style="flex:1" type="button" data-act="clear"${c.lines.length ? "" : " disabled"}>${t("est.act.clear", "Clear")}</button>
+          <button class="btn btn-ghost btn-sm" style="flex:1" type="button" data-act="clear"${c.lines.length ? "" : " disabled"}>${t("est.act.clearAll", "Clear all")}</button>
         </div>
       </div>
       <p class="sum-note">${t("est.sum.note", "This is an estimate only. The final price is confirmed at the lab.")}${P.DRAFT ? " <b>" + t("est.sum.draft", "Prices shown are draft prices.") + "</b>" : ""}</p>`;
@@ -128,6 +128,11 @@
     const html = summaryHTML();
     document.querySelectorAll("[data-summary]").forEach(el => (el.innerHTML = html));
     const c = compute();
+    const n = c.lines.length;
+    const count = document.getElementById("est-count");
+    count.textContent = n ? (n === 1 ? t("est.count1", "1 test ticked") : t("est.countN", "{n} tests ticked").replace("{n}", n)) : t("est.countNone", "No tests ticked yet");
+    count.classList.toggle("has", n > 0);
+    document.querySelector(".est-listbar [data-act]").disabled = !n;
     const mb = document.getElementById("mobile-total");
     if (mb) {
       mb.textContent = peso(c.total);
