@@ -116,7 +116,7 @@ body.home .site-header:not(.scrolled) .lang { background: rgba(255,255,255,.45);
 }
 .hero-bg { position: absolute; inset: 0; z-index: 0; }
 /* colors sampled from the reference hero: blush base, teal mist top-left, taupe-peach bottom-left, rose-lilac right edge */
-.hero-bg { background: #EBDDD6; }
+.hero-bg { background: #F7F1EE; }
 .hero-bg img {
   /* photo sits right of the headline and below the header; its top and left edges fade into the backdrop */
   position: absolute; left: 12%; right: 0; bottom: 0; top: 96px; width: 88%; height: calc(100% - 96px);
@@ -127,7 +127,7 @@ body.home .site-header:not(.scrolled) .lang { background: rgba(255,255,255,.45);
           mask-composite: intersect;
 }
 /* light warm tint: whites read as blush, the person keeps natural color */
-.hero-bg::before { content: ""; position: absolute; inset: 0; z-index: 1; background: #FAEDE6; mix-blend-mode: multiply; }
+.hero-bg::before { content: ""; position: absolute; inset: 0; z-index: 1; background: #FDF6F2; mix-blend-mode: multiply; }
 /* misty blur behind the text only, gone before the microscope */
 .hero-bg::after {
   content: ""; position: absolute; inset: 0; z-index: 2;
@@ -143,14 +143,14 @@ body.home .site-header:not(.scrolled) .lang { background: rgba(255,255,255,.45);
     radial-gradient(22% 32% at 3% 44%, rgba(176,204,200,.7) 0%, rgba(176,204,200,0) 100%),
     radial-gradient(30% 34% at 5% 99%, rgba(178,160,148,.85) 0%, rgba(196,178,168,.5) 45%, rgba(214,196,188,0) 80%),
     radial-gradient(30% 34% at 27% 95%, rgba(226,192,178,.75) 0%, rgba(230,200,188,0) 80%),
-    radial-gradient(26% 55% at 100% 82%, rgba(224,190,202,.5) 0%, rgba(226,196,206,0) 85%),
+    radial-gradient(22% 45% at 100% 85%, rgba(232,208,214,.28) 0%, rgba(232,208,214,0) 85%),
     /* gentle shade behind the headline so the white letters stand out */
     radial-gradient(20% 15% at 39% 48%, rgba(104,128,126,.5) 0%, rgba(120,142,140,.24) 55%, rgba(140,160,158,0) 100%),
     /* left side wash behind the text; clear over the person */
     linear-gradient(90deg, rgba(226,212,205,.55) 0%, rgba(226,212,205,.3) 30%, rgba(226,212,205,0) 46%),
     /* bright blush veils that hide darker lab equipment at the very top and right edge */
     linear-gradient(180deg, rgba(255,255,255,.92) 0%, rgba(255,255,255,.55) 9%, rgba(255,255,255,0) 17%),
-    linear-gradient(270deg, rgba(234,220,215,.85) 0%, rgba(234,220,215,.4) 8%, rgba(234,220,215,0) 18%);
+    linear-gradient(270deg, rgba(255,255,255,.82) 0%, rgba(255,255,255,.45) 8%, rgba(255,255,255,0) 18%);
 }
 /* keeps white text readable over the bright photo */
 .hero h1, .hero .eyebrow, .hero-foot p, .hero-stats {
@@ -173,7 +173,7 @@ body.home .site-header:not(.scrolled) .lang { background: rgba(255,255,255,.45);
 .hero-stats {
   list-style: none; display: grid; gap: 20px; align-self: start; text-align: right; margin-top: 36px;
   padding: 22px 24px; border-radius: 20px; min-width: 210px;
-  background: rgba(165, 145, 140, .14); border: 1px solid rgba(255,255,255,.25);
+  background: rgba(105, 112, 116, .24); border: 1px solid rgba(255,255,255,.3);
   backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
 }
 .hero-stats b { display: block; font-family: var(--head); font-weight: 500; font-size: clamp(30px, 3vw, 42px); letter-spacing: -.03em; line-height: 1; }
