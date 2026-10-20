@@ -98,7 +98,7 @@ img { max-width: 100%; }
   background: #fff; color: var(--ink); cursor: pointer; place-items: center;
 }
 /* Home: light frosted bar over the photo until you scroll */
-body.home .site-header:not(.scrolled) { background: rgba(240, 231, 227, .45); border-color: rgba(255,255,255,.35); }
+body.home .site-header:not(.scrolled) { background: rgba(232, 240, 250, .5); border-color: rgba(255,255,255,.4); }
 body.home .site-header:not(.scrolled) .lang { background: rgba(255,255,255,.45); }
 
 /* ---------- Mobile action bar ---------- */
@@ -110,20 +110,20 @@ body.home .site-header:not(.scrolled) .lang { background: rgba(255,255,255,.45);
   padding: 150px 0 40px; color: #fff; overflow: hidden; display: flex;
 }
 .hero-bg { position: absolute; inset: 0; z-index: 0; }
-.hero-bg { background: #E3D6D0; }
+.hero-bg { background: #DCE7F6; }
 .hero-bg img { width: 100%; height: 100%; object-fit: cover; object-position: 70% 30%; display: block; filter: saturate(.5) brightness(1.06); }
-/* tints the photo so its whites become the reference's blush tone */
-.hero-bg::before { content: ""; position: absolute; inset: 0; z-index: 1; background: #EDD5CF; mix-blend-mode: multiply; }
+/* same soft haze as the reference, in OneCare blue and green: the photo's whites become a pale brand blue */
+.hero-bg::before { content: ""; position: absolute; inset: 0; z-index: 1; background: #DDE8F7; mix-blend-mode: multiply; }
 .hero-bg::after {
   content: ""; position: absolute; inset: 0; z-index: 2;
   background:
-    radial-gradient(34% 48% at 6% 16%, rgba(138,166,163,.85) 0%, rgba(150,174,171,.45) 50%, rgba(160,178,176,0) 100%),
-    radial-gradient(40% 46% at 4% 100%, rgba(166,146,135,.7) 0%, rgba(190,168,158,.35) 55%, rgba(205,184,175,0) 100%),
-    linear-gradient(90deg, rgba(176,170,166,.42) 0%, rgba(214,196,190,.22) 40%, rgba(232,214,208,0) 65%, rgba(220,200,197,.25) 100%);
+    radial-gradient(34% 48% at 6% 16%, rgba(64,178,128,.72) 0%, rgba(96,190,148,.4) 50%, rgba(120,200,160,0) 100%),
+    radial-gradient(40% 46% at 4% 100%, rgba(38,98,186,.68) 0%, rgba(72,124,200,.34) 55%, rgba(110,150,210,0) 100%),
+    linear-gradient(90deg, rgba(110,148,196,.42) 0%, rgba(170,196,228,.22) 40%, rgba(221,232,247,0) 65%, rgba(196,214,238,.25) 100%);
 }
 /* keeps white text readable over the bright photo */
 .hero h1, .hero .eyebrow, .hero-foot p, .hero-stats {
-  text-shadow: 0 1px 2px rgba(70, 55, 48, .28), 0 4px 26px rgba(70, 55, 48, .28);
+  text-shadow: 0 1px 2px rgba(20, 50, 100, .3), 0 4px 26px rgba(20, 50, 100, .3);
 }
 .hero-inner { position: relative; z-index: 1; display: grid; grid-template-columns: 1fr auto; grid-template-rows: 1fr auto; gap: 40px; }
 .hero .eyebrow { color: rgba(255,255,255,.85); }
@@ -142,7 +142,7 @@ body.home .site-header:not(.scrolled) .lang { background: rgba(255,255,255,.45);
 .hero-stats {
   list-style: none; display: grid; gap: 20px; align-self: start; text-align: right; margin-top: 36px;
   padding: 22px 24px; border-radius: 20px; min-width: 210px;
-  background: rgba(150, 128, 120, .16); border: 1px solid rgba(255,255,255,.22);
+  background: rgba(0, 71, 171, .14); border: 1px solid rgba(255,255,255,.25);
   backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
 }
 .hero-stats b { display: block; font-family: var(--head); font-weight: 500; font-size: clamp(30px, 3vw, 42px); letter-spacing: -.03em; line-height: 1; }
@@ -152,7 +152,7 @@ body.home .site-header:not(.scrolled) .lang { background: rgba(255,255,255,.45);
 .round-btn {
   width: 52px; height: 52px; border-radius: 50%; display: grid; place-items: center; flex: none;
   border: 1px solid rgba(255,255,255,.6); color: #fff; transition: background .2s;
-  background: rgba(150,128,120,.18); backdrop-filter: blur(8px);
+  background: rgba(0,71,171,.14); backdrop-filter: blur(8px);
 }
 .round-btn:hover { background: rgba(255,255,255,.14); }
 
