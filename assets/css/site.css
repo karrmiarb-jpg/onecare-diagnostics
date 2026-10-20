@@ -113,7 +113,7 @@ body.home .site-header:not(.scrolled) .lang { background: rgba(255,255,255,.55);
 }
 .hero-bg { position: absolute; inset: 0; z-index: 0; }
 /* colors sampled from the reference hero: blush base, teal mist top-left, taupe-peach bottom-left, rose-lilac right edge */
-.hero-bg { background: #FFFBF1; } /* soft cream glow, like the closing photo's sky */
+.hero-bg { background: #FFFFFF; }
 .hero-bg img {
   /* photo sits right of the headline and below the header; its top and left edges fade into the backdrop */
   /* on wide screens the text starts further in, so the photo moves right too and the microscope stays clear of the headline */
@@ -140,16 +140,15 @@ body.home .site-header:not(.scrolled) .lang { background: rgba(255,255,255,.55);
     /* white at the top behind the menu, fading gradually so there is no band */
     linear-gradient(180deg, rgba(255,255,255,.92) 0%, rgba(255,255,255,.78) 7%, rgba(255,255,255,.48) 14%, rgba(255,255,255,.2) 21%, rgba(255,255,255,.05) 27%, rgba(255,255,255,0) 32%),
     /* left side wash behind the text; clear over the person */
-    linear-gradient(90deg, rgba(232,220,198,.36) 0%, rgba(232,220,198,.2) 30%, rgba(232,220,198,0) 46%),
-    /* faint cream glow at the right edge */
-    linear-gradient(270deg, rgba(254,246,224,.3) 0%, rgba(254,246,224,.14) 7%, rgba(254,246,224,0) 15%);
+    linear-gradient(90deg, rgba(226,212,205,.36) 0%, rgba(226,212,205,.2) 30%, rgba(226,212,205,0) 46%),
+    /* faint white at the right edge */
+    linear-gradient(270deg, rgba(255,255,255,.26) 0%, rgba(255,255,255,.12) 7%, rgba(255,255,255,0) 15%);
 }
 /* the reference's colors as one smooth wash down the left side: teal at the top easing into peach at the bottom.
    It fades out evenly toward the person, so there are no round spots in the corners. A faint copy shows on the right edge. */
 .hero::before {
   content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none;
-  /* colors from the closing photo: wheat at the top deepening to golden tan at the bottom */
-  background: linear-gradient(180deg, rgba(190,170,140,.66) 0%, rgba(196,178,150,.6) 24%, rgba(184,163,134,.56) 50%, rgba(170,146,116,.58) 75%, rgba(150,124,96,.62) 100%);
+  background: linear-gradient(180deg, rgba(124,148,150,.66) 0%, rgba(142,160,162,.56) 24%, rgba(190,186,186,.44) 50%, rgba(220,198,194,.42) 75%, rgba(216,182,176,.48) 100%); /* soft teal easing into a gentle peach-pink (warm, not yellow) */
   /* strong on the left behind the text, a faint matching strip on the right edge for balance */
   -webkit-mask-image: linear-gradient(90deg, #000 0%, rgba(0,0,0,.88) 16%, rgba(0,0,0,.66) 32%, rgba(0,0,0,.42) 42%, rgba(0,0,0,.14) 50%, transparent 58%, transparent 80%, rgba(0,0,0,.18) 90%, rgba(0,0,0,.45) 100%);
           mask-image: linear-gradient(90deg, #000 0%, rgba(0,0,0,.88) 16%, rgba(0,0,0,.66) 32%, rgba(0,0,0,.42) 42%, rgba(0,0,0,.14) 50%, transparent 58%, transparent 80%, rgba(0,0,0,.18) 90%, rgba(0,0,0,.45) 100%);
@@ -160,7 +159,7 @@ body.home .site-header:not(.scrolled) .lang { background: rgba(255,255,255,.55);
 }
 /* headline: soft teal-grey halo that hugs each letter (stays within a few px, so no haze or blob) */
 .hero h1 {
-  text-shadow: 0 0 1px rgba(92, 70, 52, .55), 0 0 5px rgba(92, 70, 52, .42), 0 0 12px rgba(92, 70, 52, .28);
+  text-shadow: 0 0 1px rgba(40, 62, 62, .6), 0 0 5px rgba(40, 62, 62, .45), 0 0 12px rgba(40, 62, 62, .3);
 }
 .hero-inner { position: relative; z-index: 1; display: grid; grid-template-columns: 1fr; grid-template-rows: 1fr auto; gap: 40px; }
 /* text starts about 10% in on any screen (never less than the page margin) */
