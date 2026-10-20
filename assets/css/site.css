@@ -254,7 +254,7 @@ h2.h-sm { font-size: 26px; margin-bottom: 14px; }
 .media-card:hover img { transform: scale(1.04); }
 .media-card .art { position: absolute; top: 22px; left: 18px; opacity: .9; }
 .media-card b { font-family: var(--head); font-weight: 500; font-size: 17px; letter-spacing: -.01em; }
-.media-card p { font-size: 13px; color: rgba(255,255,255,.82); margin-top: 4px; line-height: 1.45; }
+.media-card p { font-size: 13px; color: rgba(255,255,255,.82); margin-top: 4px; line-height: 1.45; min-height: calc(1.45em * 3); } /* room for 3 lines, so every card's title sits on the same line */
 
 /* Small tiles (tests) */
 .tile-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
