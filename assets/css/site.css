@@ -130,14 +130,14 @@ body.home .site-header:not(.scrolled) .lang { background: rgba(255,255,255,.55);
   content: ""; position: absolute; inset: 0; z-index: 2;
   backdrop-filter: blur(24px) saturate(1.1); -webkit-backdrop-filter: blur(24px) saturate(1.1);
   /* left side, plus a soft oval behind the end of the headline */
-  -webkit-mask-image: linear-gradient(90deg, #000 0%, #000 24%, transparent 42%), radial-gradient(17% 13% at 40% 48%, #000 50%, transparent 100%);
-          mask-image: linear-gradient(90deg, #000 0%, #000 24%, transparent 42%), radial-gradient(17% 13% at 40% 48%, #000 50%, transparent 100%);
+  -webkit-mask-image: linear-gradient(90deg, #000 0%, #000 24%, transparent 42%), radial-gradient(28% 22% at 40% 50%, #000 30%, transparent 100%);
+          mask-image: linear-gradient(90deg, #000 0%, #000 24%, transparent 42%), radial-gradient(28% 22% at 40% 50%, #000 30%, transparent 100%);
 }
 .hero::after {
   content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none;
   background:
-    radial-gradient(14% 16% at 9% 5%, rgba(104,142,137,.55) 0%, rgba(104,142,137,0) 100%), /* behind the white logo */
-    radial-gradient(26% 38% at 15% 13%, rgba(124,164,158,0.6) 0%, rgba(140,172,168,0.42) 40%, rgba(176,204,200,0.0) 78%),
+    radial-gradient(24% 28% at 9% 4%, rgba(112,148,143,.42) 0%, rgba(118,152,147,.28) 35%, rgba(126,158,154,.12) 65%, rgba(130,160,156,0) 100%), /* behind the white logo */
+    radial-gradient(40% 56% at 13% 14%, rgba(126,164,158,.44) 0%, rgba(136,170,165,.32) 28%, rgba(150,180,176,.18) 52%, rgba(168,196,192,.07) 74%, rgba(176,204,200,0) 92%), /* soft teal mist, no visible edge */
     radial-gradient(22% 32% at 3% 44%, rgba(176,204,200,0.45) 0%, rgba(176,204,200,0.0) 100%),
     radial-gradient(30% 34% at 5% 99%, rgba(178,160,148,0.55) 0%, rgba(196,178,168,0.33) 45%, rgba(214,196,188,0.0) 80%),
     radial-gradient(30% 34% at 27% 95%, rgba(226,192,178,0.49) 0%, rgba(230,200,188,0.0) 80%),
@@ -145,7 +145,7 @@ body.home .site-header:not(.scrolled) .lang { background: rgba(255,255,255,.55);
     /* white at the top behind the menu, fading gradually so there is no band */
     linear-gradient(180deg, rgba(255,255,255,.92) 0%, rgba(255,255,255,.78) 7%, rgba(255,255,255,.48) 14%, rgba(255,255,255,.2) 21%, rgba(255,255,255,.05) 27%, rgba(255,255,255,0) 32%),
     /* gentle shade behind the headline so the white letters stand out */
-    radial-gradient(20% 15% at 39% 48%, rgba(104,128,126,.5) 0%, rgba(120,142,140,.24) 55%, rgba(140,160,158,0.0) 100%),
+    radial-gradient(34% 28% at 38% 50%, rgba(132,154,152,.36) 0%, rgba(140,160,158,.24) 35%, rgba(150,168,166,.1) 68%, rgba(140,160,158,0.0) 100%),
     /* left side wash behind the text; clear over the person */
     linear-gradient(90deg, rgba(226,212,205,0.36) 0%, rgba(226,212,205,0.2) 30%, rgba(226,212,205,0.0) 46%),
     /* bright blush veils that hide darker lab equipment at the very top and right edge */
