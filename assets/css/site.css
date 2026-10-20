@@ -137,17 +137,17 @@ body.home .site-header:not(.scrolled) .lang { background: rgba(255,255,255,.55);
   content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none;
   background:
     radial-gradient(14% 16% at 9% 5%, rgba(104,142,137,.55) 0%, rgba(104,142,137,0) 100%), /* behind the white logo */
-    radial-gradient(26% 38% at 15% 13%, rgba(124,164,158,.92) 0%, rgba(140,172,168,.65) 40%, rgba(176,204,200,0) 78%),
-    radial-gradient(22% 32% at 3% 44%, rgba(176,204,200,.7) 0%, rgba(176,204,200,0) 100%),
-    radial-gradient(30% 34% at 5% 99%, rgba(178,160,148,.85) 0%, rgba(196,178,168,.5) 45%, rgba(214,196,188,0) 80%),
-    radial-gradient(30% 34% at 27% 95%, rgba(226,192,178,.75) 0%, rgba(230,200,188,0) 80%),
-    radial-gradient(22% 45% at 100% 85%, rgba(232,208,214,.28) 0%, rgba(232,208,214,0) 85%),
+    radial-gradient(26% 38% at 15% 13%, rgba(124,164,158,0.6) 0%, rgba(140,172,168,0.42) 40%, rgba(176,204,200,0.0) 78%),
+    radial-gradient(22% 32% at 3% 44%, rgba(176,204,200,0.45) 0%, rgba(176,204,200,0.0) 100%),
+    radial-gradient(30% 34% at 5% 99%, rgba(178,160,148,0.55) 0%, rgba(196,178,168,0.33) 45%, rgba(214,196,188,0.0) 80%),
+    radial-gradient(30% 34% at 27% 95%, rgba(226,192,178,0.49) 0%, rgba(230,200,188,0.0) 80%),
+    radial-gradient(22% 45% at 100% 85%, rgba(232,208,214,0.18) 0%, rgba(232,208,214,0.0) 85%),
     /* gentle shade behind the headline so the white letters stand out */
-    radial-gradient(20% 15% at 39% 48%, rgba(104,128,126,.5) 0%, rgba(120,142,140,.24) 55%, rgba(140,160,158,0) 100%),
+    radial-gradient(20% 15% at 39% 48%, rgba(104,128,126,.5) 0%, rgba(120,142,140,.24) 55%, rgba(140,160,158,0.0) 100%),
     /* left side wash behind the text; clear over the person */
-    linear-gradient(90deg, rgba(226,212,205,.55) 0%, rgba(226,212,205,.3) 30%, rgba(226,212,205,0) 46%),
+    linear-gradient(90deg, rgba(226,212,205,0.36) 0%, rgba(226,212,205,0.2) 30%, rgba(226,212,205,0.0) 46%),
     /* bright blush veils that hide darker lab equipment at the very top and right edge */
-    linear-gradient(270deg, rgba(255,255,255,.4) 0%, rgba(255,255,255,.18) 7%, rgba(255,255,255,0) 15%);
+    linear-gradient(270deg, rgba(255,255,255,0.26) 0%, rgba(255,255,255,0.12) 7%, rgba(255,255,255,0.0) 15%);
 }
 /* keeps white text readable over the bright photo */
 .hero h1, .hero .eyebrow, .hero-foot p, .hero-stats {
@@ -177,8 +177,8 @@ body.home .site-header:not(.scrolled) .lang { background: rgba(255,255,255,.55);
   background: radial-gradient(50% 50% at 60% 50%, rgba(62, 76, 82, .5) 0%, rgba(62, 76, 82, .26) 55%, rgba(62, 76, 82, 0) 100%);
   filter: blur(6px);
 }
-.hero-stats b { display: block; font-family: var(--head); font-weight: 500; font-size: clamp(30px, 3vw, 42px); letter-spacing: -.03em; line-height: 1; }
-.hero-stats small { display: block; font-size: 13px; font-weight: 500; color: #fff; margin-top: 6px; }
+.hero-stats b { display: block; font-family: var(--head); font-weight: 500; font-size: clamp(24px, 2.3vw, 32px); letter-spacing: -.025em; line-height: 1.05; }
+.hero-stats small { display: block; font-size: 14px; font-weight: 500; color: #fff; margin-top: 6px; max-width: 220px; margin-left: auto; }
 .hero-foot { grid-column: 1 / -1; display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; }
 .hero-foot p { max-width: 420px; font-size: 15px; font-weight: 500; color: #fff; }
 .round-btn {
@@ -623,7 +623,8 @@ body.home .site-footer { margin-top: 0; }
   body.has-mobile-sum { padding-bottom: 90px; }
   body.has-mobile-sum .mobile-bar { display: none !important; }
   .hero-inner { grid-template-columns: 1fr; }
-  .hero-stats { grid-template-columns: repeat(4, auto); justify-content: start; text-align: left; margin-top: 0; gap: 28px; }
+  .hero-stats { grid-template-columns: repeat(2, auto); justify-content: start; text-align: left; margin-top: 0; gap: 28px 40px; }
+  .hero-stats small { margin-left: 0; }
   .duo, .faq { grid-template-columns: 1fr; }
   .faq { gap: 10px; }
 }
@@ -652,7 +653,7 @@ body.home .site-footer { margin-top: 0; }
   .hero { margin-top: -65px; padding: 110px 0 28px; min-height: 0; }
   .hero-bg img { top: 84px; height: calc(100% - 84px); }
   .hero h1 { margin: 16px 0 24px; }
-  .hero-stats { grid-template-columns: repeat(2, auto); gap: 18px 36px; }
+  .hero-stats { grid-template-columns: 1fr 1fr; gap: 18px 24px; }
   .hero-foot p { display: none; }
   .hero-actions .btn { flex: 1 1 auto; }
   section.block { padding-top: 72px; }
