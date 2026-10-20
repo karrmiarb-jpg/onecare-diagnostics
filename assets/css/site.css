@@ -132,8 +132,9 @@ body.home .site-header:not(.scrolled) .lang { background: rgba(255,255,255,.45);
 .hero-bg::after {
   content: ""; position: absolute; inset: 0; z-index: 2;
   backdrop-filter: blur(24px) saturate(1.1); -webkit-backdrop-filter: blur(24px) saturate(1.1);
-  -webkit-mask-image: linear-gradient(90deg, #000 0%, #000 24%, transparent 42%);
-          mask-image: linear-gradient(90deg, #000 0%, #000 24%, transparent 42%);
+  /* left side, plus a soft oval behind the end of the headline */
+  -webkit-mask-image: linear-gradient(90deg, #000 0%, #000 24%, transparent 42%), radial-gradient(17% 13% at 40% 48%, #000 50%, transparent 100%);
+          mask-image: linear-gradient(90deg, #000 0%, #000 24%, transparent 42%), radial-gradient(17% 13% at 40% 48%, #000 50%, transparent 100%);
 }
 .hero::after {
   content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none;
@@ -143,6 +144,8 @@ body.home .site-header:not(.scrolled) .lang { background: rgba(255,255,255,.45);
     radial-gradient(30% 34% at 5% 99%, rgba(178,160,148,.85) 0%, rgba(196,178,168,.5) 45%, rgba(214,196,188,0) 80%),
     radial-gradient(30% 34% at 27% 95%, rgba(226,192,178,.75) 0%, rgba(230,200,188,0) 80%),
     radial-gradient(26% 55% at 100% 82%, rgba(224,190,202,.5) 0%, rgba(226,196,206,0) 85%),
+    /* gentle shade behind the headline so the white letters stand out */
+    radial-gradient(20% 15% at 39% 48%, rgba(104,128,126,.5) 0%, rgba(120,142,140,.24) 55%, rgba(140,160,158,0) 100%),
     /* left side wash behind the text; clear over the person */
     linear-gradient(90deg, rgba(226,212,205,.55) 0%, rgba(226,212,205,.3) 30%, rgba(226,212,205,0) 46%),
     /* bright blush veils that hide darker lab equipment at the very top and right edge */
