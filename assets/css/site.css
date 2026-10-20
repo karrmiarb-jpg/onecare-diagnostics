@@ -296,7 +296,7 @@ h2.h-sm { font-size: 26px; margin-bottom: 14px; }
 .comf-photo, .comf-pill { height: 200px; border-radius: var(--radius); overflow: hidden; }
 .comf-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .comf-pill { border-radius: 999px; background: #E9DDD2; display: grid; place-items: center; text-align: center; padding: 0 34px; font-family: var(--head); font-weight: 500; font-size: 18px; line-height: 1.25; color: #2F2A28; }
-.comf-pill:nth-of-type(even) { background: #EFE6DB; }
+.comf-pill:nth-of-type(4n) { background: #EFE6DB; }
 @media (max-width: 760px) {
   .carousel.reviews { grid-auto-columns: 86%; }
   .carousel.comfort { grid-auto-columns: 62%; }
