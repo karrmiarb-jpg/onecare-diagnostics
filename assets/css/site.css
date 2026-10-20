@@ -119,7 +119,7 @@ body.home .site-header:not(.scrolled) .lang { background: rgba(255,255,255,.55);
   /* on wide screens the text starts further in, so the photo moves right too and the microscope stays clear of the headline */
   --img-left: max(12%, min(calc(63vw - 652px), 23%));
   position: absolute; left: var(--img-left); right: 0; bottom: 0; top: 96px; width: calc(100% - var(--img-left)); height: calc(100% - 96px);
-  object-fit: cover; object-position: 60% 0%; display: block; filter: sepia(.12) hue-rotate(-5deg) saturate(.97) contrast(1.05) brightness(1.1); /* warm tone on the photo only */
+  object-fit: cover; object-position: 60% 0%; display: block; transform: translateX(var(--img-shift, clamp(-0.8vw, calc(7.4vw - (100vw - 1440px) * .328), 7.9vw))); /* person sits further right, with about the same space on her right as the text has on its left */ filter: sepia(.12) hue-rotate(-5deg) saturate(.97) contrast(1.05) brightness(1.1); /* warm tone on the photo only */
   -webkit-mask-image: linear-gradient(180deg, transparent 0, #000 70px), linear-gradient(90deg, transparent 0, transparent 10%, rgba(0,0,0,.35) 24%, #000 38%);
   -webkit-mask-composite: source-in;
           mask-image: linear-gradient(180deg, transparent 0, #000 70px), linear-gradient(90deg, transparent 0, transparent 10%, rgba(0,0,0,.35) 24%, #000 38%);
@@ -162,6 +162,8 @@ body.home .site-header:not(.scrolled) .lang { background: rgba(255,255,255,.55);
   text-shadow: 0 0 1px rgba(40, 62, 62, .6), 0 0 5px rgba(40, 62, 62, .45), 0 0 12px rgba(40, 62, 62, .3);
 }
 .hero-inner { position: relative; z-index: 1; display: grid; grid-template-columns: 1fr; grid-template-rows: 1fr auto; gap: 40px; }
+/* text starts about 10% in on any screen (never less than the page margin) */
+.hero-inner > div:first-child, .hero-foot p { padding-left: max(0px, calc(10vw - max(24px, (100vw - 1240px) / 2))); }
 .hero-inner > div:first-child { align-self: center; padding-bottom: 40px; }
 .hero .eyebrow { color: #3A4246; } /* small text in dark charcoal: white is too faint at this size */
 .hero .eyebrow .dot { background: var(--green); }
@@ -177,7 +179,7 @@ body.home .site-header:not(.scrolled) .lang { background: rgba(255,255,255,.55);
 .h1-chip img { width: 100%; height: 100%; object-fit: cover; display: block; filter: sepia(.14) saturate(.95); }
 .hero-actions { display: flex; gap: 10px; flex-wrap: wrap; }
 .hero-foot { grid-column: 1 / -1; display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; }
-.hero-foot p { max-width: 420px; font-size: 15px; font-weight: 500; color: #3A4246; }
+.hero-foot p { max-width: 540px; font-size: 15px; font-weight: 500; color: #3A4246; }
 .round-btn {
   width: 112px; height: 56px; border-radius: 999px; display: grid; place-items: center; flex: none;
   border: 1px solid rgba(58,66,70,.35); color: #3A4246; transition: background .2s;
@@ -645,7 +647,8 @@ body.home .site-footer { margin-top: 0; }
   .logo img { height: 40px; }
   .lang button { padding: 6px 9px; }
   .hero { margin-top: -65px; padding: 110px 0 28px; min-height: 0; }
-  .hero-bg img { top: 84px; height: calc(100% - 84px); }
+  .hero-bg img { top: 84px; height: calc(100% - 84px); --img-shift: 0%; }
+  .hero-inner > div:first-child, .hero-foot p { padding-left: 0; }
   .hero h1 { margin: 16px 0 24px; }
   .hero-foot p { display: none; }
   .hero-actions .btn { flex: 1 1 auto; }
