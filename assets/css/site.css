@@ -99,8 +99,8 @@ img { max-width: 100%; }
 }
 /* Home: see-through header with a white logo until you scroll; then solid white with the color logo */
 body.home .site-header:not(.scrolled) { background: transparent; border-color: transparent; backdrop-filter: none; color: #fff; }
-body.home .site-header:not(.scrolled) .logo img { filter: brightness(0) invert(1); }
-body.home .site-header:not(.scrolled) .menu a { text-shadow: 0 1px 10px rgba(30, 45, 55, .35); }
+body.home .site-header:not(.scrolled) .menu a, body.home .site-header:not(.scrolled) .lang { text-shadow: 0 1px 2px rgba(30, 45, 55, .3), 0 2px 14px rgba(30, 45, 55, .35); }
+body.home .site-header:not(.scrolled) .logo img { filter: brightness(0) invert(1) drop-shadow(0 1px 6px rgba(30, 45, 55, .3)); }
 body.home .site-header:not(.scrolled) .menu a:hover,
 body.home .site-header:not(.scrolled) .menu a[aria-current="page"] { background: rgba(255,255,255,.16); }
 body.home .site-header:not(.scrolled) .lang { background: rgba(255,255,255,.2); }
@@ -150,7 +150,7 @@ body.home .site-header:not(.scrolled) .btn-primary { background: #fff; color: va
     /* left side wash behind the text; clear over the person */
     linear-gradient(90deg, rgba(226,212,205,.55) 0%, rgba(226,212,205,.3) 30%, rgba(226,212,205,0) 46%),
     /* bright blush veils that hide darker lab equipment at the very top and right edge */
-    linear-gradient(180deg, rgba(92,112,116,.42) 0%, rgba(110,128,130,.18) 9%, rgba(120,138,140,0) 16%),
+    linear-gradient(180deg, rgba(112,130,133,.38) 0%, rgba(118,136,139,.26) 6%, rgba(124,142,145,.14) 13%, rgba(130,148,150,.06) 20%, rgba(136,154,156,.02) 26%, rgba(136,154,156,0) 32%), /* long, gradual shade behind the menu: no visible band */
     linear-gradient(270deg, rgba(255,255,255,.82) 0%, rgba(255,255,255,.45) 8%, rgba(255,255,255,0) 18%);
 }
 /* keeps white text readable over the bright photo */
