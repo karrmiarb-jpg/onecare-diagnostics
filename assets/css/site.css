@@ -525,7 +525,7 @@ h2.h-sm { font-size: 26px; margin-bottom: 14px; }
 body.home .site-footer { margin-top: 0; }
 .wordmark {
   font-family: var(--head); font-weight: 600; text-transform: uppercase; color: #fff;
-  font-size: clamp(72px, 19.5vw, 290px); line-height: .78; letter-spacing: -.06em;
+  font-size: min(290px, calc((100vw - 48px) / 4.25)); line-height: .78; letter-spacing: -.06em; /* fills the page width */
   margin: 0 0 56px -.04em; white-space: nowrap;
 }
 .foot { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1.3fr; gap: 36px; }
