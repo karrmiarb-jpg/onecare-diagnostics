@@ -119,7 +119,7 @@ body.home .site-header:not(.scrolled) .lang { background: rgba(255,255,255,.55);
   /* on wide screens the text starts further in, so the photo moves right too and the microscope stays clear of the headline */
   --img-left: max(12%, min(calc(63vw - 652px), 23%));
   position: absolute; left: var(--img-left); right: 0; bottom: 0; top: 96px; width: calc(100% - var(--img-left)); height: calc(100% - 96px);
-  object-fit: cover; object-position: 60% 0%; display: block; filter: sepia(.26) hue-rotate(-10deg) saturate(.95) contrast(1.05) brightness(1.1); /* warm tone on the photo only */
+  object-fit: cover; object-position: 60% 0%; display: block; filter: sepia(.12) hue-rotate(-5deg) saturate(.97) contrast(1.05) brightness(1.1); /* warm tone on the photo only */
   -webkit-mask-image: linear-gradient(180deg, transparent 0, #000 70px), linear-gradient(90deg, transparent 0, transparent 10%, rgba(0,0,0,.35) 24%, #000 38%);
   -webkit-mask-composite: source-in;
           mask-image: linear-gradient(180deg, transparent 0, #000 70px), linear-gradient(90deg, transparent 0, transparent 10%, rgba(0,0,0,.35) 24%, #000 38%);
