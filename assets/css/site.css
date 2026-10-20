@@ -117,7 +117,13 @@ body.home .site-header:not(.scrolled) .lang { background: rgba(255,255,255,.45);
 .hero-bg { position: absolute; inset: 0; z-index: 0; }
 /* colors sampled from the reference hero: blush base, teal mist top-left, taupe-peach bottom-left, rose-lilac right edge */
 .hero-bg { background: #EBDDD6; }
-.hero-bg img { width: 100%; height: 100%; object-fit: cover; object-position: 70% 30%; display: block; filter: saturate(.9) brightness(1.16); }
+.hero-bg img {
+  /* photo starts below the header bar, top edge fading into the blush backdrop */
+  position: absolute; left: 0; right: 0; bottom: 0; top: 120px; width: 100%; height: calc(100% - 120px);
+  object-fit: cover; object-position: 70% 15%; display: block; filter: saturate(.9) brightness(1.16);
+  -webkit-mask-image: linear-gradient(180deg, transparent 0, #000 140px);
+          mask-image: linear-gradient(180deg, transparent 0, #000 140px);
+}
 /* warm the photo's whites to the reference blush without dulling it */
 .hero-bg::before { content: ""; position: absolute; inset: 0; z-index: 1; background: #F4E2DA; mix-blend-mode: multiply; }
 /* misty blur behind the text, fading out toward the person */
@@ -637,8 +643,9 @@ body.home .site-footer { margin-top: 0; }
   .logo img { height: 40px; }
   .lang button { padding: 6px 9px; }
   .hero { margin-top: -65px; padding: 110px 0 28px; min-height: 0; }
+  .hero-bg img { top: 84px; height: calc(100% - 84px); }
   .hero h1 { margin: 16px 0 24px; }
-  .hero-stats { grid-template-columns: repeat(2, auto); gap: 18px 36px; }
+  .hero-stats { grid-template-columns: repeat(2, auto); gap: 18px 36px; background: rgba(150, 124, 116, .3); }
   .hero-foot p { display: none; }
   .hero-actions .btn { flex: 1 1 auto; }
   section.block { padding-top: 72px; }
