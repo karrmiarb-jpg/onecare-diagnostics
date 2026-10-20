@@ -175,12 +175,6 @@ body.home .site-header:not(.scrolled) .lang { background: rgba(255,255,255,.55);
   list-style: none; display: grid; gap: 26px; align-self: start; justify-items: end; text-align: right; margin-top: 36px;
   margin-right: clamp(24px, 4vw, 64px); position: relative; isolation: isolate;
 }
-/* soft, borderless shade behind the figures so the white text reads (no box) */
-.hero-stats::before {
-  content: ""; position: absolute; inset: -60px -70px; z-index: -1; pointer-events: none;
-  background: radial-gradient(50% 50% at 60% 50%, rgba(62, 76, 82, .5) 0%, rgba(62, 76, 82, .26) 55%, rgba(62, 76, 82, 0) 100%);
-  filter: blur(6px);
-}
 .hero-stats b { display: block; font-family: var(--head); font-weight: 500; font-size: clamp(24px, 2.3vw, 32px); letter-spacing: -.025em; line-height: 1.05; }
 .hero-stats small { display: block; font-size: 14px; font-weight: 500; color: #fff; margin-top: 6px; max-width: 220px; margin-left: auto; }
 .hero-foot { grid-column: 1 / -1; display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; }
