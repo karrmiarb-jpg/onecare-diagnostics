@@ -129,9 +129,9 @@ body.home .site-header:not(.scrolled) .lang { background: rgba(255,255,255,.55);
 .hero-bg::after {
   content: ""; position: absolute; inset: 0; z-index: 2;
   backdrop-filter: blur(24px) saturate(1.1); -webkit-backdrop-filter: blur(24px) saturate(1.1);
-  /* left side, plus a soft oval behind the end of the headline */
-  -webkit-mask-image: linear-gradient(90deg, #000 0%, #000 24%, transparent 42%), radial-gradient(28% 22% at 40% 50%, #000 30%, transparent 100%);
-          mask-image: linear-gradient(90deg, #000 0%, #000 24%, transparent 42%), radial-gradient(28% 22% at 40% 50%, #000 30%, transparent 100%);
+  /* blur on the left side behind the text only */
+  -webkit-mask-image: linear-gradient(90deg, #000 0%, #000 24%, transparent 42%);
+          mask-image: linear-gradient(90deg, #000 0%, #000 24%, transparent 42%);
 }
 .hero::after {
   content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none;
