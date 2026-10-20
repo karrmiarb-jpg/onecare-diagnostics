@@ -157,6 +157,10 @@ body.home .site-header:not(.scrolled) .lang { background: rgba(255,255,255,.55);
 .hero h1, .hero .eyebrow, .hero-foot p, .hero-stats {
   text-shadow: 0 1px 3px rgba(40, 50, 55, .28); /* tight shadow only: a wide one makes a grey haze around the letters */
 }
+/* headline: soft teal-grey halo that hugs each letter (stays within a few px, so no haze or blob) */
+.hero h1 {
+  text-shadow: 0 0 1px rgba(40, 62, 62, .6), 0 0 5px rgba(40, 62, 62, .45), 0 0 12px rgba(40, 62, 62, .3);
+}
 .hero-inner { position: relative; z-index: 1; display: grid; grid-template-columns: 1fr auto; grid-template-rows: 1fr auto; gap: 40px; }
 .hero .eyebrow { color: rgba(255,255,255,.85); }
 .hero .eyebrow .dot { background: var(--green); }
