@@ -12,7 +12,7 @@
 <link rel="icon" href="assets/logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/site.css">
 <script defer src="assets/js/i18n.js"></script>
 <script defer src="assets/js/site.js"></script>
@@ -41,208 +41,224 @@
 }
 </script>
 </head>
-<body>
+<body class="home">
 <header id="site-header"></header>
 
 <!-- Hero -->
 <section class="hero">
-  <div class="hero-photo"><img src="assets/img/hero.jpg" alt="OneCare medical technologist examining a sample under a microscope"></div>
-  <div class="wrap hero-grid">
+  <div class="hero-bg"><img src="assets/img/hero.jpg" alt="OneCare medical technologist examining a sample under a microscope"></div>
+  <div class="wrap hero-inner">
     <div>
       <span class="eyebrow"><span class="dot"></span><span data-i18n="home.eyebrow">DOH-Licensed Lab · Dumanjug, Cebu</span></span>
-      <h1 data-i18n="home.h1">Accurate results.<br>A warm welcome.<br><span class="accent">Close to home.</span></h1>
-      <p class="lead" data-i18n="home.lead">Walk in, get a warm welcome, and leave with results your doctor can trust. No long trip, no long line, at a price that won't break the bank.</p>
+      <h1>
+        <span data-i18n="home.h1a">Accurate</span>
+        <span><span class="h1-chip" aria-hidden="true"><img src="assets/img/lab-tests.jpg" alt=""></span><span data-i18n="home.h1b">results,</span></span>
+        <span data-i18n="home.h1c">close to home.</span>
+      </h1>
       <div class="hero-actions">
-        <a class="btn btn-primary" href="tests.html">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 11H4M20 7H4M7 21V4a1 1 0 0 1 1-1h4a1 1 0 0 1 0 12H7"/></svg>
-          <span data-i18n="cta.prices">See Tests &amp; Prices</span>
-        </a>
-        <a class="btn btn-ghost" href="contact.html#book" data-i18n="cta.book">Book a Visit</a>
+        <a class="btn btn-primary" href="contact.html#book" data-i18n="cta.book">Book a Visit</a>
+        <a class="btn btn-white" href="tests.html"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><span data-i18n="home.seePrices">See Prices</span></a>
       </div>
-      <ul class="hero-facts">
-        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="home.f1">Led by a registered medical technologist</span></li>
-        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="home.f2">Senior &amp; PWD discounts</span></li>
-        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="home.f3">Open Mon–Sat, 7:30AM–5:00PM</span></li>
-      </ul>
     </div>
-
-    <div class="hero-cards" aria-hidden="true">
-      <div class="float">
-        <div class="ic" style="background:#E4F8EE;color:#00A055"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></div>
-        <div><b data-i18n="home.c1">Accuracy First</b><small data-i18n="home.c1s">The right kit, every time</small></div>
-      </div>
-      <div class="float">
-        <div class="ic" style="background:#E8F1FF;color:#0047AB"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
-        <div><b data-i18n="home.c2">Explained Clearly</b><small data-i18n="home.c2s">Plain words, no jargon</small></div>
-      </div>
-      <div class="float">
-        <div class="ic" style="background:#E0F7F4;color:#0FB5A6"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
-        <div><b data-i18n="home.c3">Close to Home</b><small data-i18n="home.c3s">Dumanjug &amp; nearby towns</small></div>
-      </div>
+    <ul class="hero-stats">
+      <li><b>2024</b><small data-i18n="home.st1">Serving Dumanjug since</small></li>
+      <li><b>20+</b><small data-i18n="home.st2">Lab tests available</small></li>
+      <li><b>6</b><small data-i18n="home.st3">Days open a week</small></li>
+      <li><b>25%</b><small data-i18n="home.st4">Senior &amp; PWD discount</small></li>
+    </ul>
+    <div class="hero-foot">
+      <p data-i18n="home.lead">Walk in, get a warm welcome, and leave with results your doctor can trust. No long trip, no long line, at a price that won't break the bank.</p>
+      <a class="round-btn" href="#services" aria-label="Scroll down"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12l7 7 7-7"/></svg></a>
     </div>
   </div>
 </section>
 
-<main class="wrap">
-  <!-- How can we help -->
-  <div class="help reveal">
-    <h2 data-i18n="home.helpH">How Can We Help You?</h2>
-    <div class="help-grid">
-      <a class="help-item" href="tests.html">
-        <span class="ic-box"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 11H4M20 7H4M7 21V4a1 1 0 0 1 1-1h4a1 1 0 0 1 0 12H7"/></svg></span>
-        <span><b data-i18n="home.h1t">Prices</b><p data-i18n="home.h1p">See your estimated total before you come.</p></span>
-      </a>
-      <a class="help-item" href="before-your-test.html">
-        <span class="ic-box green"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></span>
-        <span><b data-i18n="home.h2t">Preparation</b><p data-i18n="home.h2p">Fasting, urine samples and what to bring.</p></span>
-      </a>
-      <a class="help-item" href="contact.html#book">
-        <span class="ic-box"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18M9 16l2 2 4-4"/></svg></span>
-        <span><b data-i18n="cta.book">Book a Visit</b><p data-i18n="home.h3p">Call, text, or book ahead. Walk-ins welcome.</p></span>
-      </a>
-      <a class="help-item" href="patient-care.html">
-        <span class="ic-box green"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1.1L12 21l7.8-7.5 1-1.1a5.5 5.5 0 0 0 0-7.8z"/></svg></span>
-        <span><b data-i18n="home.h4t">Senior &amp; Cancer Care</b><p data-i18n="home.h4p">Priority lane, assistance and seating.</p></span>
-      </a>
-      <a class="help-item" href="test-guide.html">
-        <span class="ic-box"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></svg></span>
-        <span><b data-i18n="home.h5t">What Tests Mean</b><p data-i18n="home.h5p">Each test explained in plain words.</p></span>
-      </a>
-    </div>
-  </div>
-
+<main>
   <!-- Services -->
-  <section class="block">
-    <div class="sec-head reveal">
-      <h2 data-i18n="home.svcH">Our <span>Services</span></h2>
-      <p data-i18n="home.svcP">Accurate testing for you and your family, available now in Dumanjug.</p>
-    </div>
-    <div class="services">
-      <a class="svc reveal" href="tests.html">
-        <div class="svc-art"><img src="assets/img/lab-tests.jpg" alt="Sample test tubes beside a laboratory analyzer" loading="lazy" style="object-position:40% 32%"></div>
-        <div class="svc-body"><div><b data-i18n="home.s1">Laboratory Tests</b><p data-i18n="home.s1p">Blood count, blood sugar, cholesterol, kidney and liver tests, urinalysis and fecalysis.</p></div><span class="arrow"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span></div>
-      </a>
-      <a class="svc reveal" href="tests.html">
-        <div class="svc-art plain"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></div>
-        <div class="svc-body"><div><b data-i18n="home.s2">Rapid Screening Tests</b><p data-i18n="home.s2p">Dengue, Hepatitis B, syphilis and HIV screening. Private and confidential.</p></div><span class="arrow"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span></div>
-      </a>
-      <a class="svc reveal" href="tests.html">
-        <div class="svc-art"><img src="assets/img/ecg.jpg" alt="Stethoscope and ECG electrodes on an ECG printout" loading="lazy"></div>
-        <div class="svc-body"><div><b data-i18n="svc.ecg">ECG</b><p data-i18n="home.s3p">A painless recording of your heart's rhythm.</p></div><span class="arrow"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span></div>
-      </a>
-      <a class="svc reveal" href="contact.html#book">
-        <div class="svc-art plain"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M12 11v6M9 14h6"/></svg></div>
-        <div class="svc-body"><div><b data-i18n="svc.home">Home Collection</b><p data-i18n="home.s4p">For those who can't come in. Call us to check if your area is covered.</p></div><span class="arrow"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span></div>
-      </a>
-      <a class="svc reveal" href="tests.html">
-        <div class="svc-art plain"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1.1L12 21l7.8-7.5 1-1.1a5.5 5.5 0 0 0 0-7.8z"/><path d="M3.5 12h4l2-3 3 6 2-3h6"/></svg></div>
-        <div class="svc-body"><div><b data-i18n="svc.health">Health Packages</b><p data-i18n="home.s5p">Common check-up bundles at one price.</p></div><span class="arrow"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span></div>
-      </a>
-      <a class="svc reveal" href="contact.html#book">
-        <div class="svc-art plain"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2M2 13h20"/></svg></div>
-        <div class="svc-body"><div><b data-i18n="svc.corp">Corporate Packages</b><p data-i18n="home.s6p">Pre-employment and annual tests for your team. Ask us for a quote.</p></div><span class="arrow"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span></div>
-      </a>
-    </div>
-  </section>
-
-  <!-- Trust band -->
-  <div class="band reveal">
-    <div class="stat"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></div><div><b data-i18n="home.t1">DOH-Licensed</b><small><span data-i18n="home.t1s">License No.</span> <span data-license>07-160-26-CL-2</span></small></div></div>
-    <div class="stat"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="5"/><path d="M3 21a9 9 0 0 1 18 0"/></svg></div><div><b data-i18n="home.t2">Led by an RMT</b><small data-i18n="home.t2s">Registered medical technologist</small></div></div>
-    <div class="stat"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 2v6l-5 9a3 3 0 0 0 2.6 4.5h10.8A3 3 0 0 0 20 17l-5-9V2"/><path d="M8 2h8M6.5 14h11"/></svg></div><div><b data-i18n="home.t3">Accuracy First</b><small data-i18n="home.t3s">We never cut corners on results</small></div></div>
-    <div class="stat"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><div><b data-i18n="home.t4">The Same Welcome</b><small data-i18n="home.t4s">For everyone who walks in</small></div></div>
-  </div>
-
-  <!-- Why OneCare -->
-  <section class="block">
-    <div class="sec-head reveal">
-      <h2 data-i18n="home.whyH">Why <span>OneCare</span>?</h2>
-      <p data-i18n="home.whyP">Three promises we keep with every visit.</p>
-    </div>
-    <div class="grid-3">
-      <article class="card pillar reveal">
-        <span class="num">01</span>
-        <h3 data-i18n="home.w1">Results you can trust</h3>
-        <p data-i18n="home.w1p">Your doctor treats what our lab reports, so being right comes first. When a test needs a better kit to be accurate, we use the better kit.</p>
-      </article>
-      <article class="card pillar reveal">
-        <span class="num">02</span>
-        <h3 data-i18n="home.w2">The same welcome for everyone</h3>
-        <p data-i18n="home.w2p">A farmer and a business owner get the same smile, the same time and the same respect. No one is treated like a number.</p>
-      </article>
-      <article class="card pillar reveal">
-        <span class="num">03</span>
-        <h3 data-i18n="home.w3">Close to home</h3>
-        <p data-i18n="home.w3p">No trip to the next town or the city. Accurate testing right here in Dumanjug, at a price that doesn't empty your pocket.</p>
-      </article>
-    </div>
-  </section>
-
-  <!-- Teasers -->
-  <section class="block">
-    <div class="split">
-      <div class="feature blue reveal">
-        <h3 data-i18n="home.estH">Know your total before you come</h3>
-        <p data-i18n="home.estP">Tick the tests you need and see an estimated total right away, including the senior and PWD discount.</p>
-        <ul class="checks">
-          <li><i><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></i><span data-i18n="home.est1">Prices for every test and package</span></li>
-          <li><i><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></i><span data-i18n="home.est2">Reminders if a test needs fasting</span></li>
-          <li><i><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></i><span data-i18n="home.est3">Send your list to us in one tap</span></li>
-        </ul>
-        <a class="btn btn-white" href="tests.html" data-i18n="home.estBtn">Open the Price Estimator</a>
+  <section class="block" id="services">
+    <div class="wrap">
+      <div class="sec-top reveal">
+        <div>
+          <h2><span data-i18n="home.everyH1">Everything you need for</span><span data-i18n="home.everyH2">better health, in one place.</span></h2>
+          <p data-i18n="home.svcP">Accurate testing for you and your family, available now in Dumanjug.</p>
+        </div>
+        <div class="car-nav">
+          <button type="button" data-prev="svc-car" aria-label="Previous"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></button>
+          <button type="button" data-next="svc-car" aria-label="Next"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></button>
+        </div>
       </div>
-      <div class="feature reveal">
-        <h3 data-i18n="home.prepH">Prepare the right way</h3>
-        <p data-i18n="home.prepP">A good result starts before you arrive. A few simple steps make sure your test is accurate the first time.</p>
-        <ul class="checks">
-          <li><i><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></i><span data-i18n="home.prep1">Fasting 8–12 hours for blood sugar and cholesterol</span></li>
-          <li><i><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></i><span data-i18n="home.prep2">No urinalysis during your period</span></li>
-          <li><i><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></i><span data-i18n="home.prep3">What to bring on the day</span></li>
-        </ul>
-        <a class="btn btn-ghost" href="before-your-test.html" data-i18n="cta.prep">How to Prepare</a>
+      <div class="carousel reveal" id="svc-car" data-carousel>
+        <a class="media-card" href="tests.html"><img src="assets/img/lab-tests.jpg" alt="Sample test tubes beside a laboratory analyzer" loading="lazy" style="object-position:30% 40%"><b data-i18n="home.s1">Laboratory Tests</b><p data-i18n="home.s1p">Blood count, blood sugar, cholesterol, kidney and liver tests, urinalysis and fecalysis.</p></a>
+        <a class="media-card" href="tests.html"><img src="assets/img/microscope.jpg" alt="Medical technologist looking through a microscope" loading="lazy" style="object-position:62% 50%"><b data-i18n="home.s2">Rapid Screening Tests</b><p data-i18n="home.s2p">Dengue, Hepatitis B, syphilis and HIV screening. Private and confidential.</p></a>
+        <a class="media-card" href="tests.html"><img src="assets/img/ecg.jpg" alt="Stethoscope and ECG electrodes on an ECG printout" loading="lazy"><b data-i18n="svc.ecg">ECG</b><p data-i18n="home.s3p">A painless recording of your heart's rhythm.</p></a>
+        <a class="media-card green" href="tests.html"><span class="art"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 8 12 3 3 8v8l9 5 9-5z"/><path d="m3 8 9 5 9-5M12 13v8"/></svg></span><b data-i18n="svc.health">Health Packages</b><p data-i18n="home.s5p">Common check-up bundles at one price.</p></a>
+        <a class="media-card" href="contact.html#book"><span class="art"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M12 11v6M9 14h6"/></svg></span><b data-i18n="svc.home">Home Collection</b><p data-i18n="home.s4p">For those who can't come in. Call us to check if your area is covered.</p></a>
+        <a class="media-card green" href="contact.html#book"><span class="art"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2M2 13h20"/></svg></span><b data-i18n="svc.corp">Corporate Packages</b><p data-i18n="home.s6p">Pre-employment and annual tests for your team. Ask us for a quote.</p></a>
       </div>
     </div>
   </section>
 
-  <!-- Patient care -->
+  <!-- Tests -->
   <section class="block">
-    <div class="sec-head reveal">
-      <h2 data-i18n="home.careH">Extra care for <span>those who need it</span></h2>
-      <p data-i18n="home.careP">Our senior citizens and cancer patients are served first, with help and a seat while they wait.</p>
+    <div class="wrap">
+      <div class="sec-top reveal">
+        <div>
+          <h2><span data-i18n="home.testsH1">Tests for every</span><span data-i18n="home.testsH2">part of your health</span></h2>
+          <p data-i18n="home.testsP">Tick the tests you need on our Prices page and see your total before you come.</p>
+        </div>
+        <div class="actions">
+          <a class="btn btn-primary btn-sm" href="tests.html" data-i18n="home.seePrices">See Prices</a>
+          <a class="btn btn-ghost btn-sm" href="test-guide.html#feel-form" data-i18n="home.feelBtn">Not sure? Tell us what you feel</a>
+        </div>
+      </div>
+      <div class="tile-grid reveal">
+        <a class="tile" href="test-guide.html"><span class="ti"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2.7s-6 6.6-6 11.3a6 6 0 0 0 12 0c0-4.7-6-11.3-6-11.3z"/></svg></span><span>CBC</span></a>
+        <a class="tile" href="test-guide.html"><span class="ti"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2.7s-6 6.6-6 11.3a6 6 0 0 0 12 0c0-4.7-6-11.3-6-11.3z"/></svg></span><span>Blood Typing</span></a>
+        <a class="tile" href="test-guide.html"><span class="ti"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 2v6l-5 9a3 3 0 0 0 2.6 4.5h10.8A3 3 0 0 0 20 17l-5-9V2"/><path d="M8 2h8M6.5 14h11"/></svg></span><span>Blood Sugar (FBS / RBS)</span></a>
+        <a class="tile" href="test-guide.html"><span class="ti"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 2v6l-5 9a3 3 0 0 0 2.6 4.5h10.8A3 3 0 0 0 20 17l-5-9V2"/><path d="M8 2h8M6.5 14h11"/></svg></span><span>Cholesterol (Lipid Profile)</span></a>
+        <a class="tile" href="test-guide.html"><span class="ti"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 4c-3 2-3 9 0 13s9 4 11 0-2-6-4-8-4-7-7-5z"/></svg></span><span>Kidney (BUN &amp; Creatinine)</span></a>
+        <a class="tile" href="test-guide.html"><span class="ti"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 20A7 7 0 0 1 4 13V5h8a8 8 0 0 1 8 8v0a7 7 0 0 1-7 7z"/><path d="M4 20 14 10"/></svg></span><span>Uric Acid</span></a>
+        <a class="tile" href="test-guide.html"><span class="ti"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 20A7 7 0 0 1 4 13V5h8a8 8 0 0 1 8 8v0a7 7 0 0 1-7 7z"/><path d="M4 20 14 10"/></svg></span><span>Liver (SGPT / SGOT)</span></a>
+        <a class="tile" href="test-guide.html"><span class="ti"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 2h8l-1 5v13a2 2 0 0 1-2 2h-2a2 2 0 0 1-2-2V7z"/><path d="M9 12h6"/></svg></span><span>Urinalysis</span></a>
+        <a class="tile" href="test-guide.html"><span class="ti"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="8" y="6" width="8" height="14" rx="4"/><path d="M19 7l-3 2M5 7l3 2M19 13h-3M5 13h3M19 19l-3-2M5 19l3-2M10 3l1 3M14 3l-1 3"/></svg></span><span>Fecalysis</span></a>
+        <a class="tile" href="test-guide.html"><span class="ti"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M6 21v-1a6 6 0 0 1 12 0v1"/></svg></span><span>Pregnancy Test</span></a>
+        <a class="tile" href="test-guide.html"><span class="ti"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></span><span>Dengue Test</span></a>
+        <a class="tile" href="test-guide.html"><span class="ti"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></span><span>Hepatitis B</span></a>
+        <a class="tile" href="test-guide.html"><span class="ti"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></span><span>Syphilis Screening</span></a>
+        <a class="tile" href="test-guide.html"><span class="ti"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></span><span>HIV Screening</span></a>
+        <a class="tile" href="test-guide.html"><span class="ti"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></span><span>ECG</span></a>
+        <a class="tile" href="tests.html"><span class="ti"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 8 12 3 3 8v8l9 5 9-5z"/><path d="m3 8 9 5 9-5M12 13v8"/></svg></span><span><span data-i18n="svc.health">Health Packages</span></span></a>
+      </div>
     </div>
-    <div class="grid-2">
-      <a class="card reveal" href="patient-care.html#seniors" style="display:flex;gap:18px;align-items:flex-start">
-        <span class="ic-box"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="5" r="2"/><path d="M10 22v-6l-2-1 1-6h6l1 6-2 1v6M18 22V11"/></svg></span>
-        <span><h3 style="margin-top:0" data-i18n="care.senH">Senior Citizens' Corner</h3><p data-i18n="home.senP">Priority lane, assistance and seating, and your 25% senior discount.</p></span>
-      </a>
-      <a class="card reveal" href="patient-care.html#cancer" style="display:flex;gap:18px;align-items:flex-start">
-        <span class="ic-box green"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21C9 17 6.5 13.5 6.5 9.5a5.5 5.5 0 0 1 11 0c0 4-2.5 7.5-5.5 11.5z"/></svg></span>
-        <span><h3 style="margin-top:0" data-i18n="care.canH">Cancer Patients' Corner</h3><p data-i18n="home.canP">Priority lane, assistance and seating, and steady support for regular CBCs.</p></span>
-      </a>
+  </section>
+
+  <!-- Led by an RMT -->
+  <section class="block">
+    <div class="wrap">
+      <div class="sec-top reveal">
+        <h2><span data-i18n="home.leadH1">Led by a</span><span data-i18n="home.leadH2">registered medical technologist</span></h2>
+      </div>
+      <div class="duo reveal">
+        <div class="card">
+          <p style="font-size:17px;color:var(--ink)" data-i18n="about.leadP">OneCare is owned and run by <b>Karr Mia R. Boquecosa, RMT</b>. She sets the standard for every result that leaves our lab, and makes sure every person at the door is treated the same way.</p>
+          <ul class="checks" style="margin-top:22px">
+          <li><i><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></i><span data-i18n="about.p1">Accuracy comes first, always</span></li>
+          <li><i><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></i><span data-i18n="about.p2">The same welcome for everyone</span></li>
+          <li><i><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></i><span data-i18n="about.p3">Fair prices, close to home</span></li>
+          </ul>
+          <a class="btn btn-ghost btn-sm" style="margin-top:26px" href="about.html" data-i18n="home.aboutBtn">Our Story</a>
+        </div>
+        <div class="card dark license">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+          <div>
+            <h3 style="margin:0 0 12px" data-i18n="about.licH">Licensed by the Department of Health</h3>
+            <dl>
+              <dt data-i18n="about.licNo">License to Operate No.</dt><dd data-license>07-160-26-CL-2</dd>
+              <dt data-i18n="about.licType">Type</dt><dd data-i18n="about.licTypeV">Clinical Laboratory (Primary)</dd>
+              <dt data-i18n="about.licValid">Valid</dt><dd>Jan 1 – Dec 31, 2026</dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Respects your time -->
+  <section class="block">
+    <div class="wrap">
+      <div class="sec-top reveal">
+        <h2><span data-i18n="home.timeH1">Healthcare that</span><span data-i18n="home.timeH2">respects your time</span></h2>
+      </div>
+      <div class="chip-grid reveal">
+        <div class="chip-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="13" cy="4" r="2"/><path d="m9 20 3-6 3 3v4M7 12l3-4 4 1 3 3"/></svg><span data-i18n="feat.walkin">Walk-ins welcome</span></div>
+        <div class="chip-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M8 6h8M8 12h2M14 12h2M8 16h2M14 16h2"/></svg><span data-i18n="feat.est">See your total before you come</span></div>
+        <div class="chip-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 2 3 7h7l-5.5 4.5 2 7.5-6.5-4.5L5.5 21l2-7.5L2 9h7z"/></svg><span data-i18n="feat.prio">Priority lane for seniors</span></div>
+        <div class="chip-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0L2 12V2h10l8.6 8.6a2 2 0 0 1 0 2.8z"/><circle cx="7" cy="7" r="1.5"/></svg><span data-i18n="feat.disc">25% senior &amp; PWD discount</span></div>
+        <div class="chip-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V3H6.5A2.5 2.5 0 0 0 4 5.5z"/><path d="M8 7h8M8 11h6"/></svg><span data-i18n="feat.plain">Tests explained in plain words</span></div>
+        <div class="chip-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg><span data-i18n="feat.prep">Fasting and prep reminders</span></div>
+        <div class="chip-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M12 11v6M9 14h6"/></svg><span data-i18n="svc.home">Home Collection</span></div>
+        <div class="chip-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 21v-4h12v4M5 13h14l-1 4H6zM8 13V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v8"/></svg><span data-i18n="hours">Open Mon–Sat, 7:30AM–5:00PM</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Extra care -->
+  <section class="block">
+    <div class="wrap">
+      <div class="sec-top reveal">
+        <div>
+          <h2><span data-i18n="home.careH1">Extra care for</span><span data-i18n="home.careH2">those who need it</span></h2>
+          <p data-i18n="home.careP">Our senior citizens and cancer patients are served first, with help and a seat while they wait.</p>
+        </div>
+        <a class="btn btn-ghost btn-sm" href="patient-care.html" data-i18n="nav.care">Patient Care</a>
+      </div>
+      <div class="grid-2 reveal">
+        <a class="card" href="patient-care.html#seniors"><span class="ic-box"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 2 3 7h7l-5.5 4.5 2 7.5-6.5-4.5L5.5 21l2-7.5L2 9h7z"/></svg></span><h3 data-i18n="care.senH">Senior Citizens' Corner</h3><p data-i18n="home.senP">Priority lane, assistance and seating, and your 25% senior discount.</p></a>
+        <a class="card" href="patient-care.html#cancer"><span class="ic-box green"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1.1L12 21l7.8-7.5 1-1.1a5.5 5.5 0 0 0 0-7.8z"/></svg></span><h3 data-i18n="care.canH">Cancer Patients' Corner</h3><p data-i18n="home.canP">Priority lane, assistance and seating, and steady support for regular CBCs.</p></a>
+      </div>
     </div>
   </section>
 
   <!-- Patient stories: shown once we have videos with written consent -->
   <section class="block stories" id="stories" hidden>
-    <div class="sec-head">
-      <h2 data-i18n="home.storyH">Stories from <span>our patients</span></h2>
-    </div>
-    <div class="grid-3">
-      <!-- Paste Facebook/YouTube video embeds here, one per card -->
+    <div class="wrap">
+      <div class="sec-top"><h2 data-i18n="home.storyH">Stories from <span>our patients</span></h2></div>
+      <div class="grid-3">
+        <!-- Paste Facebook/YouTube video embeds here, one per card -->
+      </div>
     </div>
   </section>
 
-  <!-- CTA -->
-  <div class="cta reveal">
-    <div>
-      <h3 data-i18n="home.ctaH">Your health, taken seriously. You, welcomed warmly.</h3>
-      <p data-i18n="home.ctaP">Visit us in Poblacion Central, Dumanjug, Mon–Sat, 7:30AM–5:00PM. Walk-ins welcome.</p>
+  <!-- FAQ -->
+  <section class="block">
+    <div class="wrap faq reveal">
+      <div>
+        <h2 data-i18n="faq.h">FAQ</h2>
+        <p data-i18n="faq.p">Quick answers to what people ask us most.</p>
+      </div>
+      <div>
+        <details>
+          <summary><span data-i18n="faq.q1">Do I need an appointment?</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary>
+          <p data-i18n="faq.a1">No. Walk-ins are welcome Mon–Sat, 7:30AM–5:00PM. Booking ahead just helps us get ready for you.</p>
+        </details>
+        <details>
+          <summary><span data-i18n="faq.q2">Do I need to fast before my test?</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary>
+          <p data-i18n="faq.a2">Only for some tests, like blood sugar (FBS) and cholesterol. Our Preparation page lists what each test needs.</p>
+        </details>
+        <details>
+          <summary><span data-i18n="faq.q3">How much will my tests cost?</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary>
+          <p data-i18n="faq.a3">Tick your tests on our Prices page to see an estimated total, with your discount already applied. The final price is confirmed at the lab.</p>
+        </details>
+        <details>
+          <summary><span data-i18n="faq.q4">Do you give senior and PWD discounts?</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary>
+          <p data-i18n="faq.a4">Yes. Senior citizens and PWDs get 25% off. Please bring your Senior Citizen or PWD ID.</p>
+        </details>
+        <details>
+          <summary><span data-i18n="faq.q5">Can you collect samples at home?</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary>
+          <p data-i18n="faq.a5">Yes, for those who can't come in. Call us to check if your area is covered.</p>
+        </details>
+        <details>
+          <summary><span data-i18n="faq.q6">Are screening tests like HIV private?</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary>
+          <p data-i18n="faq.a6">Yes. Screening tests are private and confidential. We explain them and ask for your consent first.</p>
+        </details>
+      </div>
     </div>
-    <div class="cta-actions">
-      <a class="btn btn-white" href="tel:+639851888881" data-tel data-i18n="cta.call">Call Us</a>
-      <a class="btn btn-outline" href="contact.html#book" data-i18n="cta.book">Book a Visit</a>
+  </section>
+
+  <!-- Big call to action -->
+  <section class="cta-photo">
+    <img src="assets/img/scientists.jpg" alt="" loading="lazy">
+    <div class="wrap">
+      <div>
+        <h2><span data-i18n="home.bigH1">Your health,</span><span data-i18n="home.bigH2">taken seriously.</span></h2>
+        <p data-i18n="home.ctaP">Visit us in Poblacion Central, Dumanjug, Mon–Sat, 7:30AM–5:00PM. Walk-ins welcome.</p>
+      </div>
+      <div class="cta-actions">
+        <a class="btn btn-white" href="contact.html#book" data-i18n="cta.book">Book a Visit</a>
+        <a class="btn btn-outline" href="tel:+639851888881" data-tel><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span data-i18n="cta.call">Call Us</span></a>
+      </div>
     </div>
-  </div>
+  </section>
 </main>
 
 <footer id="site-footer"></footer>

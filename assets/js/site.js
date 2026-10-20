@@ -93,7 +93,7 @@
             <button type="button" data-lang="en" aria-pressed="true">EN</button>
             <button type="button" data-lang="ceb" aria-pressed="false">BIS</button>
           </div>
-          <a class="btn btn-primary btn-sm call-btn" href="tel:${CLINIC.phoneTel}">${ICON.phone}<span data-i18n="cta.call">Call Us</span></a>
+          <a class="btn btn-primary btn-sm call-btn" href="contact.html#book" data-i18n="cta.book">Book a Visit</a>
           <button class="burger" type="button" aria-label="Open menu" aria-controls="menu" aria-expanded="false">${ICON.menu}</button>
         </div>
       </div>`;
@@ -104,10 +104,11 @@
       ? `<li>${ICON.fb}<a href="${CLINIC.facebook}" target="_blank" rel="noopener">Facebook</a></li>` : "";
     return `
       <div class="wrap">
+        <div class="wordmark" aria-hidden="true">OneCare</div>
         <div class="foot">
           <div>
-            <a href="index.html" class="logo"><img src="assets/logo.png" alt="OneCare Diagnostics" width="170" height="52"></a>
             <p data-i18n="foot.tag">Accurate lab results from people who welcome you, close to home. Serving Dumanjug and nearby towns since 2024.</p>
+            <p style="margin-top:14px"><span data-i18n="foot.license">DOH License No.</span> ${CLINIC.license}</p>
           </div>
           <div>
             <h4 data-i18n="foot.pages">Pages</h4>
@@ -130,12 +131,11 @@
               <li>${ICON.phone}<a href="tel:${CLINIC.phoneTel}">${CLINIC.phoneDisplay}</a></li>
               <li>${ICON.mail}<a href="mailto:${CLINIC.email}">${CLINIC.email}</a></li>
               <li>${ICON.clock}<span data-i18n="hours">${CLINIC.hoursEn}</span></li>
-              <li>${ICON.shield}<span><span data-i18n="foot.license">DOH License No.</span> ${CLINIC.license}</span></li>
               ${fb}
             </ul>
           </div>
         </div>
-        <p class="copy">© <span data-year></span> OneCare Diagnostics · Dumanjug, Cebu</p>
+        <p class="copy"><span>© <span data-year></span> OneCare Diagnostics · Dumanjug, Cebu</span><span data-i18n="foot.rights">All rights reserved.</span></p>
       </div>`;
   }
 
@@ -172,6 +172,30 @@
       burger.setAttribute("aria-expanded", String(open));
     });
     document.querySelectorAll(".lang button").forEach(b => b.addEventListener("click", () => setLang(b.dataset.lang)));
+
+    // home: header turns solid once you scroll past the top of the photo
+    if (document.body.classList.contains("home") && h) {
+      const onScroll = () => h.classList.toggle("scrolled", window.scrollY > 40 || (menu && menu.classList.contains("open")));
+      window.addEventListener("scroll", onScroll, { passive: true });
+      if (burger) burger.addEventListener("click", onScroll);
+      onScroll();
+    }
+
+    // carousels: arrow buttons scroll one card at a time
+    document.querySelectorAll("[data-carousel]").forEach(track => {
+      const prev = document.querySelector(`[data-prev="${track.id}"]`);
+      const next = document.querySelector(`[data-next="${track.id}"]`);
+      const step = () => (track.firstElementChild ? track.firstElementChild.getBoundingClientRect().width + 14 : 300);
+      const update = () => {
+        if (prev) prev.disabled = track.scrollLeft < 4;
+        if (next) next.disabled = track.scrollLeft + track.clientWidth > track.scrollWidth - 4;
+      };
+      if (prev) prev.addEventListener("click", () => track.scrollBy({ left: -step(), behavior: "smooth" }));
+      if (next) next.addEventListener("click", () => track.scrollBy({ left: step(), behavior: "smooth" }));
+      track.addEventListener("scroll", update, { passive: true });
+      window.addEventListener("resize", update);
+      update();
+    });
 
     // reveal on scroll
     const items = document.querySelectorAll(".reveal");
