@@ -168,8 +168,8 @@ body.home .site-header:not(.scrolled) .lang { background: rgba(255,255,255,.55);
 .h1-chip img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .hero-actions { display: flex; gap: 10px; flex-wrap: wrap; }
 .hero-stats {
-  list-style: none; display: grid; gap: 20px; align-self: start; text-align: right; margin-top: 36px;
-  position: relative; isolation: isolate;
+  list-style: none; display: grid; gap: 26px; align-self: start; justify-items: end; text-align: right; margin-top: 36px;
+  margin-right: clamp(24px, 4vw, 64px); position: relative; isolation: isolate;
 }
 /* soft, borderless shade behind the figures so the white text reads (no box) */
 .hero-stats::before {
@@ -623,7 +623,7 @@ body.home .site-footer { margin-top: 0; }
   body.has-mobile-sum { padding-bottom: 90px; }
   body.has-mobile-sum .mobile-bar { display: none !important; }
   .hero-inner { grid-template-columns: 1fr; }
-  .hero-stats { grid-template-columns: repeat(2, auto); justify-content: start; text-align: left; margin-top: 0; gap: 28px 40px; }
+  .hero-stats { grid-template-columns: repeat(2, auto); justify-content: start; justify-items: start; text-align: left; margin-top: 0; margin-right: 0; gap: 28px 40px; }
   .hero-stats small { margin-left: 0; }
   .duo, .faq { grid-template-columns: 1fr; }
   .faq { gap: 10px; }
