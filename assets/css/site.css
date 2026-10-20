@@ -310,14 +310,15 @@ h2.h-sm { font-size: 26px; margin-bottom: 14px; }
   position: relative; margin-top: 110px; min-height: 640px; color: #fff; overflow: hidden;
   display: flex; align-items: flex-end; padding: 60px 0 56px;
 }
-.cta-photo > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 60% 40%; filter: sepia(.14) saturate(.95); }
+.cta-photo > img { position: absolute; top: 0; left: 0; width: 116%; max-width: none; height: 100%; object-fit: cover; object-position: 50% 55%; transform: scaleX(-1); } /* mirrored and widened so the mother and daughter sit right of the headline; photo is pre-graded */
 .cta-photo::before {
   content: ""; position: absolute; inset: 0; z-index: 1;
-  background: linear-gradient(0deg, rgba(80,128,185,.62) 0%, rgba(110,165,200,.18) 60%, rgba(255,255,255,0) 100%), radial-gradient(60% 80% at 0% 100%, rgba(120,205,175,.35), transparent 70%);
+  /* warm shade at the bottom-left so the white headline reads; matches the hero's warm tones */
+  background: linear-gradient(0deg, rgba(92,70,58,.55) 0%, rgba(120,94,80,.24) 42%, rgba(255,255,255,0) 70%), radial-gradient(55% 70% at 0% 100%, rgba(96,74,62,.38), transparent 70%);
 }
 .cta-photo .wrap { position: relative; z-index: 2; display: flex; align-items: flex-end; justify-content: space-between; gap: 30px; flex-wrap: wrap; }
-.cta-photo h2, .cta-photo p { text-shadow: 0 2px 24px rgba(30, 60, 100, .22); }
-.cta-photo h2 { font-size: clamp(44px, 7vw, 104px); line-height: .9; letter-spacing: -.045em; text-transform: uppercase; color: #fff; }
+.cta-photo h2, .cta-photo p { text-shadow: 0 1px 3px rgba(60, 44, 36, .3); }
+.cta-photo h2 { font-size: clamp(40px, 4.6vw, 72px); line-height: .9; letter-spacing: -.045em; text-transform: uppercase; color: #fff; }
 .cta-photo h2 span { display: block; }
 .cta-photo p { max-width: 420px; margin-top: 18px; font-size: 14.5px; color: rgba(255,255,255,.85); }
 .cta-photo .cta-actions { flex-direction: column; align-items: stretch; }
