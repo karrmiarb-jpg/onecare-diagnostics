@@ -259,7 +259,7 @@ h2.h-sm { font-size: 26px; margin-bottom: 14px; }
 /* Small tiles (tests) */
 .tile-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
 .tile {
-  display: flex; align-items: center; gap: 12px; padding: 12px 14px; border-radius: 12px;
+  display: flex; align-items: center; gap: 12px; padding: 12px 14px; border-radius: 12px; min-height: 60px; /* even rows even if a label wraps */
   background: var(--soft); font-size: 14.5px; font-weight: 500; transition: background .2s;
 }
 .tile:hover { background: var(--soft-2); }

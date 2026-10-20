@@ -197,6 +197,14 @@
       update();
     });
 
+    // "reason you visit" tiles: open Prices with that reason's usual tests already ticked
+    document.querySelectorAll("[data-tests]").forEach(link => link.addEventListener("click", () => {
+      let saved = {};
+      try { saved = JSON.parse(sessionStorage.getItem("oc-est") || "{}"); } catch (e) {}
+      const ids = link.dataset.tests.split(",").map(x => x.trim()).filter(Boolean);
+      try { sessionStorage.setItem("oc-est", JSON.stringify({ ids, senior: !!saved.senior })); } catch (e) {}
+    }));
+
     // reveal on scroll
     const items = document.querySelectorAll(".reveal");
     if ("IntersectionObserver" in window) {
