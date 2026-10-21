@@ -286,11 +286,10 @@ h2.h-sm { font-size: 26px; margin-bottom: 14px; }
 .review.sample::after { content: "SAMPLE"; position: absolute; bottom: 16px; right: 16px; font-size: 10px; letter-spacing: .08em; color: #B45309; background: #FEF3E2; padding: 3px 7px; border-radius: 99px; }
 
 /* Comfort and care */
-.carousel.comfort { grid-auto-columns: calc((100% - 42px) / 4.3); }
+.carousel.comfort { grid-auto-columns: calc((100% - 36px) / 4.15); gap: 12px; }
 .comf-photo, .comf-pill { height: 200px; border-radius: var(--radius); overflow: hidden; }
 .comf-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.comf-pill { border-radius: 999px; background: #E9DDD2; display: grid; place-items: center; text-align: center; padding: 0 34px; font-family: var(--head); font-weight: 500; font-size: 18px; line-height: 1.25; color: #2F2A28; }
-.comf-pill:nth-of-type(4n) { background: #EFE6DB; }
+.comf-pill { border-radius: 36% / 50%; background: #E9DDD2; display: grid; place-items: center; text-align: center; padding: 0 56px; font-family: var(--head); font-weight: 600; font-size: 15px; line-height: 1.2; letter-spacing: -.01em; color: #2F2A28; } /* one soft oval among the photos, like the reference */
 @media (max-width: 760px) {
   .carousel.reviews { grid-auto-columns: 86%; }
   .carousel.comfort { grid-auto-columns: 62%; }
