@@ -70,7 +70,12 @@
 
   <!-- Centered patient quote. SAMPLE TEXT: replace with a real review (with the patient's OK) before this goes live -->
   <section class="block quote-band">
-    <div class="wrap reveal">
+    <div class="wrap qb-grid reveal">
+      <!-- one reason tile at a time; filled by site.js from the "reason you visit" tiles below, changes every few seconds -->
+      <div class="qb-rotator" data-rotate="2500" aria-label="Common reasons people visit">
+        <div class="qb-slides"></div>
+        <div class="qb-dots" role="tablist"></div>
+      </div>
       <figure class="sample">
         <blockquote data-i18n="home.quote">“They explained every test in words I could understand, and I didn't have to travel to the city anymore.”</blockquote>
         <figcaption><span data-i18n="home.quoteBy">Patient name · Dumanjug</span></figcaption>

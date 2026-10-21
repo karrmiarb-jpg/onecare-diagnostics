@@ -232,6 +232,41 @@
         : track.scrollBy({ left: step(), behavior: "smooth" }));
     });
 
+    // reason rotator after the hero: shows one "reason you visit" tile at a time, next one every few seconds.
+    // Built from the real tiles (so text, translations and links stay the same); pauses on hover/focus;
+    // no auto-advance for people who prefer reduced motion (the dots still work).
+    document.querySelectorAll(".qb-rotator").forEach(box => {
+      const slides = box.querySelector(".qb-slides"), dots = box.querySelector(".qb-dots");
+      const tiles = [...document.querySelectorAll(".tile-grid.reasons .tile")];
+      if (!slides || !tiles.length) return;
+      tiles.forEach((t, i) => {
+        const c = t.cloneNode(true);
+        c.classList.remove("reveal", "in");
+        slides.appendChild(c);
+        const d = document.createElement("button");
+        d.type = "button"; d.setAttribute("aria-label", `Reason ${i + 1} of ${tiles.length}`);
+        d.addEventListener("click", () => { show(i); restart(); });
+        dots.appendChild(d);
+      });
+      const items = [...slides.children], marks = [...dots.children];
+      let cur = 0, timer = null, paused = false;
+      const show = i => {
+        cur = (i + items.length) % items.length;
+        items.forEach((el, k) => { el.classList.toggle("on", k === cur); el.tabIndex = k === cur ? 0 : -1; el.setAttribute("aria-hidden", k === cur ? "false" : "true"); });
+        marks.forEach((el, k) => el.classList.toggle("on", k === cur));
+      };
+      const restart = () => {
+        clearInterval(timer);
+        if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+        timer = setInterval(() => { if (!paused && !document.hidden) show(cur + 1); }, +box.dataset.rotate || 2500);
+      };
+      box.addEventListener("mouseenter", () => { paused = true; });
+      box.addEventListener("mouseleave", () => { paused = false; });
+      box.addEventListener("focusin", () => { paused = true; });
+      box.addEventListener("focusout", () => { paused = false; });
+      show(0); restart();
+    });
+
     // "reason you visit" tiles: open Prices with that reason's usual tests already ticked
     document.querySelectorAll("[data-tests]").forEach(link => link.addEventListener("click", () => {
       let saved = {};

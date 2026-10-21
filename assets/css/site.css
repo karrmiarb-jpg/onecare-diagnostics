@@ -284,12 +284,35 @@ h2.h-sm { font-size: 26px; margin-bottom: 14px; }
 .tile-grid.reasons .go { position: absolute; top: 20px; right: 20px; color: var(--muted); transition: transform .2s, color .2s; }
 .tile-grid.reasons .tile:hover .go { transform: translate(2px, -2px); color: var(--ink); }
 
-/* Centered patient quote between the hero and services */
-.quote-band { text-align: center; }
-.quote-band figure { margin: 0 auto; max-width: 880px; position: relative; }
-.quote-band blockquote { margin: 0; font-family: var(--head); font-weight: 500; font-size: clamp(24px, 2.7vw, 38px); line-height: 1.25; letter-spacing: -.02em; color: var(--ink); text-wrap: balance; }
+/* After the hero: one rotating "reason" tile on the left, the big patient quote on the right */
+.qb-grid { display: grid; grid-template-columns: minmax(280px, 360px) 1fr; gap: clamp(32px, 6vw, 88px); align-items: center; }
+.qb-rotator { position: relative; }
+.qb-slides { display: grid; }
+.qb-slides > .tile {
+  grid-area: 1 / 1; position: relative; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-between; gap: 18px;
+  padding: 26px; border-radius: 20px; background: var(--soft); min-height: 250px; font-size: 19px; font-weight: 500;
+  opacity: 0; visibility: hidden; transform: translateY(6px); transition: opacity .5s ease, transform .5s ease, visibility 0s .5s;
+}
+.qb-slides > .tile.on { opacity: 1; visibility: visible; transform: none; transition: opacity .5s ease, transform .5s ease; }
+.qb-slides > .tile:hover { background: var(--soft-2); }
+/* icon sits on a soft white circle so the line icon reads clearly */
+.qb-slides .ti.ri { width: 84px; height: 84px; border-radius: 50%; background: #fff; display: grid; place-items: center; box-shadow: 0 1px 2px rgba(16,24,40,.05); }
+.qb-slides .ri svg { width: 50px; height: 50px; }
+.qb-slides .tl { display: block; line-height: 1.3; }
+.qb-slides .tl small { display: block; margin-top: 8px; font-size: 13.5px; font-weight: 400; color: var(--muted); line-height: 1.5; }
+.qb-slides .go { position: absolute; top: 24px; right: 24px; color: var(--muted); }
+.qb-dots { display: flex; gap: 6px; margin-top: 14px; padding-left: 4px; }
+.qb-dots button { width: 7px; height: 7px; border-radius: 99px; border: 0; padding: 0; background: #CDD3D8; cursor: pointer; transition: width .3s, background .3s; }
+.qb-dots button.on { width: 22px; background: var(--ink); }
+.quote-band blockquote { margin: 0; font-family: var(--head); font-weight: 500; font-size: clamp(24px, 2.7vw, 38px); line-height: 1.25; letter-spacing: -.02em; color: var(--ink); text-wrap: pretty; }
+.quote-band figure { margin: 0; position: relative; }
 .quote-band figcaption { margin-top: 22px; font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); display: inline-flex; gap: 10px; align-items: center; }
 .quote-band figure.sample figcaption::after { content: "SAMPLE"; font-size: 10px; letter-spacing: .08em; color: #B45309; background: #FEF3E2; padding: 3px 7px; border-radius: 99px; }
+@media (max-width: 760px) {
+  .qb-grid { grid-template-columns: 1fr; gap: 36px; }
+  .qb-slides > .tile { min-height: 220px; }
+}
+@media (prefers-reduced-motion: reduce) { .qb-slides > .tile { transition: none; } }
 
 /* Patient reviews */
 .carousel.reviews { grid-auto-columns: calc((100% - 28px) / 3); }
