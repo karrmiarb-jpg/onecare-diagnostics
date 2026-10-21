@@ -233,16 +233,16 @@
     });
 
     // reason rotator after the hero: shows one "reason you visit" tile at a time, next one every few seconds.
-    // Built from the real tiles (so text, translations and links stay the same); pauses on hover/focus;
+    // Same tiles as the Tests page (text, translations and links stay the same); pauses on hover/focus;
     // no auto-advance for people who prefer reduced motion (the dots still work).
     document.querySelectorAll(".qb-rotator").forEach(box => {
       const slides = box.querySelector(".qb-slides"), dots = box.querySelector(".qb-dots");
-      const tiles = [...document.querySelectorAll(".tile-grid.reasons .tile")];
-      if (!slides || !tiles.length) return;
+      if (!slides) return;
+      // uses the tiles written inside it; falls back to copying the page's "reason you visit" tiles
+      if (!slides.children.length) document.querySelectorAll(".tile-grid.reasons .tile").forEach(t => slides.appendChild(t.cloneNode(true)));
+      const tiles = [...slides.children];
+      if (!tiles.length) return;
       tiles.forEach((t, i) => {
-        const c = t.cloneNode(true);
-        c.classList.remove("reveal", "in");
-        slides.appendChild(c);
         const d = document.createElement("button");
         d.type = "button"; d.setAttribute("aria-label", `Reason ${i + 1} of ${tiles.length}`);
         d.addEventListener("click", () => { show(i); restart(); });
