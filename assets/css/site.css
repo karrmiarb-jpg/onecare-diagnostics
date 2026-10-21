@@ -244,11 +244,12 @@ h2.h-sm { font-size: 26px; margin-bottom: 14px; }
 }
 .media-card.green { background: linear-gradient(165deg, #BDE6D6 0%, #74BFA0 100%); }
 .media-card img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; transition: transform .7s ease; } /* card photos come pre-graded to one shared tone */
-.media-card::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, rgba(255,255,255,0) 52%, rgba(120,146,140,.35) 72%, rgba(74,104,98,.82) 100%); } /* light misty grey-green fade behind the text, like the reference (was dark taupe) */
+.media-card::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, rgba(255,255,255,0) 50%, rgba(255,255,255,.72) 70%, rgba(255,255,255,.95) 100%); } /* soft white fade behind the dark text */
+.media-card { box-shadow: 0 1px 2px rgba(16,24,40,.05), 0 6px 18px rgba(16,24,40,.05); } /* keeps the edge visible now the fade is white */
 .media-card:hover img { transform: scale(1.04); }
 .media-card .art { position: absolute; top: 22px; left: 18px; opacity: .9; }
-.media-card b { font-family: var(--head); font-weight: 500; font-size: 17px; letter-spacing: -.01em; }
-.media-card p { font-size: 13px; color: rgba(255,255,255,.82); margin-top: 4px; line-height: 1.45; min-height: calc(1.45em * 3); } /* room for 3 lines, so every card's title sits on the same line */
+.media-card b { font-family: var(--head); font-weight: 500; font-size: 17px; letter-spacing: -.01em; color: var(--ink); }
+.media-card p { font-size: 13px; color: #3A4246; margin-top: 4px; line-height: 1.45; min-height: calc(1.45em * 3); } /* room for 3 lines, so every card's title sits on the same line */
 
 /* Small tiles (tests) */
 .tile-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
