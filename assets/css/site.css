@@ -295,12 +295,14 @@ h2.h-sm { font-size: 26px; margin-bottom: 14px; }
 }
 .qb-slides > .tile.on { opacity: 1; visibility: visible; transform: none; transition: opacity .5s ease, transform .5s ease; }
 .qb-slides > .tile:hover { background: var(--soft-2); }
-/* icon sits on a soft white circle so the line icon reads clearly */
-.qb-slides .ti.ri { width: 84px; height: 84px; border-radius: 50%; background: #fff; display: grid; place-items: center; box-shadow: 0 1px 2px rgba(16,24,40,.05); }
-.qb-slides .ri svg { width: 50px; height: 50px; }
+/* bigger icon, no background; the outline picks up some of the accent colour so it reads a little more colourful */
+.qb-slides .ti.ri { width: 64px; height: 64px; background: none; }
+.qb-slides .ri svg { width: 64px; height: 64px; }
+.qb-slides .ri .o { stroke: color-mix(in srgb, var(--ac) 40%, #5E5654); }
+.qb-slides .ri .a { stroke-width: 2.6; }
 .qb-slides .tl { display: block; line-height: 1.3; }
 .qb-slides .tl small { display: block; margin-top: 8px; font-size: 13.5px; font-weight: 400; color: var(--muted); line-height: 1.5; }
-.qb-slides .go { position: absolute; top: 24px; right: 24px; color: var(--muted); }
+.qb-slides .go { display: none; } /* no arrow on the rotating tile */
 .qb-dots { display: flex; gap: 6px; margin-top: 14px; padding-left: 4px; }
 .qb-dots button { width: 7px; height: 7px; border-radius: 99px; border: 0; padding: 0; background: #CDD3D8; cursor: pointer; transition: width .3s, background .3s; }
 .qb-dots button.on { width: 22px; background: var(--ink); }
