@@ -195,6 +195,28 @@
       track.addEventListener("scroll", update, { passive: true });
       window.addEventListener("resize", update);
       update();
+
+      // gentle autoplay (data-autoplay): one card every few seconds, looping back to the start.
+      // Pauses on hover, touch or keyboard focus; stops for good once someone uses the arrows or swipes.
+      if (!track.hasAttribute("data-autoplay") || matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+      let paused = false, stopped = false, onScreen = false;
+      const stop = () => { stopped = true; };
+      [prev, next].forEach(b => b && b.addEventListener("click", stop));
+      track.addEventListener("pointerdown", stop);
+      track.addEventListener("wheel", e => { if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) stop(); }, { passive: true });
+      track.addEventListener("mouseenter", () => { paused = true; });
+      track.addEventListener("mouseleave", () => { paused = false; });
+      track.addEventListener("focusin", () => { paused = true; });
+      track.addEventListener("focusout", () => { paused = false; });
+      if ("IntersectionObserver" in window) {
+        new IntersectionObserver(([e]) => { onScreen = e.isIntersecting; }, { threshold: .5 }).observe(track);
+      } else onScreen = true;
+      setInterval(() => {
+        if (stopped || paused || !onScreen || document.hidden) return;
+        const atEnd = track.scrollLeft + track.clientWidth > track.scrollWidth - 4;
+        if (atEnd) track.scrollTo({ left: 0, behavior: "smooth" });
+        else track.scrollBy({ left: step(), behavior: "smooth" });
+      }, +track.dataset.autoplay || 4000);
     });
 
     // "reason you visit" tiles: open Prices with that reason's usual tests already ticked
