@@ -181,20 +181,19 @@
       onScroll();
     }
 
-    // carousels: arrow buttons scroll one card at a time
+    // carousels: arrow buttons scroll one card at a time and wrap around at either end
     document.querySelectorAll("[data-carousel]").forEach(track => {
       const prev = document.querySelector(`[data-prev="${track.id}"]`);
       const next = document.querySelector(`[data-next="${track.id}"]`);
       const step = () => (track.firstElementChild ? track.firstElementChild.getBoundingClientRect().width + 14 : 300);
-      const update = () => {
-        if (prev) prev.disabled = track.scrollLeft < 4;
-        if (next) next.disabled = track.scrollLeft + track.clientWidth > track.scrollWidth - 4;
-      };
-      if (prev) prev.addEventListener("click", () => track.scrollBy({ left: -step(), behavior: "smooth" }));
-      if (next) next.addEventListener("click", () => track.scrollBy({ left: step(), behavior: "smooth" }));
-      track.addEventListener("scroll", update, { passive: true });
-      window.addEventListener("resize", update);
-      update();
+      const atStart = () => track.scrollLeft < 4;
+      const atEnd = () => track.scrollLeft + track.clientWidth > track.scrollWidth - 4;
+      if (prev) prev.addEventListener("click", () => atStart()
+        ? track.scrollTo({ left: track.scrollWidth, behavior: "smooth" })
+        : track.scrollBy({ left: -step(), behavior: "smooth" }));
+      if (next) next.addEventListener("click", () => atEnd()
+        ? track.scrollTo({ left: 0, behavior: "smooth" })
+        : track.scrollBy({ left: step(), behavior: "smooth" }));
     });
 
     // "reason you visit" tiles: open Prices with that reason's usual tests already ticked
