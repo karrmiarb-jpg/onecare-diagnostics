@@ -113,7 +113,7 @@ body.home .site-header:not(.scrolled) .lang { background: rgba(255,255,255,.55);
 }
 .hero-bg { position: absolute; inset: 0; z-index: 0; }
 /* colors sampled from the reference hero: blush base, teal mist top-left, taupe-peach bottom-left, rose-lilac right edge */
-.hero-bg { background: #FFFFFF; }
+.hero-bg { background: #EAEFEE; } /* same soft grey as the photo's blurred lab */
 .hero-bg img {
   /* photo sits right of the headline and below the header; its top and left edges fade into the backdrop */
   /* on wide screens the text starts further in, so the photo moves right too: about the same space on her right as the text has on its left */
@@ -141,9 +141,9 @@ body.home .site-header:not(.scrolled) .lang { background: rgba(255,255,255,.55);
     /* white at the top behind the menu, fading gradually so there is no band */
     linear-gradient(180deg, rgba(255,255,255,.92) 0%, rgba(255,255,255,.78) 7%, rgba(255,255,255,.48) 14%, rgba(255,255,255,.2) 21%, rgba(255,255,255,.05) 27%, rgba(255,255,255,0) 32%),
     /* light natural mist over the blurred microscope behind the headline (no dark patch) */
-    radial-gradient(36% 32% at 40% 50%, rgba(255,255,255,.55) 0%, rgba(255,255,255,.34) 40%, rgba(255,255,255,.12) 70%, rgba(255,255,255,0) 100%),
+    radial-gradient(36% 32% at 40% 50%, rgba(255,255,255,.3) 0%, rgba(255,255,255,.18) 40%, rgba(255,255,255,.06) 70%, rgba(255,255,255,0) 100%),
     /* left side wash behind the text; clear over the person */
-    linear-gradient(90deg, rgba(255,255,255,.5) 0%, rgba(255,255,255,.28) 30%, rgba(255,255,255,0) 46%),
+    linear-gradient(90deg, rgba(255,255,255,.22) 0%, rgba(255,255,255,.12) 30%, rgba(255,255,255,0) 46%),
     /* faint white at the right edge */
     linear-gradient(270deg, rgba(255,255,255,.26) 0%, rgba(255,255,255,.12) 7%, rgba(255,255,255,0) 15%);
 }
@@ -151,7 +151,7 @@ body.home .site-header:not(.scrolled) .lang { background: rgba(255,255,255,.55);
    It fades out evenly toward the person, so there are no round spots in the corners. A faint copy shows on the right edge. */
 .hero::before {
   content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none;
-  background: rgba(255,255,255,.9); /* plain white wash behind the text */
+  background: linear-gradient(180deg, rgba(236,240,240,.9) 0%, rgba(226,232,232,.84) 55%, rgba(232,237,236,.88) 100%); /* soft lab-grey from the photo, so the left is not blank white */
   /* strong on the left behind the text, a faint matching strip on the right edge for balance */
   -webkit-mask-image: linear-gradient(90deg, #000 0%, rgba(0,0,0,.85) 14%, rgba(0,0,0,.45) 30%, rgba(0,0,0,.12) 42%, transparent 52%, transparent 80%, rgba(0,0,0,.18) 90%, rgba(0,0,0,.45) 100%);
           mask-image: linear-gradient(90deg, #000 0%, rgba(0,0,0,.85) 14%, rgba(0,0,0,.45) 30%, rgba(0,0,0,.12) 42%, transparent 52%, transparent 80%, rgba(0,0,0,.18) 90%, rgba(0,0,0,.45) 100%);
