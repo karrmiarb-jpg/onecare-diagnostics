@@ -285,6 +285,13 @@ h2.h-sm { font-size: 26px; margin-bottom: 14px; }
 .tile-grid.reasons .go { position: absolute; top: 20px; right: 20px; color: var(--muted); transition: transform .2s, color .2s; }
 .tile-grid.reasons .tile:hover .go { transform: translate(2px, -2px); color: var(--ink); }
 
+/* Services heading: centered, in the hero's style (uppercase, tight, deep green-charcoal) */
+.sec-top.sec-center { flex-direction: column; align-items: center; text-align: center; margin-bottom: 36px; }
+.sec-top.sec-center h2 { font-size: clamp(36px, 4.4vw, 66px); line-height: .92; letter-spacing: -.045em; font-weight: 500; text-transform: uppercase; color: #1F2E2A; }
+.sec-top.sec-center h2 span + span { color: inherit; }
+.sec-top.sec-center p { margin: 16px auto 0; max-width: 520px; }
+.car-nav.car-nav-center { justify-content: center; margin-top: 24px; }
+
 /* After the hero: one rotating "reason" tile on the left, the big patient quote on the right */
 .qb-grid { display: grid; grid-template-columns: minmax(280px, 360px) 1fr; gap: clamp(32px, 6vw, 88px); align-items: center; }
 .qb-rotator { position: relative; }
