@@ -186,6 +186,42 @@
       const prev = document.querySelector(`[data-prev="${track.id}"]`);
       const next = document.querySelector(`[data-next="${track.id}"]`);
       const step = () => (track.firstElementChild ? track.firstElementChild.getBoundingClientRect().width + 14 : 300);
+      // endless loop (data-loop): a copy of the cards sits on each side of the real ones; after every
+      // scroll, if the view has drifted into a copy, it jumps back by one set, invisibly, so the arrows
+      // (and swipes) just keep going round
+      if (track.hasAttribute("data-loop") && track.children.length > 1) {
+        const originals = [...track.children];
+        const copy = el => {
+          const c = el.cloneNode(true);
+          c.setAttribute("aria-hidden", "true");
+          c.tabIndex = -1;
+          c.querySelectorAll("a, button").forEach(x => { x.tabIndex = -1; });
+          return c;
+        };
+        track.prepend(...originals.map(copy));
+        track.append(...originals.map(copy));
+        const setWidth = () => originals[0].offsetLeft - track.children[0].offsetLeft;
+        const jump = by => {
+          track.style.scrollSnapType = "none";
+          track.scrollTo({ left: track.scrollLeft + by, behavior: "instant" });
+          requestAnimationFrame(() => { track.style.scrollSnapType = ""; });
+        };
+        const settle = () => {
+          const w = setWidth();
+          if (track.scrollLeft < w - 2) jump(w);
+          else if (track.scrollLeft >= 2 * w - 2) jump(-w);
+        };
+        track.scrollTo({ left: setWidth(), behavior: "instant" });
+        let t;
+        track.addEventListener("scroll", () => { clearTimeout(t); t = setTimeout(settle, 140); }, { passive: true });
+        window.addEventListener("resize", () => {
+          const w = setWidth(), i = Math.round((track.scrollLeft % w) / step());
+          track.scrollTo({ left: w + i * step(), behavior: "instant" });
+        });
+        if (prev) prev.addEventListener("click", () => track.scrollBy({ left: -step(), behavior: "smooth" }));
+        if (next) next.addEventListener("click", () => track.scrollBy({ left: step(), behavior: "smooth" }));
+        return;
+      }
       const atStart = () => track.scrollLeft < 4;
       const atEnd = () => track.scrollLeft + track.clientWidth > track.scrollWidth - 4;
       if (prev) prev.addEventListener("click", () => atStart()
