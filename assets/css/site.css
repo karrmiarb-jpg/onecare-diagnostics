@@ -278,7 +278,8 @@ h2.h-sm { font-size: 26px; margin-bottom: 14px; }
 .tile-grid.reasons .ri svg { width: 56px; height: 56px; overflow: visible; }
 .ri .o, .ri .a { fill: none; stroke-linecap: round; stroke-linejoin: round; }
 .ri .o { stroke: #5E5654; stroke-width: 2; }
-.ri .a { stroke: var(--ac); stroke-width: 2.4; }
+.ri .a { stroke: #B5884A; stroke-width: 2.4; } /* wheat-gold detail, from the closing photo and the review stars */
+.ri .o:first-child { fill: #F1E7DA; } /* soft beige inside the main shape, like the comfort pill */
 .tile-grid.reasons .tl { display: block; line-height: 1.3; }
 .tile-grid.reasons .tl small { display: block; margin-top: 6px; font-size: 13px; font-weight: 400; color: var(--muted); line-height: 1.45; min-height: calc(1.45em * 2); } /* 2 lines reserved so titles line up */
 .tile-grid.reasons .go { position: absolute; top: 20px; right: 20px; color: var(--muted); transition: transform .2s, color .2s; }
@@ -298,7 +299,6 @@ h2.h-sm { font-size: 26px; margin-bottom: 14px; }
 /* bigger icon, no background; the outline picks up some of the accent colour so it reads a little more colourful */
 .qb-slides .ti.ri { width: 64px; height: 64px; background: none; }
 .qb-slides .ri svg { width: 64px; height: 64px; }
-.qb-slides .ri .o { stroke: color-mix(in srgb, var(--ac) 40%, #5E5654); }
 .qb-slides .ri .a { stroke-width: 2.6; }
 .qb-slides .tl { display: block; line-height: 1.3; }
 .qb-slides .tl small { display: block; margin-top: 8px; font-size: 13.5px; font-weight: 400; color: var(--muted); line-height: 1.5; }
