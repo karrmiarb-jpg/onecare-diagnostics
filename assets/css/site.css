@@ -116,8 +116,11 @@ body.home .site-header:not(.scrolled) .lang { background: rgba(255,255,255,.55);
 .hero-bg { background: #FFFFFF; }
 .hero-bg img {
   /* photo sits right of the headline and below the header; its top and left edges fade into the backdrop */
-  position: absolute; left: 12%; right: 0; bottom: 0; top: 96px; width: 88%; height: calc(100% - 96px);
+  /* on wide screens the text starts further in, so the photo moves right too: about the same space on her right as the text has on its left */
+  --img-left: max(12%, min(calc(63vw - 652px), 23%));
+  position: absolute; left: var(--img-left); right: 0; bottom: 0; top: 96px; width: calc(100% - var(--img-left)); height: calc(100% - 96px);
   object-fit: cover; object-position: 60% 0%; display: block; filter: contrast(1.04) brightness(1.06); /* clean whites, no warm tint */
+  transform: translateX(var(--img-shift, clamp(0px, calc(7.4vw - (100vw - 1440px) * .328), 7.9vw)));
   -webkit-mask-image: linear-gradient(180deg, transparent 0, #000 70px), linear-gradient(90deg, transparent 0, transparent 10%, rgba(0,0,0,.35) 24%, #000 38%);
   -webkit-mask-composite: source-in;
           mask-image: linear-gradient(180deg, transparent 0, #000 70px), linear-gradient(90deg, transparent 0, transparent 10%, rgba(0,0,0,.35) 24%, #000 38%);
@@ -172,6 +175,8 @@ body.home .site-header:not(.scrolled) .lang { background: rgba(255,255,255,.55);
 .h1-chip img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .hero-actions { display: flex; gap: 10px; flex-wrap: wrap; }
 .hero-actions .btn-white { box-shadow: inset 0 0 0 1px rgba(31,46,42,.22); } /* outline so it shows on the white wash */
+/* text starts about 10% in on any screen (never less than the page margin) */
+.hero-inner > div:first-child, .hero-foot p { padding-left: max(0px, calc(10vw - max(24px, (100vw - 1240px) / 2))); }
 .hero-foot { grid-column: 1 / -1; display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; }
 .hero-foot p { max-width: 420px; font-size: 15px; font-weight: 500; color: #3A4A44; }
 .round-btn {
@@ -712,6 +717,7 @@ section.block.tint { background: #F2F7F3; margin-top: 96px; padding-bottom: 96px
   .lang button { padding: 6px 9px; }
   .hero { margin-top: -65px; padding: 110px 0 28px; min-height: 0; }
   .hero-bg img { top: 84px; height: calc(100% - 84px); --img-shift: 0%; }
+  .hero-inner > div:first-child, .hero-foot p { padding-left: 0; }
   .hero h1 { margin: 16px 0 24px; }
   .hero-foot p { display: none; }
   .hero-actions .btn { flex: 1 1 auto; }
