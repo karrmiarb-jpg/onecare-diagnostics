@@ -113,7 +113,7 @@ body.home .site-header:not(.scrolled) .lang { background: rgba(255,255,255,.55);
 }
 .hero-bg { position: absolute; inset: 0; z-index: 0; }
 /* colors sampled from the reference hero: blush base, teal mist top-left, taupe-peach bottom-left, rose-lilac right edge */
-.hero-bg { background: linear-gradient(180deg, #FFFFFF 0%, #FFFFFF 45%, #E9EDED 80%, #E3E8E8 100%); } /* white behind the headline, the lab bench's light grey lower down so the far-left strip blends with the photo */
+.hero-bg { background: #FFFFFF; }
 .hero-bg img {
   /* photo sits right of the headline and below the header; its top and left edges fade into the backdrop */
   position: absolute; left: 12%; right: 0; bottom: 0; top: 96px; width: 88%; height: calc(100% - 96px);
@@ -144,8 +144,8 @@ body.home .site-header:not(.scrolled) .lang { background: rgba(255,255,255,.55);
     linear-gradient(180deg, rgba(255,255,255,.92) 0%, rgba(255,255,255,.78) 7%, rgba(255,255,255,.48) 14%, rgba(255,255,255,.2) 21%, rgba(255,255,255,.05) 27%, rgba(255,255,255,0) 32%),
     /* light natural mist over the blurred microscope behind the headline (no dark patch) */
     radial-gradient(36% 32% at 40% 50%, rgba(255,255,255,.55) 0%, rgba(255,255,255,.34) 40%, rgba(255,255,255,.12) 70%, rgba(255,255,255,0) 100%),
-    /* soft white behind the headline only (an oval on the upper left), so the lower left shows the photo */
-    radial-gradient(60% 52% at 0% 36%, rgba(255,255,255,.5) 0%, rgba(255,255,255,.28) 50%, rgba(255,255,255,0) 100%),
+    /* left side wash behind the text; clear over the person */
+    linear-gradient(90deg, rgba(255,255,255,.5) 0%, rgba(255,255,255,.28) 30%, rgba(255,255,255,0) 46%),
     /* faint white at the right edge */
     linear-gradient(270deg, rgba(255,255,255,.26) 0%, rgba(255,255,255,.12) 7%, rgba(255,255,255,0) 15%);
 }
