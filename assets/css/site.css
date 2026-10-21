@@ -100,7 +100,7 @@ img { max-width: 100%; }
 /* Home: see-through header on the hero. White logo on the teal mist; dark menu and black button,
    since the hero behind them is light (like the reference). Once scrolled: white bar with the color logo. */
 body.home .site-header:not(.scrolled) { background: transparent; border-color: transparent; backdrop-filter: none; }
-body.home .site-header:not(.scrolled) .logo img { filter: brightness(0) invert(1) drop-shadow(0 1px 2px rgba(25, 40, 50, .35)); }
+body.home .site-header:not(.scrolled) .logo img { filter: none; } /* colour logo on the white hero */
 body.home .site-header:not(.scrolled) .lang { background: rgba(255,255,255,.55); }
 
 /* ---------- Mobile action bar ---------- */
@@ -113,13 +113,11 @@ body.home .site-header:not(.scrolled) .lang { background: rgba(255,255,255,.55);
 }
 .hero-bg { position: absolute; inset: 0; z-index: 0; }
 /* colors sampled from the reference hero: blush base, teal mist top-left, taupe-peach bottom-left, rose-lilac right edge */
-.hero-bg { background: #FFFEFA; } /* a whisper of the closing photo's cream */
+.hero-bg { background: #FFFFFF; }
 .hero-bg img {
   /* photo sits right of the headline and below the header; its top and left edges fade into the backdrop */
-  /* on wide screens the text starts further in, so the photo moves right too and the microscope stays clear of the headline */
-  --img-left: max(12%, min(calc(63vw - 652px), 23%));
-  position: absolute; left: var(--img-left); right: 0; bottom: 0; top: 96px; width: calc(100% - var(--img-left)); height: calc(100% - 96px);
-  object-fit: cover; object-position: 60% 0%; display: block; transform: translateX(var(--img-shift, clamp(-0.8vw, calc(7.4vw - (100vw - 1440px) * .328), 7.9vw))); /* person sits further right, with about the same space on her right as the text has on its left */ filter: saturate(1.06) contrast(1.06) brightness(1.04); /* clean and crisp: no sepia, the photo file is already white-balanced */
+  position: absolute; left: 12%; right: 0; bottom: 0; top: 96px; width: 88%; height: calc(100% - 96px);
+  object-fit: cover; object-position: 60% 0%; display: block; filter: sepia(.26) hue-rotate(-10deg) saturate(.95) contrast(1.05) brightness(1.1); /* warm tone on the photo only */
   -webkit-mask-image: linear-gradient(180deg, transparent 0, #000 70px), linear-gradient(90deg, transparent 0, transparent 10%, rgba(0,0,0,.35) 24%, #000 38%);
   -webkit-mask-composite: source-in;
           mask-image: linear-gradient(180deg, transparent 0, #000 70px), linear-gradient(90deg, transparent 0, transparent 10%, rgba(0,0,0,.35) 24%, #000 38%);
@@ -139,8 +137,10 @@ body.home .site-header:not(.scrolled) .lang { background: rgba(255,255,255,.55);
   background:
     /* white at the top behind the menu, fading gradually so there is no band */
     linear-gradient(180deg, rgba(255,255,255,.92) 0%, rgba(255,255,255,.78) 7%, rgba(255,255,255,.48) 14%, rgba(255,255,255,.2) 21%, rgba(255,255,255,.05) 27%, rgba(255,255,255,0) 32%),
+    /* light natural mist over the blurred microscope behind the headline (no dark patch) */
+    radial-gradient(36% 32% at 40% 50%, rgba(246,250,247,.55) 0%, rgba(246,250,247,.34) 40%, rgba(246,250,247,.12) 70%, rgba(246,250,247,0) 100%),
     /* left side wash behind the text; clear over the person */
-    linear-gradient(90deg, rgba(228,218,200,.34) 0%, rgba(228,218,200,.18) 30%, rgba(228,218,200,0) 46%),
+    linear-gradient(90deg, rgba(250,252,250,.5) 0%, rgba(250,252,250,.28) 30%, rgba(250,252,250,0) 46%),
     /* faint white at the right edge */
     linear-gradient(270deg, rgba(255,255,255,.26) 0%, rgba(255,255,255,.12) 7%, rgba(255,255,255,0) 15%);
 }
@@ -148,28 +148,21 @@ body.home .site-header:not(.scrolled) .lang { background: rgba(255,255,255,.55);
    It fades out evenly toward the person, so there are no round spots in the corners. A faint copy shows on the right edge. */
 .hero::before {
   content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none;
-  background: linear-gradient(180deg, rgba(124,148,150,.66) 0%, rgba(142,160,162,.56) 24%, rgba(190,186,186,.44) 50%, rgba(218,206,186,.4) 75%, rgba(206,190,164,.46) 100%); /* soft teal easing into a faint wheat-gold, the same hues as the closing photo */
+  background: linear-gradient(180deg, rgba(246,250,247,.92) 0%, rgba(238,246,240,.86) 30%, rgba(232,243,235,.8) 60%, rgba(240,247,242,.84) 100%); /* white with a hint of OneCare green */
   /* strong on the left behind the text, a faint matching strip on the right edge for balance */
-  -webkit-mask-image: linear-gradient(90deg, #000 0%, rgba(0,0,0,.88) 16%, rgba(0,0,0,.66) 32%, rgba(0,0,0,.42) 42%, rgba(0,0,0,.14) 50%, transparent 58%, transparent 80%, rgba(0,0,0,.18) 90%, rgba(0,0,0,.45) 100%);
-          mask-image: linear-gradient(90deg, #000 0%, rgba(0,0,0,.88) 16%, rgba(0,0,0,.66) 32%, rgba(0,0,0,.42) 42%, rgba(0,0,0,.14) 50%, transparent 58%, transparent 80%, rgba(0,0,0,.18) 90%, rgba(0,0,0,.45) 100%);
+  -webkit-mask-image: linear-gradient(90deg, #000 0%, rgba(0,0,0,.85) 14%, rgba(0,0,0,.45) 30%, rgba(0,0,0,.12) 42%, transparent 52%, transparent 80%, rgba(0,0,0,.18) 90%, rgba(0,0,0,.45) 100%);
+          mask-image: linear-gradient(90deg, #000 0%, rgba(0,0,0,.85) 14%, rgba(0,0,0,.45) 30%, rgba(0,0,0,.12) 42%, transparent 52%, transparent 80%, rgba(0,0,0,.18) 90%, rgba(0,0,0,.45) 100%);
 }
 /* keeps white text readable over the bright photo */
-.hero h1 {
-  text-shadow: 0 1px 3px rgba(40, 50, 55, .28); /* tight shadow only: a wide one makes a grey haze around the letters */
-}
-/* headline: soft teal-grey halo that hugs each letter (stays within a few px, so no haze or blob) */
-.hero h1 {
-  text-shadow: 0 0 1px rgba(40, 62, 62, .6), 0 0 5px rgba(40, 62, 62, .45), 0 0 12px rgba(40, 62, 62, .3);
+.hero h1, .hero .eyebrow, .hero-foot p {
+  text-shadow: none; /* dark text on the white-green wash needs no shadow */
 }
 .hero-inner { position: relative; z-index: 1; display: grid; grid-template-columns: 1fr; grid-template-rows: 1fr auto; gap: 40px; }
-/* text starts about 10% in on any screen (never less than the page margin) */
-.hero-inner > div:first-child, .hero-foot p { padding-left: max(0px, calc(10vw - max(24px, (100vw - 1240px) / 2))); }
-.hero-inner > div:first-child { align-self: center; padding-bottom: 40px; }
-.hero .eyebrow { color: #3A4246; } /* small text in dark charcoal: white is too faint at this size */
+.hero .eyebrow { color: #3A4A44; }
 .hero .eyebrow .dot { background: var(--green); }
 .hero h1 {
-  font-size: clamp(44px, 5.2vw, 80px); line-height: .9; letter-spacing: -.045em; font-weight: 500; /* sized to end before the microscope */
-  text-transform: uppercase; color: #fff; margin: 22px 0 30px;
+  font-size: clamp(44px, 6.3vw, 96px); line-height: .9; letter-spacing: -.045em; font-weight: 500;
+  text-transform: uppercase; color: #1F2E2A; margin: 22px 0 30px; /* deep green-charcoal: white would vanish on the white wash */
 }
 .hero h1 > span { display: block; }
 .h1-chip {
@@ -179,7 +172,7 @@ body.home .site-header:not(.scrolled) .lang { background: rgba(255,255,255,.55);
 .h1-chip img { width: 100%; height: 100%; object-fit: cover; display: block; filter: sepia(.14) saturate(.95); }
 .hero-actions { display: flex; gap: 10px; flex-wrap: wrap; }
 .hero-foot { grid-column: 1 / -1; display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; }
-.hero-foot p { max-width: 540px; font-size: 15px; font-weight: 500; color: #3A4246; }
+.hero-foot p { max-width: 420px; font-size: 15px; font-weight: 500; color: #3A4A44; }
 .round-btn {
   width: 112px; height: 56px; border-radius: 999px; display: grid; place-items: center; flex: none;
   border: 1px solid rgba(58,66,70,.35); color: #3A4246; transition: background .2s;
@@ -686,7 +679,6 @@ body.home .site-footer { margin-top: 0; }
   .lang button { padding: 6px 9px; }
   .hero { margin-top: -65px; padding: 110px 0 28px; min-height: 0; }
   .hero-bg img { top: 84px; height: calc(100% - 84px); --img-shift: 0%; }
-  .hero-inner > div:first-child, .hero-foot p { padding-left: 0; }
   .hero h1 { margin: 16px 0 24px; }
   .hero-foot p { display: none; }
   .hero-actions .btn { flex: 1 1 auto; }
