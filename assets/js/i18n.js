@@ -64,6 +64,8 @@ window.ONECARE_CEB = {
   "home.s7p": "Pregnancy test ug ang kasagarang prenatal nga mga test, sa usa ka bisita.",
   "svc.senior": "Alaga sa Senior",
   "home.s8p": "Priority lane, lingkoranan samtang maghulat, ug ang imong 25% senior discount.",
+  "home.quote": "“Gipasabot nila ang matag test sa pulong nga akong masabtan, ug dili na ko kinahanglan mobiyahe sa siyudad.”",
+  "home.quoteBy": "Ngalan sa pasyente · Dumanjug",
   "home.s6p": "Pre-employment ug annual nga test para sa imong team. Pangutana para sa quote.",
   "home.t1": "DOH-Licensed",
   "home.t1s": "License No.",

@@ -276,6 +276,13 @@ h2.h-sm { font-size: 26px; margin-bottom: 14px; }
 .tile-grid.reasons .go { position: absolute; top: 20px; right: 20px; color: var(--muted); transition: transform .2s, color .2s; }
 .tile-grid.reasons .tile:hover .go { transform: translate(2px, -2px); color: var(--ink); }
 
+/* Centered patient quote between the hero and services */
+.quote-band { text-align: center; }
+.quote-band figure { margin: 0 auto; max-width: 880px; position: relative; }
+.quote-band blockquote { margin: 0; font-family: var(--head); font-weight: 500; font-size: clamp(24px, 2.7vw, 38px); line-height: 1.25; letter-spacing: -.02em; color: var(--ink); text-wrap: balance; }
+.quote-band figcaption { margin-top: 22px; font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); display: inline-flex; gap: 10px; align-items: center; }
+.quote-band figure.sample figcaption::after { content: "SAMPLE"; font-size: 10px; letter-spacing: .08em; color: #B45309; background: #FEF3E2; padding: 3px 7px; border-radius: 99px; }
+
 /* Patient reviews */
 .carousel.reviews { grid-auto-columns: calc((100% - 28px) / 3); }
 .review { margin: 0; background: var(--soft); border-radius: var(--radius); padding: 18px; display: grid; grid-template-columns: 76px 1fr; gap: 6px 22px; min-height: 186px; }
