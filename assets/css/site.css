@@ -179,12 +179,12 @@ body.home .site-header:not(.scrolled) .lang { background: rgba(255,255,255,.55);
 }
 .h1-chip img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .hero-actions { display: flex; gap: 10px; flex-wrap: wrap; }
-.trust-line2 { display: flex; align-items: center; gap: 12px; margin-top: 28px; padding-left: 4px; } /* under the rotating tile, inside the box */
-.trust-line2 .faces { display: flex; }
-.trust-line2 .faces i { width: 30px; height: 30px; font-size: 11px !important; border-radius: 50%; display: grid; place-items: center; font-style: normal; font-size: 13px; font-weight: 600; color: #fff; background: var(--c); border: 2px solid #fff; margin-left: -10px; box-shadow: 0 2px 6px rgba(16,24,40,.12); }
-.trust-line2 .faces i:first-child { margin-left: 0; }
-.trust-line2 b { display: block; font-size: 14px; white-space: nowrap; font-weight: 600; color: #1F2E2A; }
-.trust-line2 small { display: block; font-size: 13px; color: #5A6068; margin-top: 2px; }
+.hero-trust { display: flex; align-items: center; gap: 14px; margin-top: 28px; }
+.hero-trust .faces { display: flex; }
+.hero-trust .faces i { width: 38px; height: 38px; border-radius: 50%; display: grid; place-items: center; font-style: normal; font-size: 13px; font-weight: 600; color: #fff; background: var(--c); border: 2px solid #fff; margin-left: -10px; box-shadow: 0 2px 6px rgba(16,24,40,.12); }
+.hero-trust .faces i:first-child { margin-left: 0; }
+.hero-trust b { display: block; font-size: 15px; font-weight: 600; color: #1F2E2A; }
+.hero-trust small { display: block; font-size: 13px; color: #5A6068; margin-top: 2px; }
 .hero-actions .btn-white { box-shadow: inset 0 0 0 1px rgba(31,46,42,.22); } /* outline so it shows on the white wash */
 .hero-foot { grid-column: 1 / -1; display: flex; align-items: flex-end; justify-content: flex-end; gap: 24px; } /* only the scroll button now */
 .hero-foot p { max-width: 420px; font-size: 15px; font-weight: 500; color: #3A4A44; }
@@ -836,10 +836,10 @@ section.block.duo-open-sec { padding-top: 128px; padding-bottom: 42px; }
   .lang button { padding: 6px 9px; }
   .hero { margin-top: -65px; padding: 110px 0 60px; min-height: 0; }
   section.block.quote-band { margin-top: -20px; }
-  .trust-line2 { margin-top: 20px; }
-  .trust-line2 .faces i { width: 30px; height: 30px; font-size: 11px; }
-  .trust-line2 b { font-size: 13.5px; }
-  .trust-line2 small { font-size: 12px; }
+  .hero-trust { display: inline-flex; margin-top: 18px; padding: 8px 16px 8px 8px; border-radius: 999px; background: rgba(255,255,255,.88); box-shadow: 0 4px 14px rgba(16,24,40,.1); } /* readable over the photo on phones */
+  .hero-trust .faces i { width: 30px; height: 30px; font-size: 11px; }
+  .hero-trust b { font-size: 13.5px; }
+  .hero-trust small { font-size: 12px; }
   .cta-photo .wrap { flex-direction: column; align-items: stretch; } /* phones: headline, then buttons, both from the left */
   .cta-photo::before { background: linear-gradient(0deg, rgba(10,30,45,.82) 0%, rgba(10,30,45,.55) 45%, rgba(10,30,45,.1) 80%); } /* stronger shade on phones, where the headline sits over the white coats */
   .hero-bg img { top: 84px; height: calc(100% - 84px); --img-shift: 0%; }
