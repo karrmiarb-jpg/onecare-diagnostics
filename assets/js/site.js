@@ -185,7 +185,7 @@
     document.querySelectorAll("[data-carousel]").forEach(track => {
       const prev = document.querySelector(`[data-prev="${track.id}"]`);
       const next = document.querySelector(`[data-next="${track.id}"]`);
-      const step = () => (track.firstElementChild ? track.firstElementChild.getBoundingClientRect().width + 14 : 300);
+      const step = () => (track.firstElementChild ? track.firstElementChild.getBoundingClientRect().width + parseFloat(getComputedStyle(track).columnGap || 14) : 300);
       // endless loop (data-loop): a copy of the cards sits on each side of the real ones; after every
       // scroll, if the view has drifted into a copy, it jumps back by one set, invisibly, so the arrows
       // (and swipes) just keep going round
