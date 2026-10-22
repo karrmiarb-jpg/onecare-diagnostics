@@ -719,38 +719,35 @@ section.block.para-band { padding-top: 104px; }
 .para-lic { margin-top: 22px; font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
 @media (max-width: 760px) { .para { font-size: 21px; } }
 
-/* "Know your total" + "Prepare": two separate cards, one logo-blue and one white, both lifted and clickable-looking */
+/* "Know your total" + "Prepare": two separate white cards in the site's card style; logo colours only as small accents */
 .duo-open-sec .wrap { position: relative; }
 section.block.duo-open-sec { padding-top: 128px; padding-bottom: 42px; }
 .duo-open { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-.duo-open .col { padding: clamp(28px, 3.6vw, 48px); border-radius: 24px; transition: transform .3s ease, box-shadow .3s ease; }
-.duo-open .col:hover { transform: translateY(-4px); }
-.duo-open .col-est { color: #fff; background: linear-gradient(150deg, #0B5CCB 0%, #0047AB 45%, #0A2A66 100%); box-shadow: 0 24px 50px -22px rgba(0,71,171,.55), 0 4px 10px -4px rgba(10,42,102,.25); }
-.duo-open .col-prep { background: #fff; box-shadow: inset 0 1px 0 rgba(255,255,255,.95), 0 0 0 1px rgba(16,24,40,.05), 0 22px 44px -18px rgba(16,24,40,.26), 0 4px 10px -4px rgba(16,24,40,.08); }
+.duo-open .col {
+  position: relative; overflow: hidden; padding: clamp(28px, 3.6vw, 48px); border-radius: 24px; background: #fff;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.95), 0 0 0 1px rgba(16,24,40,.05), 0 22px 44px -18px rgba(16,24,40,.26), 0 4px 10px -4px rgba(16,24,40,.08);
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+.duo-open .col:hover { transform: translateY(-4px); box-shadow: inset 0 1px 0 rgba(255,255,255,.95), 0 0 0 1px rgba(16,24,40,.05), 0 30px 54px -20px rgba(16,24,40,.3), 0 4px 10px -4px rgba(16,24,40,.08); }
+.duo-open .col::before { content: ""; position: absolute; top: 0; left: clamp(28px, 3.6vw, 48px); width: 56px; height: 3px; border-radius: 0 0 3px 3px; }
+.duo-open .col-est::before { background: #00BF63; }
+.duo-open .col-prep::before { background: #0047AB; }
 .duo-open .step { display: block; font-size: 12px; font-weight: 600; letter-spacing: .14em; margin-bottom: 18px; }
-.duo-open .col-est .step { color: #7BE3A9; }
+.duo-open .col-est .step { color: #00A055; }
 .duo-open .col-prep .step { color: #0047AB; }
-.duo-open h3 { font-size: clamp(24px, 2.2vw, 30px); letter-spacing: -.03em; font-weight: 500; margin: 0 0 12px; }
-.duo-open .col-est h3 { color: #fff; }
-.duo-open .col-prep h3 { color: #1F2E2A; }
-.duo-open p { font-size: 16px; margin: 0 0 24px; }
-.duo-open .col-est p { color: rgba(255,255,255,.86); }
-.duo-open .col-prep p { color: #5A6068; }
+.duo-open h3 { font-size: clamp(24px, 2.2vw, 30px); letter-spacing: -.03em; font-weight: 500; color: #1F2E2A; margin: 0 0 12px; }
+.duo-open p { font-size: 16px; color: #5A6068; margin: 0 0 24px; }
 .duo-open .checks { gap: 0; margin-bottom: 28px; }
-.duo-open .checks li { padding: 13px 0; font-size: 16.5px; }
-.duo-open .col-est .checks li { color: #fff; border-top: 1px solid rgba(255,255,255,.2); }
-.duo-open .col-est .checks li:last-child { border-bottom: 1px solid rgba(255,255,255,.2); }
-.duo-open .col-prep .checks li { border-top: 1px solid #E6E6E3; }
-.duo-open .col-prep .checks li:last-child { border-bottom: 1px solid #E6E6E3; }
+.duo-open .checks li { padding: 13px 0; font-size: 16.5px; border-top: 1px solid #E6E6E3; }
+.duo-open .checks li:last-child { border-bottom: 1px solid #E6E6E3; }
 .duo-open .checks li i { background: none; width: 20px; height: 20px; margin-top: 1px; }
-.duo-open .col-est .checks li i { color: #7BE3A9; }
+.duo-open .col-est .checks li i { color: #00A055; }
 .duo-open .col-prep .checks li i { color: #0047AB; }
-.duo-open .col-est .btn-primary { background: #fff; color: #0A2A66; }
-.duo-open .col-est .btn-primary:hover { background: #F2F6FC; }
 .duo-open .btn-ghost { background: transparent; }
 @media (max-width: 760px) {
   .duo-open { grid-template-columns: 1fr; gap: 16px; }
   .duo-open .col { padding: 24px 20px; border-radius: 20px; }
+  .duo-open .col::before { left: 20px; }
 }
 
 .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
