@@ -303,10 +303,10 @@ h2.h-sm { font-size: 26px; margin-bottom: 14px; }
 .qb-slides > .tile {
   grid-area: 1 / 1; position: relative; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-between; gap: 18px;
   padding: 26px; border-radius: 20px; background: var(--soft); min-height: 250px; font-size: 19px; font-weight: 500;
-  opacity: 0; visibility: hidden; transform: translateY(6px); transition: opacity .5s ease, transform .5s ease, visibility 0s .5s;
+  opacity: 0; visibility: hidden; transform: translateY(8px) scale(.97); transition: opacity .5s ease, transform .5s ease, visibility 0s .5s;
 }
 .qb-slides > .tile.on { opacity: 1; visibility: visible; transform: none; transition: opacity .5s ease, transform .5s ease; }
-.qb-slides > .tile { background: #fff; box-shadow: inset 0 1px 0 rgba(255,255,255,.95), 0 0 0 1px rgba(16,24,40,.05), 0 8px 24px -12px rgba(16,24,40,.12); }
+.qb-slides > .tile { background: #fff; box-shadow: inset 0 1px 0 rgba(255,255,255,.95), 0 0 0 1px rgba(16,24,40,.05), 0 22px 44px -18px rgba(16,24,40,.26), 0 4px 10px -4px rgba(16,24,40,.08); } /* lifted so it pops off the box */
 .qb-slides > .tile:hover { background: #FAFAF9; }
 /* bigger icon, no background; the outline picks up some of the accent colour so it reads a little more colourful */
 .qb-slides .ti.ri { width: 64px; height: 64px; background: none; }
@@ -315,13 +315,13 @@ h2.h-sm { font-size: 26px; margin-bottom: 14px; }
 .qb-slides .tl { display: block; line-height: 1.3; }
 .qb-slides .tl small { display: block; margin-top: 8px; font-size: 13.5px; font-weight: 400; color: var(--muted); line-height: 1.5; }
 .qb-slides .go { display: none; } /* no arrow on the rotating tile */
-.qb-dots { display: flex; gap: 6px; margin-top: 14px; padding-left: 4px; }
+.qb-dots { display: none; } /* no dots: the tile just changes on its own */
 .qb-dots button { width: 7px; height: 7px; border-radius: 99px; border: 0; padding: 0; background: #D4D4D1; cursor: pointer; transition: width .3s, background .3s; }
 .qb-dots button.on { width: 22px; background: var(--ink); }
 .qb-dots button:focus:not(:focus-visible) { outline: none; } /* no ring after a mouse click; keyboard focus still shows */
 .quote-band blockquote { margin: 0; font-family: var(--head); font-weight: 500; font-size: clamp(24px, 2.4vw, 34px); line-height: 1.25; letter-spacing: -.02em; color: var(--ink); text-wrap: pretty; }
 section.block.quote-band { position: relative; z-index: 2; padding-top: 0; margin-top: -40px; } /* box overlaps the bottom of the hero a little, so the two read as one structure */
-.quote-band figure { margin: 0; position: relative; }
+.quote-band figure { margin: 0; position: relative; text-align: right; } /* quote and name right-aligned */
 .quote-band figcaption { margin-top: 22px; font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); display: inline-flex; gap: 10px; align-items: center; }
 .quote-band figure.sample figcaption::after { content: "SAMPLE"; font-size: 10px; letter-spacing: .08em; color: #B45309; background: #FEF3E2; padding: 3px 7px; border-radius: 99px; }
 @media (max-width: 760px) {
