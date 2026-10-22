@@ -749,6 +749,30 @@ section.block.duo-open-sec { padding-top: 128px; padding-bottom: 42px; }
   .duo-open .col::before { left: 20px; }
 }
 
+/* "How can we help you?" inside the box under the hero: five plain links, hairlines between, no inner boxes */
+.qb-grid.help-box { display: block; padding: clamp(28px, 3.4vw, 44px) clamp(20px, 2.6vw, 36px); }
+.help-box h2 { text-align: center; font-size: clamp(24px, 2.2vw, 30px); letter-spacing: -.03em; font-weight: 500; color: #1F2E2A; margin: 0 0 clamp(20px, 2.4vw, 30px); }
+.help-row { display: grid; grid-template-columns: repeat(5, 1fr); }
+.help-link { position: relative; display: flex; flex-direction: column; gap: 14px; padding: 16px clamp(14px, 1.6vw, 24px) 18px; border-radius: 16px; color: inherit; transition: background .2s; }
+.help-link + .help-link::before { content: ""; position: absolute; left: 0; top: 14px; bottom: 14px; width: 1px; background: #E6E6E3; }
+.help-link:hover { background: #F6F7F6; }
+.help-link:focus-visible { outline: 2px solid #0047AB; outline-offset: 2px; }
+.help-link .h-ic { width: 32px; height: 32px; }
+.help-link .hi { width: 32px; height: 32px; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+.help-link .hi .o { stroke: #1A2230; stroke-width: 1.8; }
+.help-link .hi .a { stroke: var(--ac); stroke-width: 2.1; }
+.help-link .h-tx b { display: block; font-family: var(--head); font-weight: 500; font-size: 17px; letter-spacing: -.01em; color: #1F2E2A; }
+.help-link .h-tx small { display: block; margin-top: 6px; font-size: 14px; line-height: 1.45; color: #5A6068; }
+.help-link .go { position: absolute; top: 20px; right: clamp(14px, 1.6vw, 22px); color: #9AA0A6; transition: transform .2s, color .2s; }
+.help-link:hover .go { transform: translateX(3px); color: #1F2E2A; }
+@media (max-width: 900px) {
+  .help-row { grid-template-columns: 1fr; }
+  .help-link { flex-direction: row; align-items: center; gap: 16px; padding: 16px 40px 16px 8px; border-radius: 12px; }
+  .help-link + .help-link::before { left: 8px; right: 8px; top: 0; bottom: auto; width: auto; height: 1px; }
+  .help-link .go { top: 50%; margin-top: -8px; right: 10px; }
+  .help-link .h-tx small { margin-top: 3px; }
+}
+
 .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
 .reveal.in { opacity: 1; transform: none; }
 .no-js .reveal { opacity: 1; transform: none; }
