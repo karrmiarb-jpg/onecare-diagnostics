@@ -294,8 +294,11 @@ h2.h-sm { font-size: 26px; margin-bottom: 14px; }
 .tile-grid.reasons .tile:hover .go { transform: translate(2px, -2px); color: var(--ink); }
 
 /* Services heading: centered, in the hero's style (uppercase, tight, deep green-charcoal) */
-.sec-top.sec-center { flex-direction: column; align-items: center; text-align: center; margin-bottom: 36px; }
-.sec-top.sec-center h2 { margin-top: 14px; font-size: clamp(32px, 3.4vw, 48px); line-height: 1.05; letter-spacing: -.035em; font-weight: 500; color: #1F2E2A; } /* calmer than the hero: sentence case, smaller */
+.sec-top.sec-center { flex-direction: column; align-items: center; text-align: center; margin-bottom: 64px; }
+.sec-top.sec-center h2 { margin: 0; font-size: clamp(30px, 3.2vw, 46px); line-height: 1.1; letter-spacing: -.035em; font-weight: 500; color: #1F2E2A; } /* one calm line */
+.sec-top.sec-center h2 span { display: inline; }
+.sec-top.sec-center h2 span + span::before { content: " "; }
+#services { padding-top: 168px; } /* more air after the box above */
 .sec-top.sec-center h2 span + span { color: #8A8580; } /* quiet warm-grey second line */
 .sec-top.sec-center p { margin: 16px auto 0; max-width: 520px; }
 .car-nav.car-nav-center { justify-content: center; margin-top: 24px; }
