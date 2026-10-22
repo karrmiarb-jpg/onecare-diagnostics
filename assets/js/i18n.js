@@ -66,6 +66,8 @@ window.ONECARE_CEB = {
   "home.s8p": "Priority lane, lingkoranan samtang maghulat, ug ang imong 25% senior discount.",
   "home.quote": "“Gipasabot nila ang matag test sa pulong nga akong masabtan, ug dili na ko kinahanglan mobiyahe sa siyudad.”",
   "home.quoteBy": "Ngalan sa pasyente · Dumanjug",
+  "home.para": "Ang OneCare usa ka <span class=\"c-green\">DOH-licensed</span> nga laboratoryo sa Dumanjug, gipangulohan sa usa ka <span class=\"c-blue\">registered medical technologist</span>. <span class=\"rest\">Pwede ka mosulod bisan unsang Lunes hangtod Sabado, madawat nimo ang mainiton nga pag-abiabi, ug makabaton ka og resulta nga masaligan sa imong doktor. Ang mga senior ug PWD adunay priority lane ug 25% nga diskwento.</span>",
+  "home.paraLic": "DOH License to Operate No.",
   "home.s6p": "Pre-employment ug annual nga test para sa imong team. Pangutana para sa quote.",
   "home.t1": "DOH-Licensed",
   "home.t1s": "License No.",
