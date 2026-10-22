@@ -109,7 +109,7 @@ body.home .site-header:not(.scrolled) .lang { background: rgba(255,255,255,.55);
 /* ---------- Home hero ---------- */
 .hero {
   position: relative; margin-top: -73px; min-height: min(880px, 100svh);
-  padding: 150px 0 40px; color: #fff; overflow: hidden; display: flex;
+  padding: 150px 0 104px; color: #fff; overflow: hidden; display: flex; /* extra bottom room for the overlapping box */
 }
 .hero-bg { position: absolute; inset: 0; z-index: 0; }
 /* colors sampled from the reference hero: blush base, teal mist top-left, taupe-peach bottom-left, rose-lilac right edge */
@@ -120,9 +120,9 @@ body.home .site-header:not(.scrolled) .lang { background: rgba(255,255,255,.55);
   object-fit: cover; object-position: 60% 0%; display: block; filter: contrast(1.04) brightness(1.06); /* clean whites, no warm tint */
   /* top edge fades in; the left side fades out behind the headline, but from the buttons down the
      photo shows fully (only a short soft edge on the far left): top AND (left fade OR (bottom AND short edge)) */
-  -webkit-mask-image: linear-gradient(180deg, transparent 0, #000 70px, #000 calc(100% - 90px), transparent 100%), linear-gradient(90deg, rgba(0,0,0,.1) 0, rgba(0,0,0,.35) 10%, rgba(0,0,0,.7) 22%, #000 34%), linear-gradient(180deg, transparent 40%, #000 78%), linear-gradient(90deg, transparent 0, #000 12%);
+  -webkit-mask-image: linear-gradient(180deg, transparent 0, #000 70px), linear-gradient(90deg, rgba(0,0,0,.1) 0, rgba(0,0,0,.35) 10%, rgba(0,0,0,.7) 22%, #000 34%), linear-gradient(180deg, transparent 40%, #000 78%), linear-gradient(90deg, transparent 0, #000 12%);
   -webkit-mask-composite: source-in, source-over, source-in;
-          mask-image: linear-gradient(180deg, transparent 0, #000 70px, #000 calc(100% - 90px), transparent 100%), linear-gradient(90deg, rgba(0,0,0,.1) 0, rgba(0,0,0,.35) 10%, rgba(0,0,0,.7) 22%, #000 34%), linear-gradient(180deg, transparent 40%, #000 78%), linear-gradient(90deg, transparent 0, #000 12%);
+          mask-image: linear-gradient(180deg, transparent 0, #000 70px), linear-gradient(90deg, rgba(0,0,0,.1) 0, rgba(0,0,0,.35) 10%, rgba(0,0,0,.7) 22%, #000 34%), linear-gradient(180deg, transparent 40%, #000 78%), linear-gradient(90deg, transparent 0, #000 12%);
           mask-composite: intersect, add, intersect;
 }
 /* light warm tint: whites read as blush, the person keeps natural color */
@@ -316,7 +316,7 @@ h2.h-sm { font-size: 26px; margin-bottom: 14px; }
 .qb-dots button.on { width: 22px; background: var(--ink); }
 .qb-dots button:focus:not(:focus-visible) { outline: none; } /* no ring after a mouse click; keyboard focus still shows */
 .quote-band blockquote { margin: 0; font-family: var(--head); font-weight: 500; font-size: clamp(24px, 2.4vw, 34px); line-height: 1.25; letter-spacing: -.02em; color: var(--ink); text-wrap: pretty; }
-section.block.quote-band { padding-bottom: 24px; } /* same space below the box as above it */
+section.block.quote-band { position: relative; z-index: 2; padding-top: 0; margin-top: -64px; } /* box overlaps the bottom of the hero a little, so the two read as one structure */
 .quote-band figure { margin: 0; position: relative; }
 .quote-band figcaption { margin-top: 22px; font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); display: inline-flex; gap: 10px; align-items: center; }
 .quote-band figure.sample figcaption::after { content: "SAMPLE"; font-size: 10px; letter-spacing: .08em; color: #B45309; background: #FEF3E2; padding: 3px 7px; border-radius: 99px; }
@@ -761,7 +761,8 @@ section.block.tint { background: #F2F7F3; margin-top: 96px; padding-bottom: 96px
   .nav { height: 64px; }
   .logo img { height: 40px; }
   .lang button { padding: 6px 9px; }
-  .hero { margin-top: -65px; padding: 110px 0 28px; min-height: 0; }
+  .hero { margin-top: -65px; padding: 110px 0 60px; min-height: 0; }
+  section.block.quote-band { margin-top: -32px; }
   .hero-bg img { top: 84px; height: calc(100% - 84px); --img-shift: 0%; }
   .hero h1 { margin: 16px 0 24px; }
   .hero-foot p { display: none; }
