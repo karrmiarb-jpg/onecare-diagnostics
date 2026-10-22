@@ -709,6 +709,19 @@ section.block.tint { background: #F2F7F3; margin-top: 96px; padding-bottom: 96px
   .trust .wrap { padding: 28px 20px; border-radius: 18px; }
 }
 
+/* quiet in-between: four facts as open text with hairline dividers, no boxes */
+.trust-line ul { list-style: none; display: grid; grid-template-columns: repeat(4, 1fr); margin: 0; padding: 0; }
+.trust-line li { padding: 4px 28px; border-left: 1px solid #E4E4E1; }
+.trust-line li:first-child { padding-left: 0; border-left: 0; }
+.trust-line li::before { content: ""; display: block; width: 22px; height: 2px; border-radius: 2px; background: #0047AB; margin-bottom: 14px; }
+.trust-line li:nth-child(even)::before { background: #00BF63; }
+.trust-line b { display: block; font-family: var(--head); font-weight: 500; font-size: 18px; letter-spacing: -.015em; color: #1F2E2A; }
+.trust-line small { display: block; margin-top: 6px; font-size: 14px; line-height: 1.45; color: #5A6068; }
+@media (max-width: 900px) {
+  .trust-line ul { grid-template-columns: 1fr 1fr; row-gap: 32px; }
+  .trust-line li:nth-child(3) { padding-left: 0; border-left: 0; }
+}
+
 /* "Know your total" + "Prepare": one glass panel, same material as the box under the hero; logo colours as quiet accents */
 .duo-open-sec .wrap { position: relative; }
 .duo-open-sec { --duo-p: clamp(28px, 4.5vw, 64px); padding-bottom: 24px; }
