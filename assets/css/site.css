@@ -117,24 +117,24 @@ body.home .site-header:not(.scrolled) .lang { background: rgba(255,255,255,.55);
 .hero-bg img {
   /* photo sits right of the headline and below the header; its top and left edges fade into the backdrop */
   position: absolute; left: 12%; right: 0; bottom: 0; top: 96px; width: 88%; height: calc(100% - 96px);
-  object-fit: cover; object-position: 60% 0%; display: block; filter: contrast(1.04) brightness(1.06); /* clean whites, no warm tint */
+  object-fit: cover; object-position: 60% 0%; display: block; filter: contrast(1.1) brightness(1.02) saturate(1.04); /* a little more depth in the lab, clean whites, no warm tint */
   /* top edge fades in; the left side fades out behind the headline, but from the buttons down the
      photo shows fully (only a short soft edge on the far left): top AND (left fade OR (bottom AND short edge)) */
-  -webkit-mask-image: linear-gradient(180deg, transparent 0, #000 70px), linear-gradient(90deg, transparent 0, rgba(0,0,0,.45) 9%, rgba(0,0,0,.82) 20%, #000 30%), linear-gradient(180deg, transparent 40%, #000 78%), linear-gradient(90deg, transparent 0, #000 12%);
+  -webkit-mask-image: linear-gradient(180deg, transparent 0, #000 70px), linear-gradient(90deg, rgba(0,0,0,.1) 0, rgba(0,0,0,.35) 10%, rgba(0,0,0,.7) 22%, #000 34%), linear-gradient(180deg, transparent 40%, #000 78%), linear-gradient(90deg, transparent 0, #000 12%);
   -webkit-mask-composite: source-in, source-over, source-in;
-          mask-image: linear-gradient(180deg, transparent 0, #000 70px), linear-gradient(90deg, transparent 0, rgba(0,0,0,.45) 9%, rgba(0,0,0,.82) 20%, #000 30%), linear-gradient(180deg, transparent 40%, #000 78%), linear-gradient(90deg, transparent 0, #000 12%);
+          mask-image: linear-gradient(180deg, transparent 0, #000 70px), linear-gradient(90deg, rgba(0,0,0,.1) 0, rgba(0,0,0,.35) 10%, rgba(0,0,0,.7) 22%, #000 34%), linear-gradient(180deg, transparent 40%, #000 78%), linear-gradient(90deg, transparent 0, #000 12%);
           mask-composite: intersect, add, intersect;
 }
 /* light warm tint: whites read as blush, the person keeps natural color */
 /* misty blur behind the text only, gone before the microscope */
 .hero-bg::after {
   content: ""; position: absolute; inset: 0; z-index: 2;
-  backdrop-filter: blur(16px) saturate(1.1); -webkit-backdrop-filter: blur(16px) saturate(1.1);
+  backdrop-filter: blur(24px) saturate(1.1); -webkit-backdrop-filter: blur(24px) saturate(1.1);
   /* blur on the left side behind the text only */
   /* left side only, and only the upper part where the headline is: the bottom-left stays a clear photo */
-  -webkit-mask-image: linear-gradient(90deg, #000 0%, #000 12%, transparent 25%), linear-gradient(180deg, #000 0%, #000 50%, transparent 82%);
+  -webkit-mask-image: linear-gradient(90deg, #000 0%, #000 16%, transparent 30%), linear-gradient(180deg, #000 0%, #000 50%, transparent 82%);
   -webkit-mask-composite: source-in;
-          mask-image: linear-gradient(90deg, #000 0%, #000 12%, transparent 25%), linear-gradient(180deg, #000 0%, #000 50%, transparent 82%);
+          mask-image: linear-gradient(90deg, #000 0%, #000 16%, transparent 30%), linear-gradient(180deg, #000 0%, #000 50%, transparent 82%);
           mask-composite: intersect;
 }
 .hero::after {
@@ -147,18 +147,18 @@ body.home .site-header:not(.scrolled) .lang { background: rgba(255,255,255,.55);
     /* left side wash behind the text; clear over the person */
     linear-gradient(90deg, rgba(255,255,255,.5) 0%, rgba(255,255,255,.28) 30%, rgba(255,255,255,0) 46%),
     /* faint white at the right edge */
-    linear-gradient(270deg, rgba(255,255,255,.26) 0%, rgba(255,255,255,.12) 7%, rgba(255,255,255,0) 15%);
+    linear-gradient(270deg, rgba(255,255,255,.08) 0%, rgba(255,255,255,.03) 6%, rgba(255,255,255,0) 11%);
 }
 /* the reference's colors as one smooth wash down the left side: teal at the top easing into peach at the bottom.
    It fades out evenly toward the person, so there are no round spots in the corners. A faint copy shows on the right edge. */
 .hero::before {
   content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none;
-  background: rgba(255,255,255,.72); /* white wash behind the text (eased) */
+  background: rgba(255,255,255,.9); /* white wash behind the text */
   /* strong on the left behind the text, a faint matching strip on the right edge for balance */
   /* ...and eases off below the buttons, so the bottom-left isn't washed out */
-  -webkit-mask-image: linear-gradient(90deg, #000 0%, rgba(0,0,0,.85) 14%, rgba(0,0,0,.45) 30%, rgba(0,0,0,.12) 42%, transparent 52%, transparent 80%, rgba(0,0,0,.18) 90%, rgba(0,0,0,.45) 100%), linear-gradient(180deg, #000 0%, #000 50%, rgba(0,0,0,.3) 80%, rgba(0,0,0,.2) 100%);
+  -webkit-mask-image: linear-gradient(90deg, #000 0%, rgba(0,0,0,.85) 14%, rgba(0,0,0,.45) 30%, rgba(0,0,0,.12) 42%, transparent 52%, transparent 100%), linear-gradient(180deg, #000 0%, #000 50%, rgba(0,0,0,.3) 80%, rgba(0,0,0,.2) 100%);
   -webkit-mask-composite: source-in;
-          mask-image: linear-gradient(90deg, #000 0%, rgba(0,0,0,.85) 14%, rgba(0,0,0,.45) 30%, rgba(0,0,0,.12) 42%, transparent 52%, transparent 80%, rgba(0,0,0,.18) 90%, rgba(0,0,0,.45) 100%), linear-gradient(180deg, #000 0%, #000 50%, rgba(0,0,0,.3) 80%, rgba(0,0,0,.2) 100%);
+          mask-image: linear-gradient(90deg, #000 0%, rgba(0,0,0,.85) 14%, rgba(0,0,0,.45) 30%, rgba(0,0,0,.12) 42%, transparent 52%, transparent 100%), linear-gradient(180deg, #000 0%, #000 50%, rgba(0,0,0,.3) 80%, rgba(0,0,0,.2) 100%);
           mask-composite: intersect;
 }
 /* keeps white text readable over the bright photo */
