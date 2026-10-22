@@ -252,12 +252,20 @@ h2.h-sm { font-size: 26px; margin-bottom: 14px; }
 }
 .media-card.green { background: linear-gradient(165deg, #BDE6D6 0%, #74BFA0 100%); }
 .media-card img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; transition: transform .7s ease; } /* card photos come pre-graded to one shared tone */
-.media-card::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, rgba(255,255,255,0) 62%, rgba(255,255,255,.6) 78%, rgba(255,255,255,.88) 100%); } /* lighter white fade, only behind the dark text */
-.media-card { border: 1px solid #E5E7EA; box-shadow: 0 1px 2px rgba(16,24,40,.04); } /* thin soft outline so the white fade doesn't melt into the white page */
+/* frosted-glass caption over a crisp photo (no milky fade), matching the box after the hero */
+.media-card .cap { display: block; margin: -8px; padding: 14px 16px; border-radius: 16px;
+  background: rgba(255,255,255,.72); -webkit-backdrop-filter: blur(16px) saturate(1.2); backdrop-filter: blur(16px) saturate(1.2);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.9), 0 0 0 1px rgba(16,24,40,.05); }
+.media-card .cap b { display: block; }
+.media-card { border-radius: 22px; box-shadow: inset 0 1px 0 rgba(255,255,255,.6), 0 0 0 1px rgba(16,24,40,.05), 0 22px 44px -22px rgba(16,24,40,.22); transition: transform .35s ease, box-shadow .35s ease; } /* floats like the box above */
+.media-card:hover { transform: translateY(-3px); box-shadow: inset 0 1px 0 rgba(255,255,255,.6), 0 0 0 1px rgba(16,24,40,.05), 0 28px 52px -22px rgba(16,24,40,.28); }
 .media-card:hover img { transform: scale(1.04); }
 .media-card .art { position: absolute; top: 22px; left: 18px; opacity: .9; }
 .media-card b { font-family: var(--head); font-weight: 500; font-size: 17px; letter-spacing: -.01em; color: var(--ink); }
-.media-card p { font-size: 13px; color: #3A4246; margin-top: 4px; line-height: 1.45; min-height: calc(1.45em * 3); } /* room for 3 lines, so every card's title sits on the same line */
+.media-card p { font-size: 13px; color: #3A4246; margin-top: 4px; line-height: 1.45; min-height: calc(1.45em * 3); }
+#svc-car { padding: 8px 0 64px; margin: -8px 0 -48px; } /* room for the card shadows and hover lift inside the scrolling row */
+.car-nav.car-nav-center button { border: 0; background: rgba(255,255,255,.85); box-shadow: inset 0 1px 0 #fff, 0 0 0 1px rgba(16,24,40,.07), 0 10px 24px -12px rgba(16,24,40,.25); }
+.car-nav.car-nav-center button:hover { background: #fff; } /* room for 3 lines, so every card's title sits on the same line */
 
 /* Small tiles (tests) */
 .tile-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
@@ -287,8 +295,8 @@ h2.h-sm { font-size: 26px; margin-bottom: 14px; }
 
 /* Services heading: centered, in the hero's style (uppercase, tight, deep green-charcoal) */
 .sec-top.sec-center { flex-direction: column; align-items: center; text-align: center; margin-bottom: 36px; }
-.sec-top.sec-center h2 { font-size: clamp(36px, 4.4vw, 66px); line-height: .92; letter-spacing: -.045em; font-weight: 500; text-transform: uppercase; color: #1F2E2A; }
-.sec-top.sec-center h2 span + span { color: inherit; }
+.sec-top.sec-center h2 { margin-top: 14px; font-size: clamp(32px, 3.4vw, 48px); line-height: 1.05; letter-spacing: -.035em; font-weight: 500; color: #1F2E2A; } /* calmer than the hero: sentence case, smaller */
+.sec-top.sec-center h2 span + span { color: #8A8580; } /* quiet warm-grey second line */
 .sec-top.sec-center p { margin: 16px auto 0; max-width: 520px; }
 .car-nav.car-nav-center { justify-content: center; margin-top: 24px; }
 
