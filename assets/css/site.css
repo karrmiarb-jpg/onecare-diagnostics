@@ -709,34 +709,38 @@ section.block.tint { background: #F2F7F3; margin-top: 96px; padding-bottom: 96px
   .trust .wrap { padding: 28px 20px; border-radius: 18px; }
 }
 
-/* "Know your total" + "Prepare": open, unboxed, like the FAQ; logo colours only as small accents */
+/* "Know your total" + "Prepare": one glass panel, same material as the box under the hero; logo colours as quiet accents */
 .duo-open-sec .wrap { position: relative; }
-.duo-open { display: grid; grid-template-columns: 1fr 1fr; padding-top: 56px; border-top: 1px solid #E4E4E1; }
-.duo-open::before { content: ""; position: absolute; top: -1px; left: 0; width: 72px; height: 3px; background: linear-gradient(90deg, #0047AB, #00BF63); border-radius: 3px; }
-.duo-open-sec, .duo-open-sec + section { --duo-p: clamp(32px, 5vw, 72px); }
+.duo-open-sec { --duo-p: clamp(28px, 4.5vw, 64px); padding-bottom: 24px; }
+.duo-open {
+  display: grid; grid-template-columns: 1fr 1fr; border-radius: 28px; padding: clamp(28px, 4vw, 56px);
+  background:
+    radial-gradient(60% 90% at 0% 0%, rgba(0,71,171,.05), transparent 70%),
+    radial-gradient(60% 90% at 100% 100%, rgba(0,191,99,.06), transparent 70%),
+    linear-gradient(180deg, rgba(255,255,255,.9) 0%, rgba(255,255,255,.55) 45%, rgba(246,246,244,.6) 100%), rgba(255,255,255,.72);
+  -webkit-backdrop-filter: blur(22px) saturate(1.2); backdrop-filter: blur(22px) saturate(1.2);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.95), 0 0 0 1px rgba(16,24,40,.06), 0 24px 60px -24px rgba(16,24,40,.18), 0 2px 6px rgba(16,24,40,.04);
+}
+.duo-open::before { content: ""; position: absolute; top: 0; left: 44px; width: 72px; height: 3px; background: linear-gradient(90deg, #0047AB, #00BF63); border-radius: 0 0 3px 3px; }
 .duo-open .col { padding: 0 var(--duo-p) 8px 0; }
 .duo-open .col + .col { padding: 0 0 8px var(--duo-p); border-left: 1px solid #E4E4E1; }
-/* the FAQ below uses the same two halves, so its question list starts on the same line as column 02 */
-.duo-open-sec + section .faq { grid-template-columns: 1fr 1fr; gap: 0; }
-.duo-open-sec + section .faq > :last-child { padding-left: var(--duo-p); }
 .duo-open .step { display: block; font-size: 12px; font-weight: 600; letter-spacing: .14em; margin-bottom: 18px; }
 .duo-open .col-est .step { color: #00A055; }
 .duo-open .col-prep .step { color: #0047AB; }
-.duo-open h3 { font-size: clamp(24px, 2.3vw, 32px); letter-spacing: -.03em; font-weight: 500; color: #1F2E2A; margin: 0 0 12px; }
-.duo-open p { color: var(--muted); font-size: 15.5px; margin: 0 0 24px; }
+.duo-open h3 { font-size: clamp(24px, 2.2vw, 30px); letter-spacing: -.03em; font-weight: 500; color: #1F2E2A; margin: 0 0 12px; }
+.duo-open p { color: #5A6068; font-size: 16px; margin: 0 0 24px; }
 .duo-open .checks { gap: 0; margin-bottom: 28px; }
-.duo-open .checks li { padding: 13px 0; border-top: 1px solid #ECECE9; }
-.duo-open .checks li:last-child { border-bottom: 1px solid #ECECE9; }
-.duo-open .checks li i { background: none; width: 20px; height: 20px; margin-top: 0; }
+.duo-open .checks li { padding: 13px 0; border-top: 1px solid #E6E6E3; font-size: 16.5px; }
+.duo-open .checks li:last-child { border-bottom: 1px solid #E6E6E3; }
+.duo-open .checks li i { background: none; width: 20px; height: 20px; margin-top: 1px; }
 .duo-open .col-est .checks li i { color: #00A055; }
 .duo-open .col-prep .checks li i { color: #0047AB; }
 .duo-open .btn-ghost { background: transparent; }
 @media (max-width: 760px) {
-  .duo-open { grid-template-columns: 1fr; padding-top: 40px; }
+  .duo-open { grid-template-columns: 1fr; padding: 24px 20px; border-radius: 20px; }
+  .duo-open::before { left: 28px; }
   .duo-open .col { padding: 0 0 8px; }
-  .duo-open .col + .col { padding: 40px 0 8px; margin-top: 40px; border-left: 0; border-top: 1px solid #E4E4E1; }
-  .duo-open-sec + section .faq { grid-template-columns: 1fr; gap: 10px; }
-  .duo-open-sec + section .faq > :last-child { padding-left: 0; }
+  .duo-open .col + .col { padding: 32px 0 8px; margin-top: 32px; border-left: 0; border-top: 1px solid #E4E4E1; }
 }
 
 .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
