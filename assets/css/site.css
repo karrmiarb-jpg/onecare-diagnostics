@@ -314,7 +314,7 @@ h2.h-sm { font-size: 26px; margin-bottom: 14px; }
 .qb-dots button { width: 7px; height: 7px; border-radius: 99px; border: 0; padding: 0; background: #CDD3D8; cursor: pointer; transition: width .3s, background .3s; }
 .qb-dots button.on { width: 22px; background: var(--ink); }
 .qb-dots button:focus:not(:focus-visible) { outline: none; } /* no ring after a mouse click; keyboard focus still shows */
-.quote-band blockquote { margin: 0; font-family: var(--head); font-weight: 500; font-size: clamp(24px, 2.4vw, 34px); line-height: 1.25; letter-spacing: -.02em; color: var(--ink); text-wrap: pretty; }
+.quote-band blockquote { margin: 0; font-family: var(--head); font-weight: 500; font-size: clamp(24px, 2.4vw, 34px); line-height: 1.25; letter-spacing: -.02em; color: var(--ink); text-wrap: pretty; text-indent: -.42em; } /* opening quote mark hangs into the margin so all lines start on the same edge */
 .quote-band figure { margin: 0; position: relative; }
 .quote-band figcaption { margin-top: 22px; font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); display: inline-flex; gap: 10px; align-items: center; }
 .quote-band figure.sample figcaption::after { content: "SAMPLE"; font-size: 10px; letter-spacing: .08em; color: #B45309; background: #FEF3E2; padding: 3px 7px; border-radius: 99px; }
