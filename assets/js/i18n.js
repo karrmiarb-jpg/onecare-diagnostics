@@ -13,6 +13,7 @@ window.ONECARE_CEB = {
   "nav.contact": "Kontaka Kami",
   "cta.call": "Tawag Kanamo",
   "cta.text": "Text Kanamo",
+  "cta.contact": "Kontaka Kami",
   "cta.book": "Pag-book og Bisita",
   "cta.prices": "Tan-awa ang Test ug Presyo",
   "cta.prep": "Unsaon Pagpangandam",
