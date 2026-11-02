@@ -876,7 +876,6 @@ body:not(.home) .review .av { background: #E8F0FB !important; color: #0047AB; }
 body:not(.home) .review .av:nth-child(1) { }
 
 /* ================= Brand navy: footer + main buttons (from the logo blue) ================= */
-.site-footer::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, #0047AB, #00BF63); }
 .btn-primary, .cta .btn-white, body:not(.home) .cta .btn-white, body:not(.home) .feature .btn-white,
 body:not(.home) .split .feature .btn-white { background: #003A8C; color: #fff; }
 .btn-primary:hover, .cta .btn-white:hover, body:not(.home) .cta .btn-white:hover, body:not(.home) .feature .btn-white:hover { background: #0047AB; color: #fff; }
