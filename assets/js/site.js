@@ -107,7 +107,7 @@
         <div class="wordmark" aria-hidden="true">OneCare</div>
         <div class="foot">
           <div>
-            <p data-i18n="foot.tag">Accurate lab results from people who welcome you, close to home. Serving Dumanjug and nearby towns since 2024.</p>
+            <p data-i18n="foot.tag">A DOH-licensed clinical laboratory in Poblacion Central, Dumanjug, Cebu. Open since 2024.</p>
             <p style="margin-top:14px"><span data-i18n="foot.license">DOH License No.</span> ${CLINIC.license}</p>
           </div>
           <div>
