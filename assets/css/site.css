@@ -881,6 +881,13 @@ body:not(.home) .review .av:nth-child(1) { }
 body:not(.home) .split .feature .btn-white { background: #003A8C; color: #fff; }
 .btn-primary:hover, .cta .btn-white:hover, body:not(.home) .cta .btn-white:hover, body:not(.home) .feature .btn-white:hover { background: #0047AB; color: #fff; }
 
+/* service cards: square corners, text straight on the photo over a soft dark fade (no white caption box) */
+.media-card { border-radius: 0; }
+.media-card::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, rgba(10,20,35,0) 52%, rgba(10,20,35,.45) 72%, rgba(10,20,35,.78) 100%); }
+.media-card .cap { margin: 0; padding: 0; border-radius: 0; background: none; -webkit-backdrop-filter: none; backdrop-filter: none; box-shadow: none; }
+.media-card b { color: #fff; }
+.media-card p { color: rgba(255,255,255,.86); }
+
 .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
 .reveal.in { opacity: 1; transform: none; }
 .no-js .reveal { opacity: 1; transform: none; }
