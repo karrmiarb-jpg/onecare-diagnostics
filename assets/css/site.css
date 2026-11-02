@@ -853,6 +853,28 @@ body:not(.home) .steps li:nth-child(even) .n { background: #1F2E2A; color: #fff;
   body:not(.home) .cta { padding: 28px 22px; }
 }
 
+/* ================= Pops of colour (logo blue + green), site-wide ================= */
+/* heading second lines in logo blue instead of grey */
+body:not(.home) .page-hero h1 .accent, body:not(.home) .accent,
+body:not(.home) .sec-top h2 span + span, body:not(.home) .sec-head h2 span,
+#services .sec-top.sec-center h2 span + span { color: #0047AB; }
+/* card top bars: short blue-to-green gradient */
+body:not(.home) .feature::before, body:not(.home) .corner-badge::before, body:not(.home) .cta::before,
+body:not(.home) .feature.blue::before, body:not(.home) .corner-badge.green::before,
+.duo-open .col-est::before, .duo-open .col-prep::before { background: linear-gradient(90deg, #0047AB, #00BF63); width: 64px; }
+/* icon squares: soft blue / soft green tints */
+body:not(.home) .ic-box, body:not(.home) .ic-box.amber { background: #E8F0FB; color: #0047AB; }
+body:not(.home) .ic-box.green { background: #E4F6EC; color: #00A055; }
+body:not(.home) .seal { background: #E4F6EC; color: #00A055; }
+/* visit steps: numbers in logo colours */
+body:not(.home) .steps .n { background: #fff; color: #0047AB; box-shadow: 0 0 0 1.5px #0047AB, 0 8px 18px -10px rgba(0,71,171,.4); }
+body:not(.home) .steps li:nth-child(even) .n { background: #0047AB; color: #fff; box-shadow: 0 8px 18px -10px rgba(0,71,171,.5); }
+/* small blue chips */
+.qb-slides > .tile .t-count { background: #E8F0FB; color: #0047AB; }
+.qb-slides > .tile .t-count b { color: #0047AB; }
+body:not(.home) .review .av { background: #E8F0FB !important; color: #0047AB; }
+body:not(.home) .review .av:nth-child(1) { }
+
 .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
 .reveal.in { opacity: 1; transform: none; }
 .no-js .reveal { opacity: 1; transform: none; }
