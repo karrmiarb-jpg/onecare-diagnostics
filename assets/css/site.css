@@ -778,6 +778,81 @@ section.block.duo-open-sec { padding-top: 128px; padding-bottom: 42px; }
 .help-link .go { position: absolute; top: 50%; margin-top: -8px; right: 14px; color: #9AA0A6; transition: transform .2s, color .2s; }
 .help-link:hover .go { transform: translateX(3px); color: #1F2E2A; }
 
+/* ================= Inner pages: same look as the home page =================
+   White lifted cards, neutral (not mint) backgrounds, charcoal headings with a quiet warm-grey
+   second line, logo blue/green only as small accents, beige-filled line-icon style.
+   Scoped to body:not(.home) so the home page is untouched. */
+body:not(.home) { --soft: #F5F5F3; --soft-2: #ECECE9; }
+body:not(.home) .page-hero { background: #fff; border-bottom: 0; padding: 72px 0 24px; }
+body:not(.home) .page-hero h1 { color: #1F2E2A; }
+body:not(.home) .page-hero h1 .accent, body:not(.home) .accent { color: #8A8580; }
+body:not(.home) .page-hero .lead { color: #5A6068; }
+body:not(.home) .sec-top h2, body:not(.home) .sec-head h2, body:not(.home) h2.h-sm { color: #1F2E2A; letter-spacing: -.03em; }
+body:not(.home) .sec-top h2 span + span, body:not(.home) .sec-head h2 span { color: #8A8580; }
+body:not(.home) section.block.tint { background: transparent; margin-top: 0; padding-bottom: 0; }
+
+/* one card language: white, soft lift, rounded */
+body:not(.home) .card, body:not(.home) .feature, body:not(.home) .feel-card, body:not(.home) .review,
+body:not(.home) .summary, body:not(.home) .corner-badge, body:not(.home) .cta, body:not(.home) .tint .card {
+  background: #fff; color: var(--ink); border: 0; border-radius: 24px;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.95), 0 0 0 1px rgba(16,24,40,.05), 0 22px 44px -18px rgba(16,24,40,.22), 0 4px 10px -4px rgba(16,24,40,.07);
+}
+body:not(.home) .card p, body:not(.home) .feature p, body:not(.home) .corner-badge p, body:not(.home) .cta p { color: #5A6068; }
+body:not(.home) .card h3, body:not(.home) .feature h3, body:not(.home) .corner-badge h2, body:not(.home) .cta h3 { color: #1F2E2A; letter-spacing: -.02em; }
+
+/* the old solid green / blue feature blocks become white cards with a short logo-colour bar on top */
+body:not(.home) .feature, body:not(.home) .corner-badge, body:not(.home) .cta { position: relative; overflow: hidden; }
+body:not(.home) .feature::before, body:not(.home) .corner-badge::before, body:not(.home) .cta::before { content: ""; position: absolute; top: 0; left: 34px; width: 56px; height: 3px; border-radius: 0 0 3px 3px; background: #0047AB; }
+body:not(.home) .feature.blue::before, body:not(.home) .corner-badge.green::before { background: #00BF63; }
+body:not(.home) .split .feature.blue, body:not(.home) .split .feature.blue h3, body:not(.home) .split .feature.blue p, body:not(.home) .split .feature.blue .checks li { color: inherit; }
+body:not(.home) .split .feature.blue { background: #fff; }
+body:not(.home) .split .feature.blue h3 { color: #1F2E2A; }
+body:not(.home) .split .feature.blue p { color: #5A6068; }
+body:not(.home) .split .feature.blue .checks li { color: var(--ink); }
+body:not(.home) .feature .btn-white, body:not(.home) .split .feature .btn-white { background: var(--ink); color: #fff; }
+body:not(.home) .feature .btn-outline { color: var(--ink); border-color: #D7D9DE; }
+
+/* check marks: plain logo-green ticks, no mint dots (same as the home cards) */
+body:not(.home) .checks li i, body:not(.home) .feature.blue .checks li i, body:not(.home) .split .feature.blue .checks li i { background: none; color: #00A055; width: 20px; height: 20px; }
+
+/* icons: beige base with a near-black line, logo green / blue accents (matches the home icon set) */
+body:not(.home) .ic-box { background: #F1E7DA; color: #1A2230; border-radius: 14px; }
+body:not(.home) .ic-box.green { background: #F1E7DA; color: #00A055; }
+body:not(.home) .ic-box.amber { background: #F1E7DA; color: #0047AB; }
+body:not(.home) .corner-badge svg { color: #1A2230; }
+
+/* notes: quiet neutral panel with a coloured edge instead of tinted boxes */
+body:not(.home) .note-box { background: #F7F7F5; border: 0; border-left: 3px solid #0047AB; border-radius: 12px; color: #2F3438; }
+body:not(.home) .note-box.green { border-left-color: #00A055; color: #2F3438; background: #F7F7F5; }
+body:not(.home) .note-box.amber { border-left-color: #C98A1B; background: #FBF7EF; color: #5E4310; }
+body:not(.home) .note-box svg { color: currentColor; opacity: .75; }
+
+/* bottom call-to-action box: white card, near-black buttons */
+body:not(.home) .cta { padding: 40px 44px; }
+body:not(.home) .cta .btn-white { background: var(--ink); color: #fff; }
+body:not(.home) .cta .btn-outline { background: transparent; color: var(--ink); border-color: #D7D9DE; }
+
+/* reason tiles on the Tests page: white lifted cards like the home tile */
+body:not(.home) .tile-grid.reasons .tile { background: #fff; box-shadow: 0 0 0 1px rgba(16,24,40,.05), 0 14px 30px -16px rgba(16,24,40,.22); transition: transform .25s, box-shadow .25s; }
+body:not(.home) .tile-grid.reasons .tile:hover { background: #fff; transform: translateY(-3px); }
+
+/* smaller pieces */
+body:not(.home) .toggle-line { background: #F7F7F5; border-color: #E6E6E3; }
+body:not(.home) .page-hero h1 { text-wrap: balance; max-width: 16ch; }
+body:not(.home) .seal { background: #F1E7DA; color: #00A055; }
+body:not(.home) .form-placeholder { background: #FAFAF9; border-color: #D9DBD8; }
+body:not(.home) .chip-item { background: #fff; border-color: #ECECE9; }
+body:not(.home) .chip-item svg { color: #00A055; }
+body:not(.home) .upload-card { background: #FAFAF9; border-color: #D9DBD8; }
+body:not(.home) .est-row.on { background: #F2F8F4; }
+body:not(.home) .review .av { background: #F1E7DA !important; color: #1F2E2A; }
+body:not(.home) .steps .n { background: #fff; color: #1F2E2A; box-shadow: 0 0 0 1px rgba(16,24,40,.08), 0 8px 18px -10px rgba(16,24,40,.3); }
+body:not(.home) .steps li:nth-child(even) .n { background: #1F2E2A; color: #fff; }
+@media (max-width: 760px) {
+  body:not(.home) .page-hero { padding: 48px 0 12px; }
+  body:not(.home) .cta { padding: 28px 22px; }
+}
+
 .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
 .reveal.in { opacity: 1; transform: none; }
 .no-js .reveal { opacity: 1; transform: none; }
