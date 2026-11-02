@@ -69,7 +69,7 @@ window.ONECARE_CEB = {
   "home.quoteBy": "Ngalan sa pasyente · Dumanjug",
   "home.para": "Ang OneCare Diagnostics usa ka <span class=\"c-green\">DOH-licensed</span> nga clinical laboratory para sa mga pasyente gikan sa Dumanjug ug sa duol nga mga lungsod. <span class=\"rest\">Bukas <span class=\"c-blue\">Lunes hangtod Sabado, 7:30AM–5:00PM</span>, pwede ang walk-in. Ang mga senior citizen ug PWD adunay 25% nga diskwento, ug mauna ang mga senior citizen.</span>",
   "home.paraLic": "DOH License to Operate No.",
-  "home.trustB": "Bukas sukad 2024",
+  "home.trustB": "Nag-alagad sa komunidad sukad 2024",
   "home.trustS": "Lunes–Sabado, 7:30AM–5:00PM",
   "home.tTests": "ka test",
   "home.tCta": "Tan-awa ang total",
