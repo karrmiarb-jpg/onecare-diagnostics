@@ -160,6 +160,13 @@
 
     // fill clinic details anywhere on the page
     document.querySelectorAll("[data-tel]").forEach(a => a.setAttribute("href", "tel:" + CLINIC.phoneTel));
+    // "Contact Us Now": phones call us; computers (no touch screen) open an email instead
+    if (!matchMedia("(hover: none) and (pointer: coarse)").matches) {
+      document.querySelectorAll('[data-i18n="cta.now"]').forEach(el => {
+        const link = el.closest("a");
+        if (link) link.setAttribute("href", "mailto:" + CLINIC.email + "?subject=" + encodeURIComponent("Inquiry from the OneCare website"));
+      });
+    }
     document.querySelectorAll("[data-sms]").forEach(a => a.setAttribute("href", "sms:" + CLINIC.phoneTel));
     document.querySelectorAll("[data-phone]").forEach(el => (el.textContent = CLINIC.phoneDisplay));
     document.querySelectorAll("[data-email]").forEach(el => { el.textContent = CLINIC.email; if (el.tagName === "A") el.href = "mailto:" + CLINIC.email; });
