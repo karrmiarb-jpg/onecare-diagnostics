@@ -199,7 +199,7 @@
   }
 
   async function readPhoto(file) {
-    const sendBtn = `<a class="btn btn-ghost btn-sm" href="${esc(sendHref())}">${t("up.send", "Send it to us instead")}</a>`;
+    const sendBtn = `<a class="btn btn-ghost btn-sm" href="${esc(sendHref())}" target="_blank" rel="noopener">${t("up.send", "Send it to us instead")}</a>`;
     upStatus(`<div class="note-box"><span class="spinner" aria-hidden="true"></span><span>${t("up.reading", "Reading your photo… this takes a few seconds.")}</span></div>`);
     try {
       const image = await shrink(file);
